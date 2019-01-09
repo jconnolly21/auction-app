@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/db', async (req, res) => {
+router.get('/db', async function(req, res) {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM teams');
@@ -24,6 +24,6 @@ router.get('/db', async (req, res) => {
       console.error(err);
       res.send("Error " + err);
     }
-  });
+ });
 
 module.exports = router;
