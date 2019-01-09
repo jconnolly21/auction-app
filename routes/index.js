@@ -24,6 +24,6 @@ router.get('/', async (req, res) => {
       console.error(err);
       res.send("Error " + err);
     }
-  })
+  });
 
 module.exports = router;
