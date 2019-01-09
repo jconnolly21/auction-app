@@ -20,12 +20,10 @@ router.get('/db', function(req, res) {
   
   client.query('SELECT * FROM teams;', (err, res) => {
     if (err) throw err;
-    for (let row of res.rows) {
-      console.log(JSON.stringify(row));
-    }
+    var rows = res.rows;
     client.end();
   });
-  res.render('index', { title: 'success'});
+  res.render('db', { title: 'Auction App', data: rows});
 });
 
 module.exports = router;
