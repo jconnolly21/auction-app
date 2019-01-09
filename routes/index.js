@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/db', function(req, res) {
+router.get('/db', function(req, res, next) {
   client.connect();
   
   client.query('SELECT * FROM teams;', (err, res) => {
