@@ -8,12 +8,12 @@ const pool = new Pool({
 });
 
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Auction App' });
-// });
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Auction App' });
+});
 
 
-router.get('/', async (req, res) => {
+router.get('/db', async (req, res) => {
     try {
       const client = await pool.connect()
       const result = await client.query('SELECT * FROM teams');
