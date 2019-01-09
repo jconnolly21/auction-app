@@ -1,4 +1,4 @@
-#Fantasy Baseball Auction Assistant
+# Fantasy Baseball Auction Assistant
 
 The goal of this project is to create an application that assists a player when drafting in a fantasy baseball auction by performing a combination of useful tasks:
 
