@@ -128,76 +128,15 @@
 						    </tr>
 						  </thead>
 						  <tbody>
+						    {{#each data}}
 						    <tr>
-						      <th scope="row">Joe</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
+						    	<th scope="row">{{owner}}</th>
+						    	<td>243</td>
+						    	<td>260</td>
+						    	<td>0</td>
+						    	<td>0</td>
 						    </tr>
-						    <tr>
-						      <th scope="row">Jim</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Brian</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Rich</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Stu</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Jody</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Chris</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Adam</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Alan</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Craig</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
+						    {{/each}}
 						  </tbody>
 						</table>
 					</div>
@@ -205,16 +144,11 @@
 				<div class="row">
 					<div class="col">
 						<select class="selectpicker">
-						    <option data-subtext="My Team">Joe</option>
-						    <option data-subtext="Au Contreras">Brian</option>
-						    <option data-subtext="Didi or Didn't He">Jim</option>
-						    <option data-subtext="Bryce is Right">Rich</option>
-						    <option data-subtext="Team Stu">Stu</option>
-						    <option data-subtext="Cobra Kai">Chris</option>
-						    <option data-subtext="Grumpy Grumpa">Jody</option>
-						    <option data-subtext="Pirela De Vil">Adam</option>
-						    <option data-subtext="Happ-less Bronx Boys">Alan</option>
-						    <option data-subtext="Crusty">Craig</option>
+						    <select class="selectpicker">
+								{{#each data}}
+								<option data-subtext='{{display}}'>{{owner}}</option>
+								{{/each}}
+							</select>
 						</select>
 						<table class="table">
 							<thead>
@@ -266,16 +200,9 @@
 			</div>
 			<div class="col-2">
 				<select class="selectpicker">
-				    <option data-subtext="My Team">Joe</option>
-				    <option data-subtext="Au Contreras">Brian</option>
-				    <option data-subtext="Didi or Didn't He">Jim</option>
-				    <option data-subtext="Bryce is Right">Rich</option>
-				    <option data-subtext="Team Stu">Stu</option>
-				    <option data-subtext="Cobra Kai">Chris</option>
-				    <option data-subtext="Grumpy Grumpa">Jody</option>
-				    <option data-subtext="Pirela De Vil">Adam</option>
-				    <option data-subtext="Happ-less Bronx Boys">Alan</option>
-				    <option data-subtext="Crusty">Craig</option>
+				    {{#each data}}
+					<option data-subtext='{{display}}'>{{owner}}</option>
+					{{/each}}
 				</select>
 				<table class="table table-sm roster-table">
 				  <tbody>
