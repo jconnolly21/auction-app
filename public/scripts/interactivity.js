@@ -2,12 +2,10 @@
 $(document).ready(function() {
 	const Url = 'https://still-ravine-63937.herokuapp.com/players';
 	$.getJSON(Url, function(result){
-		for(i = 0; i < result.players.length; i++) {
-			console.log(result.players.name);
-			console.log(result.players.elig);
-			console.log(result.players.team);
-			console.log(result.players.value);
-		}
+		//for(i = 0; i < result.players.length; i++) {
+			console.log(result);
+			console.log(result.players);
+		//}
 	});
 });
 
