@@ -11,11 +11,17 @@ const client = new Client({
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  client.connect();
-  client.query('SELECT * FROM teams;', (err, response) => {
-  	if (err) throw err;
-    res.render('index', { data: response.rows });
-    client.end();
+  client.connect(function (err, client, done) {
+  	client.query('SELECT * FROM teams;', (err, response) => {
+  		if (err) {
+  			console.log('Error querying db.');
+  			throw err;
+  		} else {
+    		console.log('Succesfully queried db.')
+    		res.render('index', { data: response.rows });
+    	}
+    	client.release();
+  	});
   });
 });
 
