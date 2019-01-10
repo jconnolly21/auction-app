@@ -16,7 +16,8 @@
 	<script src="/bootstrap-select-1.13.2/dist/js/bootstrap-select.js"></script>
 	<link rel="stylesheet" href="/bootstrap-select-1.13.2/dist/css/bootstrap-select.css">
 
-
+	<!-- My code -->
+	<script src="scripts/interactivity.js"></script>
 	<link rel="stylesheet" href="stylesheets/styles.css">
 
 	<title>Auction App</title>
@@ -332,29 +333,6 @@
 			</div>
 		</div>	
 	</div>
-
-	<script type="text/javascript">
-		function myFunction() {
-		  document.getElementById("myDropdown").classList.toggle("show");
-		}
-		
-		function filterFunction() {
-		  var input, filter, ul, li, a, i;
-		  input = document.getElementById("myInput");
-		  filter = input.value.toUpperCase();
-		  div = document.getElementById("myDropdown");
-		  a = div.getElementsByTagName("a");
-		  for (i = 0; i < a.length; i++) {
-		    txtValue = a[i].textContent || a[i].innerText;
-		    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-		      a[i].style.display = "";
-		    } else {
-		      a[i].style.display = "none";
-		    }
-		  }
-		}
-	</script>
-
 </body>
 
 </html>
