@@ -17,7 +17,9 @@ app.set('view engine', 'hbs');
 // My Handlebars Helpers below
 hbs.registerHelper('toRem', function(obj) {
 	console.log("got to helper!");
-	return obj;
+	var rem = 260 - obj;
+	console.log("subtracted from total!");
+	return rem;
 });
 
 // uncomment after placing your favicon in /public
