@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var Handlebars = require('handlebars');
+var hbs = require('hbs');
 
 var index = require('./routes/index');
 
@@ -15,10 +15,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // My Handlebars Helpers below
-Handlebars.registerHelper('toRem', function(obj) {
+hbs.registerHelper('toRem', function(obj) {
 	console.log("got to helper!");
-	rem = 260 - obj;
-	return Handlebars.SafeString(rem);
+	return obj;
 });
 
 // uncomment after placing your favicon in /public
