@@ -3,14 +3,12 @@ var router = express.Router();
 
 const { Client } = require('pg');
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
   client.connect(function (err, client, done) {
   	if (err) {
   		console.log('Cannot connect to db.');
