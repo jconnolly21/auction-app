@@ -9,7 +9,11 @@
 
 <body>
 	<p>
-		{{data}}
+		{{#each data}}
+			<li>
+				{{display}}
+			</li>
+		{{/each}}
 	</p>
 	{{log data}}
 </body>
