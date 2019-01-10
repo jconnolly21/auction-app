@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
     		console.log('Succesfully queried db.')
     		res.render('index', { data: response.rows });
     	}
-    	client.release();
+    	client.end();
   	});
   });
 });
