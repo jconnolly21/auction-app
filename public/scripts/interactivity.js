@@ -18,8 +18,7 @@ function filterFunction() {
   }
 }
 
-// Handlebars.registerHelper('spentToRemaining', function(object) {
-// 	console.log("made it into helper")
-// 	var spent = 260 - parseInt(object);
-// 	return Handlebars.SafeString(spent.toString());
-// });
+Handlebars.registerHelper('toRem', function(obj) {
+	rem = 260 - parseInt(obj);
+	return Handlebars.SafeString(rem.toString());
+});
