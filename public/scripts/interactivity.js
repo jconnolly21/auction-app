@@ -2,16 +2,15 @@
 $(document).ready(function() {
 	const Url = 'https://still-ravine-63937.herokuapp.com/players';
 	$.getJSON(Url, function(result){
+		var htmlString = '';
 		for(i = 0; i < result.players.length; i++) {
-			console.log(result.players[i].name);
-			console.log(result.players[i].team);
-			console.log(result.players[i].elig);
-			console.log(result.players[i].value);
+			htmlString += ('<option data-subtext="' + result.players[i].team + '">' + result.players[i].name + '</option>')
 		}
+		$("#nominate-list").html(htmlString);
 	});
 });
 
-
+// <option data-subtext="WAS SP">Max Scherzer</option>
 
 
 // HELPER FUNCTIONS BELOW
