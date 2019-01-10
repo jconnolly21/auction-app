@@ -18,8 +18,8 @@ function filterFunction() {
   }
 }
 
-Handlebars.registerHelper('spentToRemaining', function(object) {
-	console.log("made it into helper")
-	var spent = 260 - parseInt(object);
-	return Handlebars.SafeString(spent.toString());
-});
+// Handlebars.registerHelper('spentToRemaining', function(object) {
+// 	console.log("made it into helper")
+// 	var spent = 260 - parseInt(object);
+// 	return Handlebars.SafeString(spent.toString());
+// });
