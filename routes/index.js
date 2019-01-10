@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
   //   res.render('index', { title: 'Auction App', data: response.rows });
   //   client.end();
   // });
-  res.render('index_test');
+  res.render('index');
 });
 
 module.exports = router;
