@@ -18,30 +18,9 @@ function filterFunction() {
   }
 }
 
-var http = require("http");
-
-var options = {
-	host: "still-ravine-63937.herokuapp.com",
-	path: "/players",
-	method: "GET",
-	headers: {
-		"Content-Type": "application/json"
-	}
-};
-
-var req = http.request(options, function(res) {
-	var responseString = "";
-
-	res.on("data", function(data) {
-		responseString += data;
-	});
-
-	res.on("end", function() {
-		console.log(responseString);
-	});
-});
-
 $(document).ready(function() {
-	req.write();
-	req.end();
+	const Url = 'https://still-ravine-63937.herokuapp.com/players';
+	$.getJSON(Url, function(result){
+		console.log(result);
+	});
 });
