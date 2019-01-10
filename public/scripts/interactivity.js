@@ -1,3 +1,16 @@
+
+$(document).ready(function() {
+	const Url = 'https://still-ravine-63937.herokuapp.com/players';
+	$.getJSON(Url, function(result){
+		console.log(result);
+	});
+});
+
+
+
+
+// HELPER FUNCTIONS BELOW
+
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -17,10 +30,3 @@ function filterFunction() {
     }
   }
 }
-
-$(document).ready(function() {
-	const Url = 'https://still-ravine-63937.herokuapp.com/players';
-	$.getJSON(Url, function(result){
-		console.log(result);
-	});
-});
