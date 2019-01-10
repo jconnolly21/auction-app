@@ -19,6 +19,7 @@ function filterFunction() {
 }
 
 Handlebars.registerHelper('toRem', function(obj) {
-	rem = 260 - parseInt(obj);
-	return Handlebars.SafeString(rem.toString());
+	console.log("got to helper!");
+	rem = 260 - obj;
+	return Handlebars.SafeString(rem);
 });
