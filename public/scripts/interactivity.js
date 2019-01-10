@@ -7,6 +7,7 @@ $(document).ready(function() {
 			htmlString = ('<option data-subtext="' + result.players[i].team + '">' + result.players[i].name + '</option>')
 			$("#nominate-list").append(htmlString);
 		}
+		$("#nominate-list").selectpicker('refresh');
 	});
 });
 
