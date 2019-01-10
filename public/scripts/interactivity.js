@@ -17,9 +17,3 @@ function filterFunction() {
     }
   }
 }
-
-Handlebars.registerHelper('toRem', function(obj) {
-	console.log("got to helper!");
-	rem = 260 - obj;
-	return Handlebars.SafeString(rem);
-});

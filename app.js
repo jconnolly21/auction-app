@@ -14,6 +14,13 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+// My Handlebars Helpers below
+Handlebars.registerHelper('toRem', function(obj) {
+	console.log("got to helper!");
+	rem = 260 - obj;
+	return Handlebars.SafeString(rem);
+});
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
