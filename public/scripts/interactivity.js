@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$.getJSON(Url, function(result){
 		var htmlString = ''
 		for(i = 0; i < result.players.length; i++) {
-			htmlString = ('<option data-subtext="' + result.players[i].team + '">' + result.players[i].name + '</option>')
+			htmlString = ('<option data-subtext="' + result.players[i].team + ' $' + result.players[i].value + '">' + result.players[i].name + '</option>');
 			$("#nominate-list").append(htmlString);
 		}
 		$("#nominate-list").selectpicker('refresh');
