@@ -15,12 +15,12 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/db', function(req, res, next) {
+router.get('/db', function(req, res) {
   client.connect();
-  
+  var rows;
   client.query('SELECT * FROM teams;', (err, res) => {
     if (err) throw err;
-    var rows = res.rows;
+    rows = res.rows;
     client.end();
   });
   res.render('db', { title: 'Auction App', data: rows});
