@@ -17,3 +17,8 @@ function filterFunction() {
     }
   }
 }
+
+Handlebars.registerHelper('spentToRemaining', function(object) {
+	var spent = 260 - parseInt(object);
+	return Handlebars.SafeString(spent.toString());
+});
