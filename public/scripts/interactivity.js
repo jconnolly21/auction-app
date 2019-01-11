@@ -87,9 +87,11 @@ function updateRosterTable(data) {
 			elig = filledBy[i].elig.split(',');
 			eligString = '';
 			for (var j = 0; j < elig.length; j++) {
-				eligString += '<button value="' + filledBy[i].name + '" id="pos-switcher" type="button">' + elig[j] + '</button>';
+				if (positions[i].slice(0,-1) != elig[j]) {
+					eligString += '<button value="' + filledBy[i].name + '" id="pos-switcher" type="button">' + elig[j] + '</button>';
+				}
 			}
-			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + filledBy[i].name + '</td><td>' + eligString + '</td><td>' + filledBy[i].price + '</td></tr>';
+			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + filledBy[i].name + '</td><td>' + eligString + '</td><td>$' + filledBy[i].price + '</td></tr>';
 		} else {
 			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td></td><td></td><td></td></tr>';
 		}
