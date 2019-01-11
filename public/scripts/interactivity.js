@@ -42,7 +42,7 @@ $(document).ready(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
-		var rosterSpot = $('#roster-spot').fine(":selected").text();
+		var rosterSpot = $('#roster-spot').find(":selected").text();
 
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
@@ -63,7 +63,7 @@ $(document).ready(function() {
 // data here is a single teams roster
 function updateRosterTable(data) {
 	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
-	
+
 }
 
 
