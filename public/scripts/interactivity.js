@@ -123,7 +123,7 @@ function updateNominateList(data) {
 	$("#nominate-list").html('');
 	var htmlString = '';
 	for (var i = 0; i < data.length; i++) {
-		htmlString = ('<option data-subtext="' + data[i].team + ' $' + data[i].value + '">' + data[i].name + '</option>');
+		htmlString = ('<option data-subtext="$' + data[i].value + ' (' + data[i].team + ') ' + data[i].elig + '">' + data[i].name + '</option>');
 		$("#nominate-list").append(htmlString);
 	}
 	$("#nominate-list").selectpicker('refresh');
