@@ -1,13 +1,48 @@
 
 $(document).ready(function() {
+	
+	// Initialize team array
+	var rosters = new Array(10);
+	for (var i = 0; i < rosters.length; i++) {
+		rosters[i] = new Array(23);
+	}
+
 	const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
 	$.getJSON(PlayersUrl, function(result){
+		
+		var personOne = result.players[i];
+		var personTwo = {
+			pid: result.players[i].pid,
+			name: result.players[i].name,
+			type: result.players[i].type,
+			team: result.players[i].team,
+			elig: result.players[i].elig,
+			stat1: result.players[i].stat1,
+			stat2: result.players[i].stat2,
+			stat3: result.players[i].stat3,
+			stat4: result.players[i].stat4,
+			stat5: result.players[i].stat5,
+			value: result.players[i].value,
+			price: result.players[i].price,
+			ownerid: result.players[i].ownerid
+		}
+
+		console.log(personOne);
+		console.log(personTwo);
+
+		// Populate elements of UI on load
 		var htmlString = ''
 		for(i = 0; i < result.players.length; i++) {
-			htmlString = ('<option data-subtext="' + result.players[i].team + ' $' + result.players[i].value + '">' + result.players[i].name + '</option>');
-			$("#nominate-list").append(htmlString);
+			if(result.players[i].owner == null) { 
+				htmlString = ('<option data-subtext="' + result.players[i].team + ' $' + result.players[i].value + '">' + result.players[i].name + '</option>');
+				$("#nominate-list").append(htmlString);
+			} else {
+				var owningTeamID = result.players[i].ownerid
+			}
 		}
 		$("#nominate-list").selectpicker('refresh');
+
+
 	});
 
 	$("#nominate-list").change(function() {
@@ -15,12 +50,14 @@ $(document).ready(function() {
 		$.getJSON(PlayersUrl, function(result){
 			for(i = 0; i < result.players.length; i++) {
 				if(result.players[i].name == playerNominated) {
+					
 					// Name and Details
 					$("#nominated-player").text(playerNominated);
 					var playerDetails = result.players[i].team + ' - ' + result.players[i].elig;
 					$("#player-details").text(playerDetails);
 					var suggestedVal = '<b>Suggested Value: $' + result.players[i].value.toString(); + '</b>';
 					$("#suggested-val").html(suggestedVal);
+					
 					// Stats and Rankings
 					if(result.players[i].type == 'Pitcher') {
 						$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">ERA</th><th scope="col">K</th><th scope="col">S</th><th scope="col">W</th><th scope="col">WHIP</th>');
@@ -33,9 +70,6 @@ $(document).ready(function() {
 		});
 	});
 });
-
-// <option data-subtext="WAS SP">Max Scherzer</option>
-
 
 // HELPER FUNCTIONS BELOW
 
