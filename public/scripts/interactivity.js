@@ -57,20 +57,21 @@ function updateBudgets(data) {
 				tableVals[i][2] += 1;
 			}
 		}
-		var maxBid = tableVals[i][0] - tableVals[i][1] - tableVals[i][2] + 1;
+		var maxBid = tableVals[i][0] + tableVals[i][1] + tableVals[i][2] - 22;
 		tableVals[i].push(maxBid);
 	}
 
 	// Put it into the table
-	var htmlString = '<tr>';
+	var htmlString = '';
 	for (var i = 0; i < tableVals.length; i++) {
+		htmlString += '<tr>'
 		htmlString += '<th scope = "row">' + teams[i] + '</th>';
 		htmlString += '<td>' + tableVals[i][3].toString() + '</td>';
 		htmlString += '<td>' + tableVals[i][0].toString() + '</td>';
 		htmlString += '<td>' + tableVals[i][1].toString() + '</td>';
 		htmlString += '<td>' + tableVals[i][2].toString() + '</td>';
+		htmlString += '</tr>';
 	}
-	htmlString += '</tr>';
 
 	$("#budgetTable").html(htmlString);
 }
