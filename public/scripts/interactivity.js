@@ -61,9 +61,12 @@ $(document).ready(function() {
 		updateRosterTable(rosters[activeRosterTeamIndex]);
 	});
 
+
+
 });
 
 // ---- UI Helper Functions ----
+
 // data here is a single teams roster
 function updateRosterTable(data) {
 	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
@@ -84,7 +87,7 @@ function updateRosterTable(data) {
 			elig = filledBy[i].elig.split(',');
 			eligString = '';
 			for (var j = 0; j < elig.length; j++) {
-				eligString += '<a href="#">' + elig[j] + '</a>';
+				eligString += '<button value="' + filledBy[i].name + '" id="pos-switcher" type="button">' + elig[j] + '</button>';
 			}
 			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + filledBy[i].name + '</td><td>' + eligString + '</td><td>' + filledBy[i].price + '</td></tr>';
 		} else {
