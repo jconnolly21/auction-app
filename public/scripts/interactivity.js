@@ -118,13 +118,6 @@ function updateRosterTable(data) {
 	$('#team-roster').html(htmlString);
 }
 
-// <tr>
-//   <th scope="row">C</th>
-//   <td></td>
-//   <td></td>
-//   <td></td>
-// </tr>
-
 // data here is the rosters 2d array
 function updateTeamTotals(data) {
 	
