@@ -10,22 +10,22 @@ $(document).ready(function() {
 	const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
 	$.getJSON(PlayersUrl, function(result){
 		
-		var personOne = result.players[i];
+		var personOne = result.players[0];
 		var personTwo = {
-			pid: result.players[i].pid,
-			name: result.players[i].name,
-			type: result.players[i].type,
-			team: result.players[i].team,
-			elig: result.players[i].elig,
-			stat1: result.players[i].stat1,
-			stat2: result.players[i].stat2,
-			stat3: result.players[i].stat3,
-			stat4: result.players[i].stat4,
-			stat5: result.players[i].stat5,
-			value: result.players[i].value,
-			price: result.players[i].price,
-			ownerid: result.players[i].ownerid
-		}
+			pid: result.players[0].pid,
+			name: result.players[0].name,
+			type: result.players[0].type,
+			team: result.players[0].team,
+			elig: result.players[0].elig,
+			stat1: result.players[0].stat1,
+			stat2: result.players[0].stat2,
+			stat3: result.players[0].stat3,
+			stat4: result.players[0].stat4,
+			stat5: result.players[0].stat5,
+			value: result.players[0].value,
+			price: result.players[0].price,
+			ownerid: result.players[0].ownerid
+		};
 
 		console.log(personOne);
 		console.log(personTwo);
