@@ -42,7 +42,7 @@ $(document).ready(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
-
+		console.log('wahoo!');
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1);
