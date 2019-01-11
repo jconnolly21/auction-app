@@ -75,10 +75,31 @@ function updateRosterTable(data) {
 		filledBy[pos] = data[i];
 	}
 
-	console.log(positions);
-	console.log(filledBy);
+	$('#team-roster').html('');
+	var htmlString = '';
+	var eligString = '';
+
+	for (var i = 0; i < positions.length; i++) {
+		if (filledBy[i] != ' ') {
+			elig = filledBy[i].elig.split(',');
+			eligString = '';
+			for (var j = 0; j < elig.length; j++) {
+				eligString += '<a href="#">' + elig[j] + '</a>';
+			}
+			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + filledBy[i].name + '</td><td>' + eligString + '</td><td>' + filledBy[i].price + '</td></tr>';
+		} else {
+			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td></td><td></td><td></td></tr>';
+		}
+	}
+	$('#team-roster').html(htmlString);
 }
 
+// <tr>
+//   <th scope="row">C</th>
+//   <td></td>
+//   <td></td>
+//   <td></td>
+// </tr>
 
 // data here is the rosters 2d array
 function updateTeamTotals(data) {
@@ -102,7 +123,6 @@ function updateBudgets(data) {
 			if (data[i][j].type == 'Hitter') {
 				tableVals[i][1] += 1;
 			} else {
-				console.log(data[i][j]);
 				tableVals[i][2] += 1;
 			}
 		}
