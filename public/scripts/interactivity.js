@@ -1,4 +1,6 @@
 
+const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
+
 $(document).ready(function() {
 	
 	// Rosters array
@@ -10,7 +12,6 @@ $(document).ready(function() {
 	// Available Players array
 	var availablePlayers = [];
 
-	const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
 	
 	$.getJSON(PlayersUrl, function(result){
 		
@@ -27,32 +28,39 @@ $(document).ready(function() {
 
 	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
-		$.getJSON(PlayersUrl, function(result){
-			for(i = 0; i < result.players.length; i++) {
-				if(result.players[i].name == playerNominated) {
-					
-					// Name and Details
-					$("#nominated-player").text(playerNominated);
-					var playerDetails = result.players[i].team + ' - ' + result.players[i].elig;
-					$("#player-details").text(playerDetails);
-					var suggestedVal = '<b>Suggested Value: $' + result.players[i].value.toString(); + '</b>';
-					$("#suggested-val").html(suggestedVal);
-					
-					// Stats and Rankings
-					if(result.players[i].type == 'Pitcher') {
-						$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">ERA</th><th scope="col">K</th><th scope="col">S</th><th scope="col">W</th><th scope="col">WHIP</th>');
-					} else {
-						$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">HR</th><th scope="col">OBP</th><th scope="col">R</th><th scope="col">RBI</th><th scope="col">SB</th>');	
-					}
-					$("#2019Proj").html('<th scope="row">2019 Projections</th><td>' + result.players[i].stat1.toString() + '</td><td>' + result.players[i].stat2.toString() + '</td><td>' + result.players[i].stat3.toString() + '</td><td>' + result.players[i].stat4.toString() + '</td><td>' + result.players[i].stat1.toString() + '</td>');
-				}
+		
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				updateDetails(availablePlayers[i]);
+				updateStatsRankings(availablePlayers[i]);
 			}
-		});
+		}
+
 	});
 });
 
 // ---- UI Helper Functions ----
 
+// data here is a single player
+function updateDetails(data) {
+	$("#nominated-player").text(data.name);
+	var playerDetails = data.team + ' - ' + data.elig;
+	$("#player-details").text(playerDetails);
+	var suggestedVal = '<b>Suggested Value: $' + data.value.toString(); + '</b>';
+	$("#suggested-val").html(suggestedVal);
+}
+
+// data here is a single player
+function updateStatsRankings(data) {
+	if(data.type == 'Pitcher') {
+		$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">ERA</th><th scope="col">K</th><th scope="col">S</th><th scope="col">W</th><th scope="col">WHIP</th>');
+	} else {
+		$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">HR</th><th scope="col">OBP</th><th scope="col">R</th><th scope="col">RBI</th><th scope="col">SB</th>');	
+	}
+	$("#2019Proj").html('<th scope="row">2019 Projections</th><td>' + data.stat1.toString() + '</td><td>' + data.stat2.toString() + '</td><td>' + data.stat3.toString() + '</td><td>' + data.stat4.toString() + '</td><td>' + data.stat5.toString() + '</td>');
+}
+
+// data here is a list of players
 function updateNominateList(data) {
 	var htmlString = ''
 	for (var i = 0; i < data.length; i++) {
