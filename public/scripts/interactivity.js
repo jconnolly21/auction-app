@@ -42,12 +42,14 @@ $(document).ready(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
+		var rosterSpot = $('#roster-spot').find(":selected").text();
 
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
 				purchasedPlayer.price = bidAmount;
+				purchasedPlayer.rosterspot = rosterSpot;
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
 			}
 		}
