@@ -55,6 +55,10 @@ $(document).ready(function() {
 		}
 		updateNominateList(availablePlayers);
 		updateBudgets(rosters);
+
+		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
+		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
+		updateRosterTable(rosters[activeRosterTeamIndex]);
 	});
 
 });
@@ -63,7 +67,16 @@ $(document).ready(function() {
 // data here is a single teams roster
 function updateRosterTable(data) {
 	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
+	var filledBy = new Array(23).fill(' ');
 
+	for (var i = 0; i < data.length; i++) {
+		var pos = positions.indexOf(data[i].rosterspot);
+		positions[pos] += '*';
+		filledBy[pos] = data[i];
+	}
+
+	console.log(positions);
+	console.log(filledBy);
 }
 
 
