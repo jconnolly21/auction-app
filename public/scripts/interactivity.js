@@ -36,11 +36,20 @@ $(document).ready(function() {
 				updateStatsRankings(availablePlayers[i]);
 			}
 		}
-
 	});
+
+	$("#bid-accepted").onClick(function() {
+		alert("Woohoo!");
+	});
+
 });
 
 // ---- UI Helper Functions ----
+
+// TODO
+function updateRoster(data) {
+
+}
 
 // data here is the rosters 2d array
 function updateBudgets(data) {
