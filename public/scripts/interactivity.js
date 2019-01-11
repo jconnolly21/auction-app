@@ -39,7 +39,17 @@ $(document).ready(function() {
 	});
 
 	$("#bid-accepted").click(function() {
-		alert("Woohoo!");
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		var teamPurchasing = $('#bidding-team').find(":selected").text();
+		var bidAmount = $('#bid-quantity').val();
+
+		var txt = playerNominated + ' ' + teamPurchasing + ' $' + bidAmount.toString();
+		alert(txt);
+		// for(i = 0; i < availablePlayers.length; i++) {
+		// 	if(availablePlayers[i].name == playerNominated) {
+
+		// 	}
+		// }
 	});
 
 });
