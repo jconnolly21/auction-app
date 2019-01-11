@@ -74,6 +74,12 @@ $(document).ready(function() {
 		updateRosterTable(rosters[activeRosterTeamIndex]);
 	});
 
+	$('#active-roster-team').change(function () {
+		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
+		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
+		updateRosterTable(rosters[activeRosterTeamIndex]);
+	})
+
 });
 
 // ---- UI Helper Functions ----
