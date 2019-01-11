@@ -1,45 +1,45 @@
 
 $(document).ready(function() {
 	
-	// Initialize team array
+	// Rosters array
 	var rosters = new Array(10);
 	for (var i = 0; i < rosters.length; i++) {
-		rosters[i] = new Array(23);
+		rosters[i] = new Array(1);
 	}
+
+	// Available Players array
+	var availablePlayers = [];
 
 	const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
 	$.getJSON(PlayersUrl, function(result){
 		
 		var personOne = result.players[0];
-		var personTwo = {
-			pid: result.players[0].pid,
-			name: result.players[0].name,
-			type: result.players[0].type,
-			team: result.players[0].team,
-			elig: result.players[0].elig,
-			stat1: result.players[0].stat1,
-			stat2: result.players[0].stat2,
-			stat3: result.players[0].stat3,
-			stat4: result.players[0].stat4,
-			stat5: result.players[0].stat5,
-			value: result.players[0].value,
-			price: result.players[0].price,
-			ownerid: result.players[0].ownerid
-		};
-
-		console.log(personOne);
-		console.log(personTwo);
 
 		// Populate elements of UI on load
 		var htmlString = ''
 		for(i = 0; i < result.players.length; i++) {
-			if(result.players[i].owner == null) { 
+			
+			// If the player is not on a team...
+			if(result.players[i].ownerid == null) { 
+				
+				// Add to available players
+				availablePlayers.push(result.players[i]);
+				
+				// Add player to nominate players list
 				htmlString = ('<option data-subtext="' + result.players[i].team + ' $' + result.players[i].value + '">' + result.players[i].name + '</option>');
 				$("#nominate-list").append(htmlString);
-			} else {
-				var owningTeamID = result.players[i].ownerid
+
+			} else { // If the player is on a team...
+				
+				// Owning Team ID will be rosters array index + 1
+				var rosterIndex = result.players[i].ownerid - 1;
+				rosters[rosterIndex].push(result.players[i]);
 			}
 		}
+
+		console.log(rosters);
+
+		// Populate dropdown with nominate players list
 		$("#nominate-list").selectpicker('refresh');
 
 
