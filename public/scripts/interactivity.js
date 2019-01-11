@@ -119,6 +119,7 @@ function updateStatsRankings(data) {
 
 // data here is a list of players
 function updateNominateList(data) {
+	$("#nominate-list").html('');
 	var htmlString = '';
 	for (var i = 0; i < data.length; i++) {
 		htmlString = ('<option data-subtext="' + data[i].team + ' $' + data[i].value + '">' + data[i].name + '</option>');
