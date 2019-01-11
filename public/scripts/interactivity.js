@@ -38,7 +38,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#bid-accepted").onClick(function() {
+	$("#bid-accepted").click(function() {
 		alert("Woohoo!");
 	});
 
