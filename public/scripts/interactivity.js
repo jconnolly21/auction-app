@@ -64,8 +64,14 @@ $(document).ready(function() {
 	$('body').on('click', '#pos-switcher', function(e) {
 		var newPos = $(e.target).text();
 		var playerName = $(e.target).val();
-		console.log(newPos);
-		console.log(playerName);
+		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
+		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
+		for (var i = 0; i < rosters[activeRosterTeamIndex].length; i++) {
+			if (rosters[activeRosterTeamIndex][i].name == playerName) {
+				rosters[activeRosterTeamIndex][i].rosterspot = newPos;
+			}
+		}
+		updateRosterTable(rosters[activeRosterTeamIndex]);
 	});
 
 });
