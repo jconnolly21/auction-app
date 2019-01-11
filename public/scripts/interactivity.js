@@ -18,7 +18,7 @@ $(document).ready(function() {
 				if(result.players[i].name == playerNominated) {
 					var playerDetails = result.players[i].team + ' - ' + result.players[i].elig;
 					$("#player-details").text(playerDetails);
-					var suggestedVal = '$' + results.players[i].value.toString()
+					var suggestedVal = '$' + result.players[i].value.toString()
 					$("#suggested-val").text(suggestedVal);
 				}
 			}
