@@ -58,14 +58,21 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
+// var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
+// function findLegalRoster(roster) {
+// 	var filled = new Array (roster.length).fill(false);
+// 	var elig = new Array (roster.length);
+// 	for (var i = 0; i < roster.length; i++) {
+// 		elig[i] = roster[i].elig.split(',');
+// 	}
+
+// }
+
 
 // data here is the rosters 2d array
 function updateTeamTotals(data) {
-	var activeTeam = $('#active-stats-team').find(":selected").text();
-	var activeTeamIndex = teams.indexOf(activeTeam);
-	var totalStats = [0,0,0,0,0,0,0,0,0,0];
+	
 }
-
 // <tr>
 //   <th scope="row">C</th>
 //   <td></td>
