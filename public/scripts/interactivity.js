@@ -76,7 +76,7 @@ function updateBudgets(data) {
 			if (data[i][j].type == 'Hitter') {
 				tableVals[i][1] += 1;
 			} else {
-				console.log(data[i][j].type);
+				console.log(data[i][j]);
 				tableVals[i][2] += 1;
 			}
 		}
