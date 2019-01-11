@@ -61,7 +61,12 @@ $(document).ready(function() {
 		updateRosterTable(rosters[activeRosterTeamIndex]);
 	});
 
-
+	$('#pos-switcher').click(function() {
+		var newPos = $(this).text();
+		var playerName = $(this).val();
+		console.log(newPos);
+		console.log(playerName);
+	});
 
 });
 
