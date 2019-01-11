@@ -59,9 +59,9 @@ $(document).ready(function() {
 
 // ---- UI Helper Functions ----
 
-// TODO
-function updateRoster(data) {
-
+// data here is the rosters 2d array
+function updateTeamTotals(data) {
+	var output = []
 }
 
 // data here is the rosters 2d array
@@ -73,9 +73,10 @@ function updateBudgets(data) {
 		tableVals[i] = [260,0,0];
 		for (var j = 0; j < data[i].length; j++) {
 			tableVals[i][0] = tableVals[i][0] - data[i][j].price;
-			if (data[i][j].type == "Hitter") {
+			if (data[i][j].type == 'Hitter') {
 				tableVals[i][1] += 1;
 			} else {
+				console.log(data[i][j].type);
 				tableVals[i][2] += 1;
 			}
 		}
