@@ -42,11 +42,13 @@ $(document).ready(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
+		var rosterSpot = $('#roster-spot').fine(":selected").text();
 
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
+				purchasedPlayer.rosterspot = rosterSpot;
 				purchasedPlayer.price = bidAmount;
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
 			}
@@ -58,15 +60,11 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
-// var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
-// function findLegalRoster(roster) {
-// 	var filled = new Array (roster.length).fill(false);
-// 	var elig = new Array (roster.length);
-// 	for (var i = 0; i < roster.length; i++) {
-// 		elig[i] = roster[i].elig.split(',');
-// 	}
-
-// }
+// data here is a single teams roster
+function updateRosterTable(data) {
+	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
+	
+}
 
 
 // data here is the rosters 2d array
