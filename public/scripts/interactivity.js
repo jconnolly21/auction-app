@@ -4,44 +4,24 @@ $(document).ready(function() {
 	// Rosters array
 	var rosters = new Array(10);
 	for (var i = 0; i < rosters.length; i++) {
-		rosters[i] = new Array(1);
+		rosters[i] = new Array(0);
 	}
 
 	// Available Players array
 	var availablePlayers = [];
 
 	const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
+	
 	$.getJSON(PlayersUrl, function(result){
 		
-		var personOne = result.players[0];
-
-		// Populate elements of UI on load
-		var htmlString = ''
 		for(i = 0; i < result.players.length; i++) {
-			
-			// If the player is not on a team...
 			if(result.players[i].ownerid == null) { 
-				
-				// Add to available players
 				availablePlayers.push(result.players[i]);
-				
-				// Add player to nominate players list
-				htmlString = ('<option data-subtext="' + result.players[i].team + ' $' + result.players[i].value + '">' + result.players[i].name + '</option>');
-				$("#nominate-list").append(htmlString);
-
-			} else { // If the player is on a team...
-				
-				// Owning Team ID will be rosters array index + 1
-				var rosterIndex = result.players[i].ownerid - 1;
-				rosters[rosterIndex].push(result.players[i]);
+			} else {
+				rosters[result.players[i].ownerid - 1].push(result.players[i]);
 			}
 		}
-
-		console.log(rosters);
-
-		// Populate dropdown with nominate players list
-		$("#nominate-list").selectpicker('refresh');
-
+		updateNominateList(availablePlayers);
 
 	});
 
@@ -71,7 +51,18 @@ $(document).ready(function() {
 	});
 });
 
-// HELPER FUNCTIONS BELOW
+// ---- UI Helper Functions ----
+
+function updateNominateList(data) {
+	var htmlString = ''
+	for (var i = 0; i < data.length; i++) {
+		htmlString = ('<option data-subtext="' + data[i].team + ' $' + data[i].value + '">' + data[i].name + '</option>');
+		$("#nominate-list").append(htmlString);
+	}
+	$("#nominate-list").selectpicker('refresh');
+}
+
+// ---- Other Helpers ----
 
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
