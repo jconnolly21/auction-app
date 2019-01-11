@@ -12,14 +12,14 @@ $(document).ready(function() {
 
 	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
-		$("#nominated-player").text(playerNominated);
 		$.getJSON(PlayersUrl, function(result){
 			for(i = 0; i < result.players.length; i++) {
 				if(result.players[i].name == playerNominated) {
+					$("#nominated-player").text(playerNominated);
 					var playerDetails = result.players[i].team + ' - ' + result.players[i].elig;
 					$("#player-details").text(playerDetails);
-					var suggestedVal = '$' + result.players[i].value.toString()
-					$("#suggested-val").text(suggestedVal);
+					var suggestedVal = '<b>Suggested Value: $' + result.players[i].value.toString(); + '</b>';
+					$("#suggested-val").html(suggestedVal);
 				}
 			}
 		});
