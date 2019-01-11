@@ -56,7 +56,20 @@
 					<div class="col-8">
 						<div class="float-right bid-box">
 							<div>
-								Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250"><br>
+								Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250"><br> 
+								Spot: 
+								<select id="roster-spot">
+								  <option>C</option>
+								  <option>1B</option>
+								  <option>2B</option>
+								  <option>SS</option>
+								  <option>3B</option>
+								  <option>CI</option>
+								  <option>MI</option>
+								  <option>OF</option>
+								  <option>U</option>
+								  <option>P</option>
+								</select>
 								Team: 
 								<select id="bidding-team" class="selectpicker">
 									{{#each data}}
@@ -266,8 +279,8 @@
 				    </tr>
 				    <tr>
 				      <th scope="row">P</th>
-				      <td>Luis Severino</td>
-				      <td>$23</td>
+				      <td></td>
+				      <td></td>
 				    </tr>
 				    <tr>
 				      <th scope="row">P</th>
