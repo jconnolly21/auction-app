@@ -42,14 +42,12 @@ $(document).ready(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
-		var rosterSpot = $('#roster-spot').find(":selected").text();
 
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
 				purchasedPlayer.price = bidAmount;
-				purchasedPlayer.rosterspot = rosterSpot;
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
 			}
 		}
@@ -63,8 +61,16 @@ $(document).ready(function() {
 
 // data here is the rosters 2d array
 function updateTeamTotals(data) {
-	var output = []
+	var activeTeam = $('#active-stats-team').find(":selected").text();
+	var activeTeamIndex = teams.indexOf(activeTeam);
+	var totalStats = [0,0,0,0,0,0,0,0,0,0];
 }
+
+// <tr>
+//   <th scope="row">C</th>
+//   <td></td>
+//   <td></td>
+// </tr>
 
 // data here is the rosters 2d array
 function updateBudgets(data) {

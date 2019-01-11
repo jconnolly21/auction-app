@@ -57,19 +57,7 @@
 						<div class="float-right bid-box">
 							<div>
 								Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250">
-								Spot: 
-								<select id="roster-spot">
-								  <option>C</option>
-								  <option>1B</option>
-								  <option>2B</option>
-								  <option>SS</option>
-								  <option>3B</option>
-								  <option>CI</option>
-								  <option>MI</option>
-								  <option>OF</option>
-								  <option>U</option>
-								  <option>P</option>
-								</select> <br>
+								<br>
 								Team: 
 								<select id="bidding-team" class="selectpicker">
 									{{#each data}}
@@ -146,7 +134,7 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<select class="selectpicker">
+						<select id="active-stats-team" class="selectpicker">
 							{{#each data}}
 							<option data-subtext='{{display}}'>{{owner}}</option>
 							{{/each}}
@@ -168,7 +156,7 @@
 							    </tr>
 							</thead>
 							<tbody>
-								<tr>
+								<tr id="team-stats">
 							      <th scope="row">Totals</th>
 							      <td>0</td>
 							      <td>0</td>
@@ -200,13 +188,13 @@
 				</div>
 			</div>
 			<div class="col-2">
-				<select class="selectpicker">
+				<select id="active-roster-team" class="selectpicker">
 				    {{#each data}}
 					<option data-subtext='{{display}}'>{{owner}}</option>
 					{{/each}}
 				</select>
 				<table class="table table-sm roster-table">
-				  <tbody>
+				  <tbody id="team-roster">
 				    <tr>
 				      <th scope="row">C</th>
 				      <td></td>
