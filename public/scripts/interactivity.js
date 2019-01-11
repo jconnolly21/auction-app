@@ -1,5 +1,6 @@
 
 const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
+var teams = ['Joe', 'Brian', 'Jim', 'Rich', 'Chris', 'Adam', 'Jody', 'Craig', 'Alan', 'Stu'];
 
 $(document).ready(function() {
 	
@@ -23,7 +24,7 @@ $(document).ready(function() {
 			}
 		}
 		updateNominateList(availablePlayers);
-
+		updateBudgets(rosters);
 	});
 
 	$("#nominate-list").change(function() {
@@ -40,6 +41,39 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
+
+// data here is the rosters 2d array
+function updateBudgets(data) {
+	
+	// Create the needed data
+	var tableVals = new Array (10);
+	for (var i = 0; i < data.length; i++) {
+		tableVals[i] = [260,0,0];
+		for (var j = 0; j < data[i].length; j++) {
+			tableVals[i][0] = tableVals[i][0] - data[i][j].price;
+			if (data[i][j].type == "Hitter") {
+				tableVals[i][1] += 1;
+			} else {
+				tableVals[i][2] += 1;
+			}
+		}
+		var maxBid = tableVals[i][0] - tableVals[i][1] - tableVals[i][2] + 1;
+		tableVals[i].push(maxBid);
+	}
+
+	// Put it into the table
+	var htmlString = '<tr>';
+	for (var i = 0; i < tableVals.length; i++) {
+		htmlString += '<th scope = "row">' + teams[i] + '</th>';
+		htmlString += '<td>' + tableVals[i][3].toString() + '</td>';
+		htmlString += '<td>' + tableVals[i][0].toString() + '</td>';
+		htmlString += '<td>' + tableVals[i][1].toString() + '</td>';
+		htmlString += '<td>' + tableVals[i][2].toString() + '</td>';
+	}
+	htmlString += '</tr>';
+
+	$("#budgetTable").html(htmlString);
+}
 
 // data here is a single player
 function updateDetails(data) {
@@ -62,7 +96,7 @@ function updateStatsRankings(data) {
 
 // data here is a list of players
 function updateNominateList(data) {
-	var htmlString = ''
+	var htmlString = '';
 	for (var i = 0; i < data.length; i++) {
 		htmlString = ('<option data-subtext="' + data[i].team + ' $' + data[i].value + '">' + data[i].name + '</option>');
 		$("#nominate-list").append(htmlString);
