@@ -1,13 +1,18 @@
 
 $(document).ready(function() {
-	const Url = 'https://still-ravine-63937.herokuapp.com/players';
-	$.getJSON(Url, function(result){
+	const PlayersUrl = 'https://still-ravine-63937.herokuapp.com/players';
+	$.getJSON(PlayersUrl, function(result){
 		var htmlString = ''
 		for(i = 0; i < result.players.length; i++) {
 			htmlString = ('<option data-subtext="' + result.players[i].team + ' $' + result.players[i].value + '">' + result.players[i].name + '</option>');
 			$("#nominate-list").append(htmlString);
 		}
 		$("#nominate-list").selectpicker('refresh');
+	});
+
+	$("#nominate-list").change(function() {
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		$('#nominated-player').text(playerNominated);
 	});
 });
 
