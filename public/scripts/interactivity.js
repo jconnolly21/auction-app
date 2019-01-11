@@ -43,13 +43,16 @@ $(document).ready(function() {
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
 
-		var txt = playerNominated + ' ' + teamPurchasing + ' $' + bidAmount.toString();
-		alert(txt);
-		// for(i = 0; i < availablePlayers.length; i++) {
-		// 	if(availablePlayers[i].name == playerNominated) {
-
-		// 	}
-		// }
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				var purchasedPlayer = availablePlayers.splice(i,1);
+				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
+				purchasedPlayer.price = bidAmount;
+				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
+			}
+		}
+		updateNominateList(availablePlayers);
+		updateBudgets(rosters);
 	});
 
 });
