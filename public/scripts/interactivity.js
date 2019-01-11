@@ -12,7 +12,17 @@ $(document).ready(function() {
 
 	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
-		$('#nominated-player').text(playerNominated);
+		$("#nominated-player").text(playerNominated);
+		$.getJSON(PlayersUrl, function(result){
+			for(i = 0; i < result.players.length; i++) {
+				if(result.players[i].name == playerNominated) {
+					var playerDetails = result.players[i].team + ' - ' + result.players[i].elig;
+					$("#player-details").text(playerDetails);
+					var suggestedVal = '$' + results.players[i].value.toString()
+					$("#suggested-val").text(suggestedVal);
+				}
+			}
+		});
 	});
 });
 
