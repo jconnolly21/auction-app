@@ -112,10 +112,15 @@ $(document).ready(function() {
 
 // data here is a player
 function updatePlayersInTables(data) {
-	var searchTerm = '#player-list:contains("' + data.name + '")';
-	console.log(searchTerm);
-	console.log($(searchTerm).html());
-	$(searchTerm).addClass('player-picked');
+	$("tbody#hitter-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked');
+	$("tbody#sp-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked');
+	$("tbody#of-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked');
 }
 
 // data here is all players
