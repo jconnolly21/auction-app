@@ -1,6 +1,7 @@
 
 const PlayersUrl = 'https://frozen-shore-95322.herokuapp.com/players';
 var teams = ['Joe', 'Brian', 'Jim', 'Rich', 'Chris', 'Adam', 'Jody', 'Craig', 'Alan', 'Stu'];
+var draftNumber = 0;
 
 $(document).ready(function() {
 	
@@ -20,9 +21,12 @@ $(document).ready(function() {
 			if(result.players[i].ownerid == null) { 
 				availablePlayers.push(result.players[i]);
 			} else {
+				draftNumber = Math.max(draftNumber, result.players[i].draftnumber)
 				rosters[result.players[i].ownerid - 1].push(result.players[i]);
 			}
 		}
+		draftNumber += 1;
+		console.log(draftNumber);
 		updateNominateList(availablePlayers);
 		updateBudgets(rosters);
 	});
@@ -50,9 +54,14 @@ $(document).ready(function() {
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
 				purchasedPlayer.rosterspot = rosterSpot;
 				purchasedPlayer.price = bidAmount;
+				purchasedPlayer.draftnumber = draftNumber;
+				console.log(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
 			}
 		}
+
+		draftNumber += 1;
+
 		updateNominateList(availablePlayers);
 		updateBudgets(rosters);
 
@@ -93,6 +102,11 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
+
+// data here is the rosters 2d array
+function updateDraftLog(data) {
+
+}
 
 // data here is a single teams roster
 function updateRosterTable(data) {
