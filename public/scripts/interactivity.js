@@ -120,7 +120,9 @@ function drawPlayerTable(data, cat) {
 	var htmlString = '';
 	// Assumption: All players values are in (-10, 60)
 	for (var i = 60; i > -10; i--) {
+		console.log(i);
 		for (var j = 0; j < eligiblePlayers.length; j++) {
+			console.log(eligiblePlayers[j])
 			if (eligiblePlayers[j].value == i) {
 				htmlString += '<tr><th scope="row>' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
 			}
