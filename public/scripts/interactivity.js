@@ -179,7 +179,17 @@ function updateStatsRankings(data) {
 		$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">HR</th><th scope="col">OBP</th><th scope="col">R</th><th scope="col">RBI</th><th scope="col">SB</th>');	
 	}
 	$("#2019Proj").html('<th scope="row">2019 Projections</th><td>' + data.stat1.toString() + '</td><td>' + data.stat2.toString() + '</td><td>' + data.stat3.toString() + '</td><td>' + data.stat4.toString() + '</td><td>' + data.stat5.toString() + '</td>');
+	$("#cat-values").html('<th scope="row">Value per Category</th><td>' + data.value1.toString() + '</td><td>' + data.value2.toString() + '</td><td>' + data.value3.toString() + '</td><td>' + data.value4.toString() + '</td><td>' + data.value5.toString() + '</td>');
 }
+
+// <tr id="cat-values">
+//   <th scope="row">$ Value per Cat.</th>
+//   <td>2</td>
+//   <td>3</td>
+//   <td>58</td>
+//   <td>5</td>
+//   <td>2</td>
+// </tr>
 
 // data here is a list of players
 function updateNominateList(data) {
