@@ -136,7 +136,7 @@ function updateTeamTotals(data) {
 	
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].type == "Pitcher") {
-			teamTotals[5] = ((totalIp*teamTotals[5]) + (data[i].countstat*data[i].stat1))/ 9;
+			teamTotals[5] = ((totalIp*teamTotals[5]) + (data[i].countstat*data[i].stat1))/(totalIp + data[i].countstat) * 9;
 			teamTotals[6] += data[i].stat2;
 			teamTotals[7] += data[i].stat3;
 			teamTotals[8] += data[i].stat4;
