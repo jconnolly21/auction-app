@@ -136,15 +136,15 @@ function updateTeamTotals(data) {
 	
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].type == "Pitcher") {
-			teamTotals[5] = ((totalIp*teamTotals[5]) + (data[i].countstat*data[i].stat1))/(totalIp + data[i].countstat);
+			teamTotals[5] = (((totalIp*teamTotals[5]) + (data[i].countstat*data[i].stat1))/(totalIp + data[i].countstat)).toFixed(2);
 			teamTotals[6] += data[i].stat2;
 			teamTotals[7] += data[i].stat3;
 			teamTotals[8] += data[i].stat4;
-			teamTotals[9] = ((totalIp*teamTotals[9]) + (data[i].countstat*data[i].stat5))/(totalIp + data[i].countstat);
+			teamTotals[9] = (((totalIp*teamTotals[9]) + (data[i].countstat*data[i].stat5))/(totalIp + data[i].countstat)).toFixed(2);
 			totalIp += data[i].countstat;
 		} else {
 			teamTotals[0] += data[i].stat1;
-			teamTotals[1] = ((teamTotals[1]*totalAb) + (data[i].stat2*data[i].countstat))/(totalAb + data[i].countstat);
+			teamTotals[1] = (((teamTotals[1]*totalAb) + (data[i].stat2*data[i].countstat))/(totalAb + data[i].countstat)).toFixed(2);
 			teamTotals[2] += data[i].stat3;
 			teamTotals[3] += data[i].stat4;
 			teamTotals[4] += data[i].stat5;
