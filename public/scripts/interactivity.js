@@ -60,7 +60,7 @@ $(document).ready(function() {
 				purchasedPlayer.rosterspot = rosterSpot;
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = draftNumber;
-				console.log(purchasedPlayer);
+				updatePlayersInTables(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
 			}
 		}
@@ -110,6 +110,14 @@ $(document).ready(function() {
 
 // ---- UI Helper Functions ----
 
+// data here is a player
+function updatePlayersInTables(data) {
+	var searchTerm = '#player-list:contains("' + data.name + '")';
+	console.log(searchTerm);
+	console.log($(searchTerm).html());
+	$(searchTerm).addClass('player-picked');
+}
+
 // data here is all players
 function drawPlayerTable(data, cat, catID) {
 	var eligiblePlayers = [];
@@ -122,9 +130,9 @@ function drawPlayerTable(data, cat, catID) {
 	var htmlString = '';
 	for (var j = 0; j < eligiblePlayers.length; j++) {
 		if (eligiblePlayers[j].ownerid == null) {
-			htmlString += '<tr><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
+			htmlString += '<tr id="player-list"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
 		} else {
-			htmlString += '<tr class="player-picked"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
+			htmlString += '<tr id="player-list" class="player-picked"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
 		}
 	}
 
