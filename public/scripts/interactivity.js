@@ -115,15 +115,15 @@ function updateDraftLog(data) {
 			allDraftedPlayers.push(data[i][j]);
 		}
 	}
-	var cur = 0;
-	for (var i = 0; i < draftNumber; i++) {
+	var cur = draftNumber;
+	for (var i = draftNumber; i >= 0; i--) {
 		console.log(i);
 		for (var j = 0; j < allDraftedPlayers.length; j++) {
 			if (allDraftedPlayers[j].draftnumber == cur) {
 				htmlString += '<li>' + allDraftedPlayers[j].name + ' (' + allDraftedPlayers[j].team + ') (' + allDraftedPlayers[j].elig + '): $' + allDraftedPlayers[j].price + ' - ' + teams[allDraftedPlayers[j].ownerid-1] + '</li>';
 			}
 		}
-		cur += 1;
+		cur -= 1;
 	}
 	$('#draft-log').html(htmlString);
 }
