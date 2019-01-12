@@ -116,6 +116,7 @@ function drawPlayerTable(data, cat) {
 			eligiblePlayers.push(data[i]);
 		}
 	}
+	console.log(eligiblePlayers);
 	var htmlString = '';
 	// Assumption: All players values are in (-10, 60)
 	for (var i = 60; i > -10; i--) {
