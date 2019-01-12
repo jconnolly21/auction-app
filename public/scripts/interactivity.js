@@ -144,7 +144,7 @@ function updateTeamTotals(data) {
 			totalIp += data[i].countstat;
 		} else {
 			teamTotals[0] += data[i].stat1;
-			teamTotals[1] = (((teamTotals[1]*totalAb) + (data[i].stat2*data[i].countstat))/(totalAb + data[i].countstat)).toFixed(2);
+			teamTotals[1] = (((teamTotals[1]*totalAb) + (data[i].stat2*data[i].countstat))/(totalAb + data[i].countstat)).toFixed(3);
 			teamTotals[2] += data[i].stat3;
 			teamTotals[3] += data[i].stat4;
 			teamTotals[4] += data[i].stat5;
@@ -157,18 +157,6 @@ function updateTeamTotals(data) {
 	}
 	$('#team-stats').html(htmlString);
 }
-
-// <th scope="row">Totals</th>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
-// <td>0</td>
 
 // data here is the rosters 2d array
 function updateBudgets(data) {
