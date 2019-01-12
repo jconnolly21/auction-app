@@ -112,13 +112,13 @@ $(document).ready(function() {
 
 // data here is a player
 function updatePlayersInTables(data) {
-	$("tbody.hitter-stats th").filter(function() {
+	$("tbody#hitter-stats th").filter(function() {
 	    return $(this).text() == data.name;
 	}).closest("tr").addClass('player-picked');
-	$("tbody.sp-stats th").filter(function() {
+	$("tbody#sp-stats th").filter(function() {
 	    return $(this).text() == data.name;
 	}).closest("tr").addClass('player-picked');
-	$("tbody.of-stats th").filter(function() {
+	$("tbody#of-stats th").filter(function() {
 	    return $(this).text() == data.name;
 	}).closest("tr").addClass('player-picked');
 }
