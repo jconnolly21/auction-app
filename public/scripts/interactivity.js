@@ -17,7 +17,7 @@ $(document).ready(function() {
 	
 	$.getJSON(PlayersUrl, function(result){
 		
-		drawPlayerTable(result.players, 'U');
+		drawPlayerTable(result.players, 'U', '#hitter-stats');
 
 		for(i = 0; i < result.players.length; i++) {
 			if(result.players[i].ownerid == null) { 
@@ -109,7 +109,7 @@ $(document).ready(function() {
 // ---- UI Helper Functions ----
 
 // data here is all players
-function drawPlayerTable(data, cat) {
+function drawPlayerTable(data, cat, catID) {
 	var eligiblePlayers = [];
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].elig.indexOf(cat) != -1) {
@@ -119,22 +119,16 @@ function drawPlayerTable(data, cat) {
 	console.log(eligiblePlayers);
 	var htmlString = '';
 	for (var j = 0; j < eligiblePlayers.length; j++) {
-		htmlString += '<tr><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
+		if (eligiblePlayers[j].ownerid == null) {
+			htmlString += '<tr><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
+		} else {
+			htmlString += '<tr class="player-picked"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
+		}
 	}
 
 	console.log(htmlString);
-	$('#hitter-stats').html(htmlString);
+	$(catID).html(htmlString);
 }
-
-// <tr>
-//   <th scope="row">Mookie Betts</th>
-//   <td>29</td>
-//   <td>0.385</td>
-//   <td>115</td>
-//   <td>92</td>
-//   <td>26</td>
-//   <td>$49</td>
-// </tr>
 
 // data here is the rosters 2d array
 function updateDraftLog(data) {
