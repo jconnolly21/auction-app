@@ -114,13 +114,13 @@ $(document).ready(function() {
 function updatePlayersInTables(data) {
 	$("tbody#hitter-stats th").filter(function() {
 	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html(data.price);
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
 	$("tbody#sp-stats th").filter(function() {
 	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html(data.price);
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
 	$("tbody#of-stats th").filter(function() {
 	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html(data.price);
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
 }
 
 // data here is all players
@@ -137,7 +137,7 @@ function drawPlayerTable(data, cat, catID) {
 		if (eligiblePlayers[j].ownerid == null) {
 			htmlString += '<tr class="player-list"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td><td class="player-price"></td></tr>'; 
 		} else {
-			htmlString += '<tr class="player-list player-picked"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td><td class="player-price"></td></tr>'; 
+			htmlString += '<tr class="player-list player-picked"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td><td class="player-price">$' + eligiblePlayers[j].price + '</td></tr>'; 
 		}
 	}
 
