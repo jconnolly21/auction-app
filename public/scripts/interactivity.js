@@ -115,21 +115,16 @@ function updateDraftLog(data) {
 			allDraftedPlayers.push(data[i][j]);
 		}
 	}
-	console.log(allDraftedPlayers);
-	console.log(draftNumber);
 	var cur = 0;
 	for (var i = 0; i < draftNumber; i++) {
 		console.log(i);
 		for (var j = 0; j < allDraftedPlayers.length; j++) {
-			console.log(j);
-			//if (allDraftedPlayers[j].draftNumber == cur) {
-				console.log('made it here');
-				htmlString += '<li>' + allDraftedPlayers[j].name + ' (' + allDraftedPlayers[j].team + ') (' + allDraftedPlayers[j].elig + '): $' + allDraftedPlayers.price + ' - ' + teams[allDraftedPlayers.ownerid-1] + '</li>';
-			//}
+			if (allDraftedPlayers[j].draftnumber == cur) {
+				htmlString += '<li>' + allDraftedPlayers[j].name + ' (' + allDraftedPlayers[j].team + ') (' + allDraftedPlayers[j].elig + '): $' + allDraftedPlayers[j].price + ' - ' + teams[allDraftedPlayers[j].ownerid-1] + '</li>';
+			}
 		}
 		cur += 1;
 	}
-	console.log(htmlString);
 	$('#draft-log').html(htmlString);
 }
 
