@@ -59,6 +59,10 @@ $(document).ready(function() {
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
 		updateRosterTable(rosters[activeRosterTeamIndex]);
+
+		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
+		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
+		updateTeamTotals(rosters[activeStatsTeamIndex]);
 	});
 
 	$('body').on('click', '#pos-switcher', function(e) {
@@ -78,7 +82,13 @@ $(document).ready(function() {
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
 		updateRosterTable(rosters[activeRosterTeamIndex]);
-	})
+	});
+
+	$('#active-stats-team').change(function () {
+		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
+		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
+		updateTeamTotals(rosters[activeStatsTeamIndex]);
+	});
 
 });
 
@@ -120,13 +130,45 @@ function updateRosterTable(data) {
 
 // data here is the rosters 2d array
 function updateTeamTotals(data) {
+	var totalIp = 0;
+	var totalAb = 0;
+	var teamTotals = [0,0,0,0,0,0,0,0,0,0];
 	
+	for (var i = 0; i < data.length; i++) {
+		if (data[i].type == "Pitcher") {
+			teamTotals[5] = ((totalIp*teamTotals[5]) + (data[i].countstat*data[i].stat1))/ 9;
+			teamTotals[6] += data[i].stat2;
+			teamTotals[7] += data[i].stat3;
+			teamTotals[8] += data[i].stat4;
+			teamTotals[9] = ((totalIp*teamTotals[9]) + (data[i].countstat*data[i].stat5))/(totalIp + data[i].countstat);
+			totalIp += data[i].countstat;
+		} else {
+			teamTotals[0] += data[i].stat1;
+			teamTotals[1] = ((teamTotals[1]*totalAb) + (data[i].stat2*data[i].countstat))/(totalAb + data[i].countstat);
+			teamTotals[2] += data[i].stat3;
+			teamTotals[3] += data[i].stat4;
+			teamTotals[4] += data[i].stat5;
+			totalAb += data[i].countstat;
+		}
+	}
+	var htmlString = '<th scope="row">Totals</th>';
+	for (var i = 0; i < teamTotals.length; i++) {
+		htmlString += '<td>' + teamTotals[i] + '</td>';
+	}
+	$('#team-stats').html(htmlString);
 }
-// <tr>
-//   <th scope="row">C</th>
-//   <td></td>
-//   <td></td>
-// </tr>
+
+// <th scope="row">Totals</th>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
+// <td>0</td>
 
 // data here is the rosters 2d array
 function updateBudgets(data) {
@@ -181,15 +223,6 @@ function updateStatsRankings(data) {
 	$("#2019Proj").html('<th scope="row">2019 Projections</th><td>' + data.stat1.toString() + '</td><td>' + data.stat2.toString() + '</td><td>' + data.stat3.toString() + '</td><td>' + data.stat4.toString() + '</td><td>' + data.stat5.toString() + '</td>');
 	$("#cat-values").html('<th scope="row">Value per Category</th><td>$' + data.value1.toString() + '</td><td>$' + data.value2.toString() + '</td><td>$' + data.value3.toString() + '</td><td>$' + data.value4.toString() + '</td><td>$' + data.value5.toString() + '</td>');
 }
-
-// <tr id="cat-values">
-//   <th scope="row">$ Value per Cat.</th>
-//   <td>2</td>
-//   <td>3</td>
-//   <td>58</td>
-//   <td>5</td>
-//   <td>2</td>
-// </tr>
 
 // data here is a list of players
 function updateNominateList(data) {
