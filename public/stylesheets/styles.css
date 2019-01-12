@@ -23,6 +23,10 @@ ul li {
   font-size: 8pt;
 }
 
+.player-table {
+  font-size: 10pt;
+}
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
