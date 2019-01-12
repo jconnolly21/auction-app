@@ -27,6 +27,11 @@ ul li {
   font-size: 10pt;
 }
 
+.player-picked {
+  background-color: black;
+  color: red;
+}
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
