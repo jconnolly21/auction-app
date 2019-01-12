@@ -121,11 +121,11 @@ function updateDraftLog(data) {
 	for (var i = 0; i < draftNumber; i++) {
 		console.log(i);
 		for (var j = 0; j < allDraftedPlayers.length; j++) {
-			if (allDraftedPlayers[j].draftNumber == cur) {
-				console.log(j);
+			console.log(j);
+			//if (allDraftedPlayers[j].draftNumber == cur) {
 				console.log('made it here');
 				htmlString += '<li>' + allDraftedPlayers[j].name + ' (' + allDraftedPlayers[j].team + ') (' + allDraftedPlayers[j].elig + '): $' + allDraftedPlayers.price + ' - ' + teams[allDraftedPlayers.ownerid-1] + '</li>';
-			}
+			//}
 		}
 		cur += 1;
 	}
