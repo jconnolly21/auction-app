@@ -29,6 +29,7 @@ $(document).ready(function() {
 		console.log(draftNumber);
 		updateNominateList(availablePlayers);
 		updateBudgets(rosters);
+		updateDraftLog(rosters);
 	});
 
 	$("#nominate-list").change(function() {
@@ -72,6 +73,8 @@ $(document).ready(function() {
 		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
+
+		updateDraftLog(rosters);
 	});
 
 	$('body').on('click', '#pos-switcher', function(e) {
@@ -105,7 +108,23 @@ $(document).ready(function() {
 
 // data here is the rosters 2d array
 function updateDraftLog(data) {
-
+	var htmlString = '';
+	var allDraftedPlayers = [];
+	for (var i = 0; i < data.length; i++) {
+		for (var j = 0; j < data[i].length; j++) {
+			allDraftedPlayers.push(data[i][j]);
+		}
+	}
+	var cur = 0;
+	for (var i = 0; i < draftNumber; i++) {
+		for (var j = 0; j < allDraftedPlayers.length; j++) {
+			if (allDraftedPlayers[j].draftNumber == cur) {
+				htmlString += '<li>' + allDraftedPlayers[j].name + ' (' + allDraftedPlayers[j].team + ') (' + allDraftedPlayers[j].elig + '): $' + allDraftedPlayers.price + ' - ' + teams[allDraftedPlayers.ownerid-1] + '</li>';
+			}
+		}
+		cur += 1;
+	}
+	$('#draft-log').html(htmlString);
 }
 
 // data here is a single teams roster
