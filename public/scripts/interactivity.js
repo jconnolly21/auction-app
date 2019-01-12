@@ -18,6 +18,8 @@ $(document).ready(function() {
 	$.getJSON(PlayersUrl, function(result){
 		
 		drawPlayerTable(result.players, 'U', '#hitter-stats');
+		drawPlayerTable(result.players, 'SP', '#sp-stats');
+		drawPlayerTable(result.players, 'OF', '#of-stats');
 
 		for(i = 0; i < result.players.length; i++) {
 			if(result.players[i].ownerid == null) { 
@@ -126,7 +128,6 @@ function drawPlayerTable(data, cat, catID) {
 		}
 	}
 
-	console.log(htmlString);
 	$(catID).html(htmlString);
 }
 
