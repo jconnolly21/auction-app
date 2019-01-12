@@ -17,6 +17,8 @@ $(document).ready(function() {
 	
 	$.getJSON(PlayersUrl, function(result){
 		
+		drawPlayerTable(result.players, 'U');
+
 		for(i = 0; i < result.players.length; i++) {
 			if(result.players[i].ownerid == null) { 
 				availablePlayers.push(result.players[i]);
@@ -105,6 +107,36 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
+
+// data here is all players
+function drawPlayerTable(data, cat) {
+	var eligiblePlayers = [];
+	for (var i = 0; i < data.length; i++) {
+		if (data[i].elig.indexOf(cat) != -1) {
+			eligiblePlayers.push(data[i]);
+		}
+	}
+	var htmlString = '';
+	// Assumption: All players values are in (-10, 60)
+	for (var i = 60; i > -10; i--) {
+		for (var j = 0; j < eligiblePlayers.length; j++) {
+			if (eligiblePlayers[j].value == i) {
+				htmlString += '<tr><th scope="row>' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td></tr>'; 
+			}
+		}
+	}
+	$('#hitter-stats').html(htmlString);
+}
+
+// <tr>
+//   <th scope="row">Mookie Betts</th>
+//   <td>29</td>
+//   <td>0.385</td>
+//   <td>115</td>
+//   <td>92</td>
+//   <td>26</td>
+//   <td>$49</td>
+// </tr>
 
 // data here is the rosters 2d array
 function updateDraftLog(data) {
