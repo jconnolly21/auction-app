@@ -115,6 +115,7 @@ function updateDraftLog(data) {
 			allDraftedPlayers.push(data[i][j]);
 		}
 	}
+	console.log(allDraftedPlayers)
 	var cur = 0;
 	for (var i = 0; i < draftNumber; i++) {
 		for (var j = 0; j < allDraftedPlayers.length; j++) {
@@ -124,6 +125,7 @@ function updateDraftLog(data) {
 		}
 		cur += 1;
 	}
+	console.log(htmlString);
 	$('#draft-log').html(htmlString);
 }
 
