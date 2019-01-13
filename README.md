@@ -16,3 +16,8 @@ The flexibility in a web application should allow further customization than wha
 	- Player --> purchasing team, purchasing amount, roster position filled, draft order (which pick #).
 	- Team --> remaining budget.
 - Major visual improvements to UI.
+
+Initializing Postgres with Player Data:
+
+``cat ~/Downloads/localfile.csv | \
+psql `heroku config:get DATABASE_URL` -c "COPY testonly FROM STDIN WITH (FORMAT CSV);"``
