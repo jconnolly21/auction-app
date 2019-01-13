@@ -40,7 +40,7 @@ router.get('/players', function(req, res, next) {
   		throw err;
   	} else {
   		console.log('Successfully connected to db from js req.')
-  		client.query('SELECT * FROM players;', (err, response) => {
+  		client.query('SELECT * FROM allplayers ORDER BY pid ASC;', (err, response) => {
   			if (err) {
   				console.log('Error querying db.');
   				throw err;
