@@ -44,7 +44,6 @@ $(document).ready(function() {
 		updateDraftLog(rosters);
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
-
 	});
 
 	$("#nominate-list").change(function() {
@@ -54,6 +53,7 @@ $(document).ready(function() {
 			if(availablePlayers[i].name == playerNominated) {
 				updateDetails(availablePlayers[i]);
 				updateStatsRankings(availablePlayers[i]);
+				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
 			}
 		}
 	});
@@ -120,6 +120,44 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
+
+// data here is availablePlayers, and player is a certain player
+function updateSimilarPlayers(data, player) {
+	var closestPlayers = new Array (0);
+	var valDistArr = new Array (0);
+	var valDist = 0;
+	var sameElig = false;
+	var eligComp = Array(1);
+
+	var eligArr = player.elig.split(',');
+	if (eligArr.indexOf('U') != -1) {
+		eligArr.splice(eligArr.indexOf('U'), 1);
+	}
+
+	for (var i = 0; i < data.length; i++) {
+		sameElig = false;
+		eligComp = data[i].elig.split(',');
+		for (var j = 0; j < eligArr.length; j++) {
+			if (eligArr[j].indexOf(eligComp) != -1) {
+				sameElig = true;
+			}
+		}
+		if (sameElig) {
+			if (closestPlayers.length < 2) {
+				closestPlayers.push(data[i]);
+				valDistArr.push(Math.abs(player.value - data[i].value));
+			} else {
+				valDist = Math.abs(player.value - data[i].value);
+				if (valDist < Math.max.apply(null, valDistArr)) {
+					repIndex = valDistArr.indexOf(Math.max.apply(null, valDistArr));
+					closestPlayers[repIndex] = data[i];
+					valDistArr[repIndex] = Math.abs(player.value - data[i].value);
+				}
+			}
+		}
+	}
+	$("#similar-players").html("<li>" + closestPlayers[0].name + " - " + closestPlayers[0].team + " - " + closestPlayers[0].elig + " - $" + closestPlayers[0].value + "</li>" + "<li>" + closestPlayers[1].name + " - " + closestPlayers[1].team + " - " + closestPlayers[1].elig + " - $" + closestPlayers[1].value + "</li>")
+}
 
 // data here is a player
 function updatePlayersInTables(data) {
