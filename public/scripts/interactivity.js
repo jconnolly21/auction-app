@@ -18,7 +18,7 @@ $(document).ready(function() {
 	$.getJSON(PlayersUrl, function(result){
 		
 		drawPlayerTable(result.players, 'U', '#hitter-stats');
-		drawPlayerTable(result.players, 'SP', '#sp-stats');
+		drawPlayerTable(result.players, 'P', '#sp-stats');
 		drawPlayerTable(result.players, 'OF', '#of-stats');
 
 		for(i = 0; i < result.players.length; i++) {
