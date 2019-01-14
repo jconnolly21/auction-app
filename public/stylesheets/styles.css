@@ -36,6 +36,10 @@ ul li {
   overflow: scroll;
 }
 
+.margin-below {
+  margin-bottom: 25px;
+}
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
