@@ -133,15 +133,15 @@ function updateSimilarPlayers(data, player) {
 	if (eligArr.indexOf('U') != -1) {
 		eligArr.splice(eligArr.indexOf('U'), 1);
 	}
-
 	for (var i = 0; i < data.length; i++) {
 		sameElig = false;
 		eligComp = data[i].elig.split(',');
 		for (var j = 0; j < eligArr.length; j++) {
-			if (eligArr[j].indexOf(eligComp) != -1) {
+			if (eligComp.indexOf(eligArr[j]) != -1) {
 				sameElig = true;
 			}
 		}
+		console.log(data[i].name);
 		if (sameElig) {
 			if (closestPlayers.length < 2) {
 				closestPlayers.push(data[i]);
@@ -180,7 +180,6 @@ function drawPlayerTable(data, cat, catID) {
 			eligiblePlayers.push(data[i]);
 		}
 	}
-	console.log(eligiblePlayers);
 	var htmlString = '';
 	for (var j = 0; j < eligiblePlayers.length; j++) {
 		if (eligiblePlayers[j].ownerid == null) {
