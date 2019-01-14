@@ -19,7 +19,15 @@ $(document).ready(function() {
 		
 		drawPlayerTable(result.players, 'U', '#hitter-stats');
 		drawPlayerTable(result.players, 'P', '#sp-stats');
+		// drawPlayerTable(result.players, 'RP', '#rp-stats');
+		drawPlayerTable(result.players, '1B', '#fb-stats');
+		drawPlayerTable(result.players, '2B', '#sb-stats');
+		drawPlayerTable(result.players, '3B', '#tb-stats');
+		drawPlayerTable(result.players, 'SS', '#ss-stats');
+		drawPlayerTable(result.players, 'MI', '#mi-stats');
+		drawPlayerTable(result.players, 'CI', '#ci-stats');
 		drawPlayerTable(result.players, 'OF', '#of-stats');
+		drawPlayerTable(result.players, 'C', '#c-stats');
 
 		for(i = 0; i < result.players.length; i++) {
 			if(result.players[i].ownerid == null) { 
@@ -34,6 +42,9 @@ $(document).ready(function() {
 		updateNominateList(availablePlayers);
 		updateBudgets(rosters);
 		updateDraftLog(rosters);
+		updateRosterTable(rosters[0]);
+		updateTeamTotals(rosters[0]);
+
 	});
 
 	$("#nominate-list").change(function() {
@@ -200,7 +211,7 @@ function updateRosterTable(data) {
 	$('#team-roster').html(htmlString);
 }
 
-// data here is the rosters 2d array
+// data here is a single teams roster
 function updateTeamTotals(data) {
 	var totalIp = 0;
 	var totalAb = 0;
