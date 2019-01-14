@@ -54,6 +54,7 @@ $(document).ready(function() {
 				updateDetails(availablePlayers[i]);
 				updateStatsRankings(availablePlayers[i]);
 				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+				updatePositionOptions(availablePlayers[i]);
 			}
 		}
 	});
@@ -120,6 +121,16 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
+
+// data here is a single player
+function updatePositionOptions(data) {
+	var eligArr = data.elig.split(',');
+	var htmlString = '';
+	for (var i = 0; i < eligArr.length; i++) {
+		htmlString += '<option>' + eligArr[i] + '</option>';
+	}
+	$('#roster-spot').html(htmlString);
+}
 
 // data here is availablePlayers, and player is a certain player
 function updateSimilarPlayers(data, player) {
