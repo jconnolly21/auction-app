@@ -138,10 +138,11 @@ function updateSimilarPlayers(data, player) {
 		eligComp = data[i].elig.split(',');
 		for (var j = 0; j < eligArr.length; j++) {
 			if (eligComp.indexOf(eligArr[j]) != -1) {
-				sameElig = true;
+				if (data[i].name != player.name) {
+					sameElig = true;
+				}
 			}
 		}
-		console.log(data[i].name);
 		if (sameElig) {
 			if (closestPlayers.length < 2) {
 				closestPlayers.push(data[i]);
