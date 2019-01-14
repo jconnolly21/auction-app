@@ -176,8 +176,10 @@ function updatePlayersInTables(data) {
 // data here is all players
 function drawPlayerTable(data, cat, catID) {
 	var eligiblePlayers = [];
+	var posArr = new Array (0);
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].elig.indexOf(cat) != -1) {
+		posArr = data[i].elig.split(',');
+		if (posArr.indexOf(cat) != -1) {
 			eligiblePlayers.push(data[i]);
 		}
 	}
