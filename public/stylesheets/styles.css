@@ -36,6 +36,11 @@ ul li {
   overflow: scroll;
 }
 
+.stat-box-small {
+  height: 300px;
+  overflow: scroll;
+}
+
 .margin-below {
   margin-bottom: 25px;
 }

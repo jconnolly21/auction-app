@@ -168,7 +168,31 @@ function updatePlayersInTables(data) {
 	$("tbody#sp-stats th").filter(function() {
 	    return $(this).text() == data.name;
 	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#rp-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#fb-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#sb-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#tb-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#ss-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#mi-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#ci-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
 	$("tbody#of-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	$("tbody#c-stats th").filter(function() {
 	    return $(this).text() == data.name;
 	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
 }
