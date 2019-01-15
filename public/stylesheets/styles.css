@@ -34,13 +34,13 @@ ul li {
   font-size: 8pt;
 }
 
-.ranking-box {
-  width: 100%;
-  height: 40%;
+.roster-box {
+  height: 450px;
+  overflow: scroll;
 }
 
 .ranking {
-  margin-top: 35px;
+  margin-top: 10px;
   width: 100px;
   text-align: center;
 }
