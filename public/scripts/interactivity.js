@@ -230,26 +230,11 @@ function drawPlayerTable(data, cat, catID) {
 	$(catID).html(htmlString);
 }
 
-// data here is the rosters 2d array
+// data here is a player
 function updateDraftLog(data) {
 	var htmlString = '';
-	var allDraftedPlayers = [];
-	for (var i = 0; i < data.length; i++) {
-		for (var j = 0; j < data[i].length; j++) {
-			allDraftedPlayers.push(data[i][j]);
-		}
-	}
-	var cur = draftNumber;
-	for (var i = draftNumber; i >= 0; i--) {
-		console.log(i);
-		for (var j = 0; j < allDraftedPlayers.length; j++) {
-			if (allDraftedPlayers[j].draftnumber == cur) {
-				htmlString += '<li>' + allDraftedPlayers[j].name + ' (' + allDraftedPlayers[j].team + ') (' + allDraftedPlayers[j].elig + '): $' + allDraftedPlayers[j].price + ' - ' + teams[allDraftedPlayers[j].ownerid-1] + '</li>';
-			}
-		}
-		cur -= 1;
-	}
-	$('#draft-log').html(htmlString);
+	htmlString += '<tr><td>' + data.draftnumber + '.</td><td>' + data.name + ' (' + data.team + ')</td><td>' + data.elig + '</td><td>$' + data.price + '</td><td>' + teams[data.ownerid-1] + '</td></tr>';
+	$('#draft-log').prepend(htmlString);
 }
 
 // data here is a single teams roster
