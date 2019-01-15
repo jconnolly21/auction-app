@@ -8,9 +8,9 @@ ul li {
 }
 
 .left-sidebar {
-  -webkit-box-shadow: 12px 0 6px -6px #ddd;
-  -moz-box-shadow:    12px 0 6px -6px #ddd;
-  box-shadow:         12px 0 6px -6px #ddd;
+  -webkit-box-shadow: 12px 0 6px -6px #eee;
+  -moz-box-shadow:    12px 0 6px -6px #eee;
+  box-shadow:         12px 0 6px -6px #eee;
 }
 
 .top-bar {
