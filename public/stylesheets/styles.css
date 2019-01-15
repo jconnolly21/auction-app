@@ -7,6 +7,15 @@ ul li {
   font-size: 10pt;
 }
 
+.top-bar {
+  height: 50px;
+  background-color: blue;
+}
+
+.center-contents {
+  text-align: center;
+}
+
 .bid-box {
   box-sizing: border-box;
   padding: 10px;
