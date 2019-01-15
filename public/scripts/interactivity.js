@@ -35,13 +35,13 @@ $(document).ready(function() {
 			} else {
 				draftNumber = Math.max(draftNumber, result.players[i].draftnumber)
 				rosters[result.players[i].ownerid - 1].push(result.players[i]);
+				updateDraftLog(result.players[i]);
 			}
 		}
 		draftNumber += 1;
 		console.log(draftNumber);
 		updateNominateList(availablePlayers);
 		updateBudgets(rosters);
-		updateDraftLog(rosters);
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
 	});
@@ -73,6 +73,7 @@ $(document).ready(function() {
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = draftNumber;
 				updatePlayersInTables(purchasedPlayer);
+				updateDraftLog(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
 			}
 		}
@@ -89,8 +90,6 @@ $(document).ready(function() {
 		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
-
-		updateDraftLog(rosters);
 	});
 
 	$('body').on('click', '#pos-switcher', function(e) {
