@@ -50,6 +50,10 @@ ul li {
   font-size: 10pt;
 }
 
+.stats-table {
+  font-size: 10pt;
+}
+
 .player-picked {
   background-color: #D3D3D3;
 }
