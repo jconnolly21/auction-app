@@ -350,9 +350,9 @@ function updateDetails(data) {
 // data here is a single player
 function updateStatsRankings(data) {
 	if(data.type == 'Pitcher') {
-		$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">ERA</th><th scope="col">K</th><th scope="col">S</th><th scope="col">W</th><th scope="col">WHIP</th>');
+		$("#stats-categories").html('<th scope="col">Stat Type</th><th class="column-center" scope="col">ERA</th><th class="column-center" scope="col">K</th><th class="column-center" scope="col">S</th><th class="column-center" scope="col">W</th><th class="column-center" scope="col">WHIP</th>');
 	} else {
-		$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">HR</th><th scope="col">OBP</th><th scope="col">R</th><th scope="col">RBI</th><th scope="col">SB</th>');	
+		$("#stats-categories").html('<th scope="col">Stat Type</th><th class="column-center" scope="col">HR</th><th class="column-center" scope="col">OBP</th><th class="column-center" scope="col">R</th><th class="column-center" scope="col">RBI</th><th class="column-center" scope="col">SB</th>');	
 	}
 	$("#2019Proj").html('<th scope="row">2019 Projections</th><td class="column-center">' + data.stat1.toString() + '</td><td class="column-center">' + data.stat2.toString() + '</td><td class="column-center">' + data.stat3.toString() + '</td><td class="column-center">' + data.stat4.toString() + '</td><td class="column-center">' + data.stat5.toString() + '</td>');
 	$("#cat-values").html('<th scope="row">PV$(cat)</th><td class="column-center">$' + data.value1.toString() + '</td><td class="column-center">$' + data.value2.toString() + '</td><td class="column-center">$' + data.value3.toString() + '</td><td class="column-center">$' + data.value4.toString() + '</td><td class="column-center">$' + data.value5.toString() + '</td>');
