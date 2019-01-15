@@ -7,6 +7,12 @@ ul li {
   font-size: 10pt;
 }
 
+.left-sidebar {
+  -webkit-box-shadow: 8px 0 6px -6px #ccc;
+  -moz-box-shadow:    8px 0 6px -6px #ccc;
+  box-shadow:         8px 0 6px -6px #ccc;
+}
+
 .top-bar {
   height: 50px;
   background-color: blue;
@@ -23,7 +29,7 @@ ul li {
   width: 100%;
   border-style: solid;
   border-width: 1px;
-  background-color: #F5F8FA;
+  background-color: #eeeeee;
 }
 
 #draft-log {
