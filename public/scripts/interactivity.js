@@ -220,9 +220,9 @@ function drawPlayerTable(data, cat, catID) {
 	var htmlString = '';
 	for (var j = 0; j < eligiblePlayers.length; j++) {
 		if (eligiblePlayers[j].ownerid == null) {
-			htmlString += '<tr class="player-list"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td><td class="player-price"></td></tr>'; 
+			htmlString += '<tr class="player-list"><th scope="row">' + eligiblePlayers[j].name + '</th><td class="column-right">' + eligiblePlayers[j].stat1 + '</td><td class="column-right">' + eligiblePlayers[j].stat2 + '</td><td class="column-right">' + eligiblePlayers[j].stat3 + '</td><td class="column-right">' + eligiblePlayers[j].stat4 + '</td><td class="column-right">' + eligiblePlayers[j].stat5 + '</td><td class="column-right">$' + eligiblePlayers[j].value + '</td><td class="column-right player-price"></td></tr>'; 
 		} else {
-			htmlString += '<tr class="player-list player-picked"><th scope="row">' + eligiblePlayers[j].name + '</th><td>' + eligiblePlayers[j].stat1 + '</td><td>' + eligiblePlayers[j].stat2 + '</td><td>' + eligiblePlayers[j].stat3 + '</td><td>' + eligiblePlayers[j].stat4 + '</td><td>' + eligiblePlayers[j].stat5 + '</td><td>$' + eligiblePlayers[j].value + '</td><td class="player-price">$' + eligiblePlayers[j].price + '</td></tr>'; 
+			htmlString += '<tr class="player-list player-picked"><th scope="row">' + eligiblePlayers[j].name + '</th><td class="column-right">' + eligiblePlayers[j].stat1 + '</td><td class="column-right">' + eligiblePlayers[j].stat2 + '</td><td class="column-right">' + eligiblePlayers[j].stat3 + '</td><td class="column-right">' + eligiblePlayers[j].stat4 + '</td><td class="column-right">' + eligiblePlayers[j].stat5 + '</td><td class="column-right">$' + eligiblePlayers[j].value + '</td><td class="column-right player-price">$' + eligiblePlayers[j].price + '</td></tr>'; 
 		}
 	}
 
@@ -236,7 +236,7 @@ function updateDraftLog(data) {
 	if (printName.length > 15) {
 		printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
 	}
-	htmlString += '<tr><th scope="row">' + data.draftnumber + '.</th><td>' + printName + ' <span class="teamname">(' + data.team + ')</span></td><td class="position">' + data.rosterspot + '</td><td class="price">$' + data.price + '</td></tr>';
+	htmlString += '<tr><th scope="row">' + data.draftnumber + '.</th><td>' + printName + ' <span class="teamname">(' + data.team + ')</span></td><td class="column-center">' + data.rosterspot + '</td><td class="column-right">$' + data.price + '</td></tr>';
 	$('#draft-log').prepend(htmlString);
 }
 
@@ -266,9 +266,9 @@ function updateRosterTable(data) {
 					}
 				}
 			}
-			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + filledBy[i].name + '</td><td>' + eligString + '</td><td>$' + filledBy[i].price + '</td></tr>';
+			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + filledBy[i].name + '</td><td>' + eligString + '</td><td class="column-right">$' + filledBy[i].price + '</td></tr>';
 		} else {
-			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td></td><td></td><td></td></tr>';
+			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td></td><td></td><td class="column-right"></td></tr>';
 		}
 	}
 	$('#team-roster').html(htmlString);
@@ -299,7 +299,7 @@ function updateTeamTotals(data) {
 	}
 	var htmlString = '<th scope="row">Totals</th>';
 	for (var i = 0; i < teamTotals.length; i++) {
-		htmlString += '<td>' + teamTotals[i] + '</td>';
+		htmlString += '<td class="column-right">' + teamTotals[i] + '</td>';
 	}
 	$('#team-stats').html(htmlString);
 }
@@ -328,10 +328,10 @@ function updateBudgets(data) {
 	for (var i = 0; i < tableVals.length; i++) {
 		htmlString += '<tr>'
 		htmlString += '<th scope = "row">' + teams[i] + '</th>';
-		htmlString += '<td>' + tableVals[i][3].toString() + '</td>';
-		htmlString += '<td>' + tableVals[i][0].toString() + '</td>';
-		htmlString += '<td>' + tableVals[i][1].toString() + '</td>';
-		htmlString += '<td>' + tableVals[i][2].toString() + '</td>';
+		htmlString += '<td class="column-right">' + tableVals[i][3].toString() + '</td>';
+		htmlString += '<td class="column-right">' + tableVals[i][0].toString() + '</td>';
+		htmlString += '<td class="column-right">' + tableVals[i][1].toString() + '</td>';
+		htmlString += '<td class="column-right">' + tableVals[i][2].toString() + '</td>';
 		htmlString += '</tr>';
 	}
 
@@ -354,8 +354,8 @@ function updateStatsRankings(data) {
 	} else {
 		$("#stats-categories").html('<th scope="col">Stat Type</th><th scope="col">HR</th><th scope="col">OBP</th><th scope="col">R</th><th scope="col">RBI</th><th scope="col">SB</th>');	
 	}
-	$("#2019Proj").html('<th scope="row">2019 Projections</th><td>' + data.stat1.toString() + '</td><td>' + data.stat2.toString() + '</td><td>' + data.stat3.toString() + '</td><td>' + data.stat4.toString() + '</td><td>' + data.stat5.toString() + '</td>');
-	$("#cat-values").html('<th scope="row">PV$(cat)</th><td>$' + data.value1.toString() + '</td><td>$' + data.value2.toString() + '</td><td>$' + data.value3.toString() + '</td><td>$' + data.value4.toString() + '</td><td>$' + data.value5.toString() + '</td>');
+	$("#2019Proj").html('<th scope="row">2019 Projections</th><td class="column-center">' + data.stat1.toString() + '</td><td class="column-center">' + data.stat2.toString() + '</td><td class="column-center">' + data.stat3.toString() + '</td><td class="column-center">' + data.stat4.toString() + '</td><td class="column-center">' + data.stat5.toString() + '</td>');
+	$("#cat-values").html('<th scope="row">PV$(cat)</th><td class="column-center">$' + data.value1.toString() + '</td><td class="column-center">$' + data.value2.toString() + '</td><td class="column-center">$' + data.value3.toString() + '</td><td class="column-center">$' + data.value4.toString() + '</td><td class="column-center">$' + data.value5.toString() + '</td>');
 }
 
 // data here is a list of players

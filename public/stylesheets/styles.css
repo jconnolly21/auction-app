@@ -32,11 +32,11 @@ ul li {
   font-size: 8pt;
 }
 
-.position {
+.column-center {
   text-align: center;
 }
 
-.price {
+.column-right {
   text-align: right;
 }
 
