@@ -59,11 +59,11 @@
 				<div class="col-8">
 					<div class="row">
 						<div class="col-8">
-							<div class="float-right bid-box">
+							<div class="row">
 								<div>
 									Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250">
 									Spot:
-									<select id="roster-spot" class="selectpicker" data-width="50px">
+									<select id="roster-spot" class="selectpicker" data-width="75px">
 										<option>C</option>
 										<option>1B</option>
 										<option>2B</option>
@@ -75,9 +75,8 @@
 										<option>U</option>
 										<option>P</option>
 									</select>
-									<br>
 									Team: 
-									<select id="bidding-team" class="selectpicker" data-width="75px">
+									<select id="bidding-team" class="selectpicker" data-width="90px">
 										{{#each data}}
 									    <option data-subtext='{{display}}'>{{owner}}</option>
 									    {{/each}}
@@ -85,44 +84,46 @@
 									<button id="bid-accepted" type="button" class="btn btn-success submit-bid">Submit</button>
 								</div>
 							</div>
-							<h2 id="nominated-player">Max Scherzer</h2>
-							<p id="player-details">SP - WAS - Age: 30</p>
-							<p id="suggested-val"><b>Suggested Value: </b>$45</p>
-							<p>Players w/ similar position eligibility:</p>
-							<ul id="similar-players">
-								<li> </li>
-								<li> </li>
-							</ul>
-							<table class="table">
-							  <thead>
-							    <tr id="stats-categories">
-							      <th scope="col">Stat Type</th>
-							      <th class="column-center" scope="col">ERA</th>
-							      <th class="column-center" scope="col">K</th>
-							      <th class="column-center" scope="col">S</th>
-							      <th class="column-center" scope="col">W</th>
-							      <th class="column-center" scope="col">WHIP</th>
-							    </tr>
-							  </thead>
-							  <tbody>
-							    <tr id="2019Proj">
-							      <th scope="row">2019 Projections</th>
-							      <td>3.03</td>
-							      <td>213</td>
-							      <td>2</td>
-							      <td>13</td>
-							      <td>1.02</td>
-							    </tr>
-							    <tr id="cat-values">
-							      <th scope="row">PV$(cat)</th>
-							      <td>2</td>
-							      <td>3</td>
-							      <td>58</td>
-							      <td>5</td>
-							      <td>2</td>
-							    </tr>
-							  </tbody>
-							</table>
+							<div class="row">
+								<h2 id="nominated-player">Max Scherzer</h2>
+								<p id="player-details">SP - WAS - Age: 30</p>
+								<p id="suggested-val"><b>Suggested Value: </b>$45</p>
+								<p>Players w/ similar position eligibility:</p>
+								<ul id="similar-players">
+									<li> </li>
+									<li> </li>
+								</ul>
+								<table class="table">
+								  <thead>
+								    <tr id="stats-categories">
+								      <th scope="col">Stat Type</th>
+								      <th class="column-center" scope="col">ERA</th>
+								      <th class="column-center" scope="col">K</th>
+								      <th class="column-center" scope="col">S</th>
+								      <th class="column-center" scope="col">W</th>
+								      <th class="column-center" scope="col">WHIP</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr id="2019Proj">
+								      <th scope="row">2019 Projections</th>
+								      <td>3.03</td>
+								      <td>213</td>
+								      <td>2</td>
+								      <td>13</td>
+								      <td>1.02</td>
+								    </tr>
+								    <tr id="cat-values">
+								      <th scope="row">PV$(cat)</th>
+								      <td>2</td>
+								      <td>3</td>
+								      <td>58</td>
+								      <td>5</td>
+								      <td>2</td>
+								    </tr>
+								  </tbody>
+								</table>
+							</div>
 						</div>
 						<div class="col-4">
 							<h5 class="text-center">Budgets</h5>
@@ -152,7 +153,7 @@
 					</div>
 					<div class="row">
 						<div class="col">
-							<select id="active-stats-team" class="selectpicker" data-width="75px">
+							<select id="active-stats-team" class="selectpicker" data-width="90px">
 								{{#each data}}
 								<option data-subtext='{{display}}'>{{owner}}</option>
 								{{/each}}
@@ -206,7 +207,7 @@
 					</div>
 				</div>
 				<div class="col-2">
-					<select id="active-roster-team" class="selectpicker" data-width="75px">
+					<select id="active-roster-team" class="selectpicker" data-width="90px">
 					    {{#each data}}
 						<option data-subtext='{{display}}'>{{owner}}</option>
 						{{/each}}
