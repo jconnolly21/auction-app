@@ -27,12 +27,6 @@ ul li {
   border-width: 2px;
 }
 
-.submit-bid {
-  float: right;
-  position: relative;
-  top: 22px;
-}
-
 #draft-log {
   font-size: 10pt;
 }
