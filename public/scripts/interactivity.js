@@ -267,7 +267,11 @@ function updateRosterTable(data) {
 					}
 				}
 			}
-			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + filledBy[i].name + '</td><td>' + eligString + '</td><td class="column-right">$' + filledBy[i].price + '</td></tr>';
+			var printName = filledBy[i].name;
+			if (printName.length > 15) {
+				printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
+			}
+			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td>' + printName + '</td><td>' + eligString + '</td><td class="column-right">$' + filledBy[i].price + '</td></tr>';
 		} else {
 			htmlString += '<tr><th scope="row">' + positions[i] + '</th><td></td><td></td><td class="column-right"></td></tr>';
 		}
