@@ -58,34 +58,34 @@
 				</div>
 				<div class="col-8">
 					<div class="row">
-						<div class="col-9">
-							<div class="row">
-								<div class="col">
-									<div class="bid-box">
-										Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250">
-										Team: 
-										<select id="bidding-team" class="selectpicker" data-width="90px">
-											{{#each data}}
-										    <option data-subtext='{{display}}'>{{owner}}</option>
-										    {{/each}}
-										</select>
-										Spot:
-										<select id="roster-spot" class="selectpicker" data-width="75px">
-											<option>C</option>
-											<option>1B</option>
-											<option>2B</option>
-											<option>SS</option>
-											<option>3B</option>
-											<option>MI</option>
-											<option>CI</option>
-											<option>OF</option>
-											<option>U</option>
-											<option>P</option>
-										</select>
-										<button id="bid-accepted" type="button" class="btn btn-success submit-bid">Submit</button>
-									</div>
-								</div>
+						<div class="col">
+							<div class="bid-box">
+								Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250">
+								Team: 
+								<select id="bidding-team" class="selectpicker" data-width="90px">
+									{{#each data}}
+								    <option data-subtext='{{display}}'>{{owner}}</option>
+								    {{/each}}
+								</select>
+								Spot:
+								<select id="roster-spot" class="selectpicker" data-width="75px">
+									<option>C</option>
+									<option>1B</option>
+									<option>2B</option>
+									<option>SS</option>
+									<option>3B</option>
+									<option>MI</option>
+									<option>CI</option>
+									<option>OF</option>
+									<option>U</option>
+									<option>P</option>
+								</select>
+								<button id="bid-accepted" type="button" class="btn btn-success submit-bid">Submit</button>
 							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-9">
 							<div class="row">
 								<div class="col-6">
 									<h2 id="nominated-player">Max Scherzer</h2>
@@ -100,8 +100,8 @@
 								<div class="col-6">
 									<div class="ranking-box">
 										<div class="ranking">
-											<span>ECR</span>
-											<span>68</span>
+											<h6>ECR</h6>
+											<h6>68</h6>
 										</div>
 									</div>
 									<table class="table table-sm stats-table">
