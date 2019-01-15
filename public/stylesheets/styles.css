@@ -19,6 +19,10 @@ ul li {
   top: 22px;
 }
 
+.draft-log {
+  font-size: 10pt;
+}
+
 .roster-table {
   font-size: 8pt;
 }

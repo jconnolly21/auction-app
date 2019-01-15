@@ -232,7 +232,7 @@ function drawPlayerTable(data, cat, catID) {
 // data here is a player
 function updateDraftLog(data) {
 	var htmlString = '';
-	htmlString += '<tr><td>' + data.draftnumber + '.</td><td>' + data.name + ' (' + data.team + ')</td><td>' + data.elig + '</td><td>$' + data.price + '</td><td>' + teams[data.ownerid-1] + '</td></tr>';
+	htmlString += '<tr><th scope="row">' + data.draftnumber + '.</th><td>' + data.name + ' (' + data.team + ')</td><td>' + data.rosterspot + '</td><td>$' + data.price + '</td><td>' + teams[data.ownerid-1] + '</td></tr>';
 	$('#draft-log').prepend(htmlString);
 }
 
