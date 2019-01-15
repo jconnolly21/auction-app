@@ -23,6 +23,10 @@ ul li {
   font-size: 10pt;
 }
 
+.position {
+   text-align: center;
+}
+
 .roster-table {
   font-size: 8pt;
 }
