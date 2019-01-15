@@ -129,6 +129,7 @@ function updatePositionOptions(data) {
 		htmlString += '<option>' + eligArr[i] + '</option>';
 	}
 	$('#roster-spot').html(htmlString);
+	$('#roster-spot').selectpicker('refresh');
 }
 
 // data here is availablePlayers, and player is a certain player
