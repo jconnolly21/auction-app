@@ -63,6 +63,12 @@
 								<div class="col">
 									<div class="bid-box">
 										Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250">
+										Team: 
+										<select id="bidding-team" class="selectpicker" data-width="90px">
+											{{#each data}}
+										    <option data-subtext='{{display}}'>{{owner}}</option>
+										    {{/each}}
+										</select>
 										Spot:
 										<select id="roster-spot" class="selectpicker" data-width="75px">
 											<option>C</option>
@@ -76,18 +82,12 @@
 											<option>U</option>
 											<option>P</option>
 										</select>
-										Team: 
-										<select id="bidding-team" class="selectpicker" data-width="90px">
-											{{#each data}}
-										    <option data-subtext='{{display}}'>{{owner}}</option>
-										    {{/each}}
-										</select>
 										<button id="bid-accepted" type="button" class="btn btn-success submit-bid">Submit</button>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col">
+								<div class="col-6">
 									<h2 id="nominated-player">Max Scherzer</h2>
 									<p id="player-details">SP - WAS - Age: 30</p>
 									<p id="suggested-val"><b>Suggested Value: </b>$45</p>
@@ -96,7 +96,9 @@
 										<li> </li>
 										<li> </li>
 									</ul>
-									<table class="table">
+								</div>
+								<div class="col-6">
+									<table class="table table-sm">
 									  <thead>
 									    <tr id="stats-categories">
 									      <th scope="col">Stat Type</th>
