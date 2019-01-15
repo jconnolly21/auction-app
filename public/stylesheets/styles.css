@@ -13,6 +13,10 @@ ul li {
   box-shadow:         12px 0 6px -6px #eee;
 }
 
+.pos-of {
+  background-color: #14CCBD;
+}
+
 .top-bar {
   height: 50px;
   background-color: blue;
