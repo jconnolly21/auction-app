@@ -91,7 +91,7 @@
 									<h2 id="nominated-player">Max Scherzer</h2>
 									<p id="player-details">SP - WAS - Age: 30</p>
 									<p id="suggested-val"><b>Suggested Value: </b>$45</p>
-									<p>Players w/ similar position eligibility:</p>
+									<p>Other players to consider:</p>
 									<ul id="similar-players">
 										<li> </li>
 										<li> </li>
@@ -117,7 +117,7 @@
 									  </thead>
 									  <tbody>
 									    <tr id="2019Proj">
-									      <th scope="row">2019 Projections</th>
+									      <th scope="row">Stats</th>
 									      <td>3.03</td>
 									      <td>213</td>
 									      <td>2</td>
@@ -125,7 +125,7 @@
 									      <td>1.02</td>
 									    </tr>
 									    <tr id="cat-values">
-									      <th scope="row">Value / Category</th>
+									      <th scope="row">Value</th>
 									      <td>2</td>
 									      <td>3</td>
 									      <td>58</td>
@@ -133,6 +133,60 @@
 									      <td>2</td>
 									    </tr>
 									  </tbody>
+									</table>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<select id="active-stats-team" class="selectpicker" data-width="90px">
+										{{#each data}}
+										<option data-subtext='{{display}}'>{{owner}}</option>
+										{{/each}}
+									</select>
+									<table class="table">
+										<thead>
+											<tr>
+										      <th scope="col"></th>
+										      <th class="column-right" scope="col">HR</th>
+										      <th class="column-right" scope="col">OBP</th>
+										      <th class="column-right" scope="col">R</th>
+										      <th class="column-right" scope="col">RBI</th>
+										      <th class="column-right" scope="col">SB</th>
+										      <th class="column-right" scope="col">ERA</th>
+										      <th class="column-right" scope="col">K</th>
+										      <th class="column-right" scope="col">S</th>
+										      <th class="column-right" scope="col">W</th>
+										      <th class="column-right" scope="col">WHIP</th>
+										    </tr>
+										</thead>
+										<tbody>
+											<tr id="team-stats">
+										      <th scope="row">Totals</th>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										      <td>0</td>
+										    </tr>
+										    <tr>
+										      <th scope="row">Targets</th>
+										      <td class="column-right">300</td>
+										      <td class="column-right">0.340</td>
+										      <td class="column-right">1000</td>
+										      <td class="column-right">950</td>
+										      <td class="column-right">125</td>
+										      <td class="column-right">3.40</td>
+										      <td class="column-right">1300</td>
+										      <td class="column-right">75</td>
+										      <td class="column-right">90</td>
+										      <td class="column-right">1.20</td>
+										    </tr>
+										</tbody>
 									</table>
 								</div>
 							</div>
@@ -160,60 +214,6 @@
 							    </tr>
 							    {{/each}}
 							  </tbody>
-							</table>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col">
-							<select id="active-stats-team" class="selectpicker" data-width="90px">
-								{{#each data}}
-								<option data-subtext='{{display}}'>{{owner}}</option>
-								{{/each}}
-							</select>
-							<table class="table">
-								<thead>
-									<tr>
-								      <th scope="col"></th>
-								      <th class="column-right" scope="col">HR</th>
-								      <th class="column-right" scope="col">OBP</th>
-								      <th class="column-right" scope="col">R</th>
-								      <th class="column-right" scope="col">RBI</th>
-								      <th class="column-right" scope="col">SB</th>
-								      <th class="column-right" scope="col">ERA</th>
-								      <th class="column-right" scope="col">K</th>
-								      <th class="column-right" scope="col">S</th>
-								      <th class="column-right" scope="col">W</th>
-								      <th class="column-right" scope="col">WHIP</th>
-								    </tr>
-								</thead>
-								<tbody>
-									<tr id="team-stats">
-								      <th scope="row">Totals</th>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								      <td>0</td>
-								    </tr>
-								    <tr>
-								      <th scope="row">Targets</th>
-								      <td class="column-right">300</td>
-								      <td class="column-right">0.340</td>
-								      <td class="column-right">1000</td>
-								      <td class="column-right">950</td>
-								      <td class="column-right">125</td>
-								      <td class="column-right">3.40</td>
-								      <td class="column-right">1300</td>
-								      <td class="column-right">75</td>
-								      <td class="column-right">90</td>
-								      <td class="column-right">1.20</td>
-								    </tr>
-								</tbody>
 							</table>
 						</div>
 					</div>

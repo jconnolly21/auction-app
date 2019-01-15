@@ -359,8 +359,8 @@ function updateStatsRankings(data) {
 	} else {
 		$("#stats-categories").html('<th scope="col">Stat Type</th><th class="column-center" scope="col">HR</th><th class="column-center" scope="col">OBP</th><th class="column-center" scope="col">R</th><th class="column-center" scope="col">RBI</th><th class="column-center" scope="col">SB</th>');	
 	}
-	$("#2019Proj").html('<th scope="row">2019 Projections</th><td class="column-center">' + data.stat1.toString() + '</td><td class="column-center">' + data.stat2.toString() + '</td><td class="column-center">' + data.stat3.toString() + '</td><td class="column-center">' + data.stat4.toString() + '</td><td class="column-center">' + data.stat5.toString() + '</td>');
-	$("#cat-values").html('<th scope="row">Value / Category</th><td class="column-center">$' + data.value1.toString() + '</td><td class="column-center">$' + data.value2.toString() + '</td><td class="column-center">$' + data.value3.toString() + '</td><td class="column-center">$' + data.value4.toString() + '</td><td class="column-center">$' + data.value5.toString() + '</td>');
+	$("#2019Proj").html('<th scope="row">Stats</th><td class="column-center">' + data.stat1.toString() + '</td><td class="column-center">' + data.stat2.toString() + '</td><td class="column-center">' + data.stat3.toString() + '</td><td class="column-center">' + data.stat4.toString() + '</td><td class="column-center">' + data.stat5.toString() + '</td>');
+	$("#cat-values").html('<th scope="row">Value</th><td class="column-center">$' + data.value1.toString() + '</td><td class="column-center">$' + data.value2.toString() + '</td><td class="column-center">$' + data.value3.toString() + '</td><td class="column-center">$' + data.value4.toString() + '</td><td class="column-center">$' + data.value5.toString() + '</td>');
 }
 
 // data here is a list of players
