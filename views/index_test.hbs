@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 	<!-- Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
@@ -16,7 +16,14 @@
 	<script src="/bootstrap-select-1.13.2/dist/js/bootstrap-select.js"></script>
 	<link rel="stylesheet" href="/bootstrap-select-1.13.2/dist/css/bootstrap-select.css">
 
+	<!-- Handlebars client-side -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
 
+	<!-- Load Require.js -->
+	<!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+
+	<!-- My code -->
+	<script src="scripts/interactivity.js"></script>
 	<link rel="stylesheet" href="stylesheets/styles.css">
 
 	<title>Auction App</title>
@@ -24,419 +31,105 @@
 
 <body>
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-3">
-				<div class="row">
-					<div class="col">
-						<h5 class="text-center">Nominate Players</h5>
-						<select class="selectpicker" data-size="10" data-live-search="true" >
-						    <option data-subtext="WAS SP">Max Scherzer</option>
-						    <option data-subtext="NYY SP">Luis Severino</option>
-						    <option data-subtext="COL SP">Jon Gray</option>
-						    <option data-subtext="COL SS">Trevor Story</option>
-						    <option data-subtext="MIL C">Yasmani Grandal</option>
-						    <option data-subtext="BOS SP">Chris Sale</option>
-						    <option data-subtext="CHC SP">Yu Darvish</option>
-						    <option data-subtext="BOS 2B">Dustin Pedroia</option>
-						    <option data-subtext="WAS OF">Juan Soto</option>
-						</select>
-					</div>
+		<div class="app-window">
+			<div class="row">
+				<div class="col-2">
 				</div>
-				<div class="row">
-					<div class="col">
-						<h5 class="text-center">Draft Log</h5>
-						<ul>
-							<li>Ozzie Albies (ATL) (2B): $22 - Rich</li>
-							<li>Luis Severino (NYY) (SP): $23 - Joe</li>
-							<li>Bryce Harper (FA) (OF): $47 - Jim</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-7">
-				<div class="row">
-					<div class="col-8">
-						<div class="float-right bid-box">
-							<div>
-								Bid: <input type="number" name="quantity" min="1" max="250"><br>
-								Team: 
-								<select class="selectpicker">
-								    <option data-subtext="My Team">Joe</option>
-								    <option data-subtext="Au Contreras">Brian</option>
-								    <option data-subtext="Didi or Didn't He">Jim</option>
-								    <option data-subtext="Bryce is Right">Rich</option>
-								    <option data-subtext="Team Stu">Stu</option>
-								    <option data-subtext="Cobra Kai">Chris</option>
-								    <option data-subtext="Grumpy Grumpa">Jody</option>
-								    <option data-subtext="Pirela De Vil">Adam</option>
-								    <option data-subtext="Happ-less Bronx Boys">Alan</option>
-								    <option data-subtext="Crusty">Craig</option>
-								</select>
-								<button type="button" class="btn btn-success submit-bid">Submit</button>
+				<div class=col-10">
+					<div class="row">
+						<div class="col-9">
+							<div class="row">
+								<div class="col">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-9">
+									<div class="row">
+										<div class="col-6">
+										</div>
+										<div class="col-6">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+										</div>
+									</div>
+								</div>
+								<div class="col-3">
+								</div>
 							</div>
 						</div>
-						<h2>Max Scherzer</h2>
-						<p>SP - WAS - Age: 30</p>
-						<p><b>Suggested Value: </b>$45</p>
-						<p>Other SP of similar value:</p>
-						<ul>
-							<li>Chris Sale - BOS - SP - $43</li>
-							<li>Jacob DeGrom - NYM - SP - $31</li>
-						</ul>
-						<table class="table">
-						  <thead>
-						    <tr>
-						      <th scope="col">Stat Type</th>
-						      <th scope="col">ERA</th>
-						      <th scope="col">K</th>
-						      <th scope="col">S</th>
-						      <th scope="col">W</th>
-						      <th scope="col">WHIP</th>
-						    </tr>
-						  </thead>
-						  <tbody>
-						    <tr>
-						      <th scope="row">2019 Projections</th>
-						      <td>3.03</td>
-						      <td>213</td>
-						      <td>2</td>
-						      <td>13</td>
-						      <td>1.02</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Rank Among Pitchers</th>
-						      <td>2</td>
-						      <td>3</td>
-						      <td>58</td>
-						      <td>5</td>
-						      <td>2</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Rank Among SP</th>
-						      <td>1</td>
-						      <td>4</td>
-						      <td>20</td>
-						      <td>5</td>
-						      <td>1</td>
-						    </tr>
-						  </tbody>
-						</table>
+						<div class="col-3">
+						</div>
 					</div>
-					<div class="col-4">
-						<h5 class="text-center">Budgets</h5>
-						<table class="table table-sm">
-						  <thead>
-						    <tr>
-						      <th scope="col">Owner</th>
-						      <th scope="col">Max</th>
-						      <th scope="col">Left</th>
-						      <th scope="col">H</th>
-						      <th scope="col">P</th>
-						    </tr>
-						  </thead>
-						  <tbody>
-						    <tr>
-						      <th scope="row">Joe</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Jim</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Brian</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Rich</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Stu</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Jody</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Chris</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Adam</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Alan</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">Craig</th>
-						      <td>243</td>
-						      <td>260</td>
-						      <td>0</td>
-						      <td>0</td>
-						    </tr>
-						  </tbody>
-						</table>
+					<div class="row margin-below">
+						<div class="col">
+							<div class="row">
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-below">
+						<div class="col">
+							<div class="row">
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-below">
+						<div class="col">
+							<div class="row">
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-below">
+						<div class="col">
+							<div class="row">
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+								<div class="col-4">
+									
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<select class="selectpicker">
-						    <option data-subtext="My Team">Joe</option>
-						    <option data-subtext="Au Contreras">Brian</option>
-						    <option data-subtext="Didi or Didn't He">Jim</option>
-						    <option data-subtext="Bryce is Right">Rich</option>
-						    <option data-subtext="Team Stu">Stu</option>
-						    <option data-subtext="Cobra Kai">Chris</option>
-						    <option data-subtext="Grumpy Grumpa">Jody</option>
-						    <option data-subtext="Pirela De Vil">Adam</option>
-						    <option data-subtext="Happ-less Bronx Boys">Alan</option>
-						    <option data-subtext="Crusty">Craig</option>
-						</select>
-						<table class="table">
-							<thead>
-								<tr>
-							      <th scope="col"></th>
-							      <th scope="col">HR</th>
-							      <th scope="col">OBP</th>
-							      <th scope="col">R</th>
-							      <th scope="col">RBI</th>
-							      <th scope="col">SB</th>
-							      <th scope="col">ERA</th>
-							      <th scope="col">K</th>
-							      <th scope="col">S</th>
-							      <th scope="col">W</th>
-							      <th scope="col">WHIP</th>
-							    </tr>
-							</thead>
-							<tbody>
-								<tr>
-							      <th scope="row">Totals</th>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							      <td>0</td>
-							    </tr>
-							    <tr>
-							      <th scope="row">Targets</th>
-							      <td>300</td>
-							      <td>.340</td>
-							      <td>1000</td>
-							      <td>950</td>
-							      <td>125</td>
-							      <td>3.40</td>
-							      <td>1300</td>
-							      <td>75</td>
-							      <td>90</td>
-							      <td>1.20</td>
-							    </tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-2">
-				<select class="selectpicker">
-				    <option data-subtext="My Team">Joe</option>
-				    <option data-subtext="Au Contreras">Brian</option>
-				    <option data-subtext="Didi or Didn't He">Jim</option>
-				    <option data-subtext="Bryce is Right">Rich</option>
-				    <option data-subtext="Team Stu">Stu</option>
-				    <option data-subtext="Cobra Kai">Chris</option>
-				    <option data-subtext="Grumpy Grumpa">Jody</option>
-				    <option data-subtext="Pirela De Vil">Adam</option>
-				    <option data-subtext="Happ-less Bronx Boys">Alan</option>
-				    <option data-subtext="Crusty">Craig</option>
-				</select>
-				<table class="table table-sm roster-table">
-				  <tbody>
-				    <tr>
-				      <th scope="row">C</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">1B</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2B</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">SS</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3B</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">CI</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">MI</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">OF</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">OF</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">OF</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">OF</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">OF</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td>Luis Severino</td>
-				      <td>$23</td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">P</th>
-				      <td></td>
-				      <td></td>
-				    </tr>
-				  </tbody>
-				</table>
-			</div>
+			</div>	
 		</div>
-		<div class="row">
-			<div class="col-3">
-				<!-- Purposefully empty for layout -->
-			</div>
-			<div class="col-9">
-				<p>TBD What should be done with this space down here...</p>
-			</div>
-		</div>	
 	</div>
-
-	<script type="text/javascript">
-		function myFunction() {
-		  document.getElementById("myDropdown").classList.toggle("show");
-		}
-		
-		function filterFunction() {
-		  var input, filter, ul, li, a, i;
-		  input = document.getElementById("myInput");
-		  filter = input.value.toUpperCase();
-		  div = document.getElementById("myDropdown");
-		  a = div.getElementsByTagName("a");
-		  for (i = 0; i < a.length; i++) {
-		    txtValue = a[i].textContent || a[i].innerText;
-		    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-		      a[i].style.display = "";
-		    } else {
-		      a[i].style.display = "none";
-		    }
-		  }
-		}
-	</script>
-
 </body>
 
 </html>
+
+
+
+
