@@ -13,8 +13,16 @@ ul li {
   box-shadow:         12px 0 6px -6px #eee;
 }
 
-.pos-of {
+.pos-OF {
   background-color: #14CCBD;
+}
+
+.pos-P {
+  background-color: #62D96B;
+}
+
+.pos-SS {
+  background-color: #D1F26D;
 }
 
 .top-bar {
