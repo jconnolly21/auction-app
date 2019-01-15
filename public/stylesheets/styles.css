@@ -23,8 +23,16 @@ ul li {
   font-size: 10pt;
 }
 
+.teamname {
+  font-size: 8pt;
+}
+
 .position {
-   text-align: center;
+  text-align: center;
+}
+
+.price {
+  text-align: right;
 }
 
 .roster-table {
