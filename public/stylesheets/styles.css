@@ -17,18 +17,21 @@ ul li {
   background-color: #14CCBD;
   border-radius: 5px;
   height: 20px;
+  width: 20px;
 }
 
 .pos-P {
   background-color: #62D96B;
   border-radius: 5px;
   height: 15px;
+  width: 20px;
 }
 
 .pos-SS {
   background-color: #D1F26D;
   border-radius: 5px;
   height: 10px;
+  width: 15px;
 }
 
 .top-bar {
