@@ -234,7 +234,7 @@ function drawPlayerTable(data, cat, catID) {
 function updateDraftLog(data) {
 	var htmlString = '';
 	var printName = data.name;
-	if (printName.length > 15) {
+	if (printName.length > 12) {
 		printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
 	}
 	htmlString += '<tr><th scope="row">' + data.draftnumber + '.</th><td>' + printName + ' <span class="teamname">(' + data.team + ')</span></td><td class="column-center"><div class="pos-' + data.rosterspot + '"">' + data.rosterspot + '</div></td><td class="column-right">$' + data.price + '</td></tr>';
