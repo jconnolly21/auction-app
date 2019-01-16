@@ -49,6 +49,10 @@ ul li {
   border-color: #eeeeee;
 } 
 
+.small-margin-top {
+  margin-top: 5px;
+}
+
 #draft-log {
   font-size: 10pt;
 }
@@ -114,7 +118,7 @@ ul li {
 }
 
 .margin-below {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .dropbtn {
