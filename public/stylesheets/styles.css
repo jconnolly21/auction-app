@@ -126,6 +126,10 @@ ul li {
   border-color: #eeeeee;
 } 
 
+#big-quantity {
+  height: 40px;
+}
+
 .small-margin-top {
   margin-top: 5px;
 }
