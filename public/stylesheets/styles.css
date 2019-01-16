@@ -14,27 +14,93 @@ ul li {
 }
 
 .pos-OF {
-  background-color: #14CCBD;
+  background-color: #D13913;
   text-align: center;
   border-radius: 5px;
-  height: 19px;
+  height: 18px;
   width: 30px;
+  color: white;
 }
 
 .pos-P {
-  background-color: #62D96B;
+  background-color: #DB2C6F;
   text-align: center;
   border-radius: 5px;
-  height: 19px;
+  height: 18px;
   width: 30px;
+  color: white;
 }
 
 .pos-SS {
-  background-color: #D1F26D;
+  background-color: #8F398F;
   text-align: center;
   border-radius: 5px;
-  height: 19px;
+  height: 18px;
   width: 30px;
+  color: white;
+}
+
+.pos-1B {
+  background-color: #7157D9;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
+}
+
+.pos-2B {
+  background-color: #2965CC;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
+}
+
+.pos-3B {
+  background-color: #00B3A4;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
+}
+
+.pos-C {
+  background-color: #238C2C;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
+}
+
+.pos-U {
+  background-color: #87A629;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
+}
+
+.pos-MI {
+  background-color: #BF8C0A;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
+}
+
+.pos-CI {
+  background-color: #96622D;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
 }
 
 .top-bar {
@@ -76,11 +142,6 @@ ul li {
   border-style: solid;
   border-width: 1px;
   border-color: #eeeeee;
-}
-
-.ranking {
-  margin-top: 10px;
-  text-align: center;
 }
 
 .column-center {
