@@ -11,7 +11,6 @@ The goal of this project is to create an application that assists a player when 
 The flexibility in a web application should allow further customization than what has been available through traditional spreadsheet tools. 
 
 ## TODO: 
-- Populate Postgres with production-scale player data.
 - Enable write-back to Postgres:
 	- Player --> purchasing team, purchasing amount, roster position filled, draft order (which pick #).
 	- Team --> remaining budget.

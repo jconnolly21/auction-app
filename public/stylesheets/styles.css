@@ -15,14 +15,17 @@ ul li {
 
 .pos-OF {
   background-color: #14CCBD;
+  border-radius: 5px;
 }
 
 .pos-P {
   background-color: #62D96B;
+  border-radius: 5px;
 }
 
 .pos-SS {
   background-color: #D1F26D;
+  border-radius: 5px;
 }
 
 .top-bar {
@@ -37,7 +40,7 @@ ul li {
 .bid-box {
   text-align: center;
   padding: 10px;
-  height: 50px;
+  height: 60px;
   width: 100%;
   border-style: solid;
   border-width: 1px;
@@ -59,7 +62,6 @@ ul li {
 
 .ranking {
   margin-top: 10px;
-  width: 100px;
   text-align: center;
 }
 
@@ -81,6 +83,7 @@ ul li {
 
 .stats-table {
   font-size: 10pt;
+  margin-top: 100px;
 }
 
 .player-picked {
