@@ -62,14 +62,12 @@
 								<div class="row">
 									<div class="col">
 										<div class="bid-box">
-											Bid: <input id="bid-quantity" type="number" name="quantity" min="1" max="250">
-											Team: 
+											$<input id="bid-quantity" type="number" name="quantity" min="1" max="250">
 											<select id="bidding-team" class="selectpicker" data-width="90px">
 												{{#each data}}
 											    <option data-subtext='{{display}}'>{{owner}}</option>
 											    {{/each}}
 											</select>
-											Spot:
 											<select id="roster-spot" class="selectpicker" data-width="75px">
 												<option>C</option>
 												<option>1B</option>
