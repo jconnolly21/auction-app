@@ -109,6 +109,10 @@ ul li {
   color: white;
 }
 
+.top-bar h2 {
+  margin-top: 5px;
+}
+
 .center-contents {
   text-align: center;
 }
