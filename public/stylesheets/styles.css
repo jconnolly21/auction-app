@@ -89,6 +89,11 @@ ul li {
   margin-top: 50px;
 }
 
+.main-details {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .player-picked {
   background-color: #D3D3D3;
 }
