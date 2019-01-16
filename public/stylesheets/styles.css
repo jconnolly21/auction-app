@@ -16,16 +16,19 @@ ul li {
 .pos-OF {
   background-color: #14CCBD;
   border-radius: 5px;
+  height: 80%;
 }
 
 .pos-P {
   background-color: #62D96B;
   border-radius: 5px;
+  height: 80%;
 }
 
 .pos-SS {
   background-color: #D1F26D;
   border-radius: 5px;
+  height: 80%;
 }
 
 .top-bar {
@@ -83,7 +86,7 @@ ul li {
 
 .stats-table {
   font-size: 10pt;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .player-picked {
