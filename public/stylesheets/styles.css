@@ -42,12 +42,11 @@ ul li {
 
 .bid-box {
   text-align: center;
-  padding: 10px;
   height: 60px;
   width: 100%;
   border-style: solid;
   border-width: 1px;
-  background-color: #eeeeee;
+  border-color: #eeeeee;
 }
 
 #draft-log {
@@ -61,6 +60,12 @@ ul li {
 .roster-box {
   height: 450px;
   overflow: scroll;
+}
+
+.thin-border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #eeeeee;
 }
 
 .ranking {
