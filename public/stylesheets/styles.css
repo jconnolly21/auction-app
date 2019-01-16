@@ -15,23 +15,26 @@ ul li {
 
 .pos-OF {
   background-color: #14CCBD;
+  text-align: center;
   border-radius: 5px;
   height: 20px;
-  width: 20px;
+  width: 35px;
 }
 
 .pos-P {
   background-color: #62D96B;
+  text-align: center;
   border-radius: 5px;
-  height: 15px;
-  width: 20px;
+  height: 20px;
+  width: 35px;
 }
 
 .pos-SS {
   background-color: #D1F26D;
+  text-align: center;
   border-radius: 5px;
-  height: 10px;
-  width: 15px;
+  height: 20px;
+  width: 35px;
 }
 
 .top-bar {
