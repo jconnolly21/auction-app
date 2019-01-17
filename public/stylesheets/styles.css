@@ -181,6 +181,15 @@ ul li {
   margin-top: 42px;
 }
 
+.player-link {
+  color: #1F4B99;
+}
+
+.player-link {
+  color: #2965CC;
+  text-decoration: none;
+}
+
 .budget-table {
   font-size: 10pt;
   margin-top: 5px;
