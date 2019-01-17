@@ -206,7 +206,8 @@ ul li {
 }
 
 .player-picked {
-  background-color: #D3D3D3;
+  color: #A7B6C2;
+  text-decoration: line-through;
 }
 
 .stat-box {

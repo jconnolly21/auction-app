@@ -246,7 +246,7 @@ function drawPlayerTable(data, cat, catID) {
 		var stat4 = eligiblePlayers[j].stat4;
 		var stat5 = eligiblePlayers[j].stat5;
 
-		if (eligiblePlayers[j].type = "Hitter") {
+		if (eligiblePlayers[j].type == "Hitter") {
 			stat2 = stat2.toFixed(3);
 		} else {
 			stat1 = stat1.toFixed(2);
