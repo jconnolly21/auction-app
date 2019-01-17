@@ -19,15 +19,6 @@ $(document).ready(function() {
 		
 		drawPlayerTable(result.players, 'U', '#hitter-stats');
 		drawPlayerTable(result.players, 'P', '#sp-stats');
-		// drawPlayerTable(result.players, 'RP', '#rp-stats');
-		drawPlayerTable(result.players, '1B', '#fb-stats');
-		drawPlayerTable(result.players, '2B', '#sb-stats');
-		drawPlayerTable(result.players, '3B', '#tb-stats');
-		drawPlayerTable(result.players, 'SS', '#ss-stats');
-		drawPlayerTable(result.players, 'MI', '#mi-stats');
-		drawPlayerTable(result.players, 'CI', '#ci-stats');
-		drawPlayerTable(result.players, 'OF', '#of-stats');
-		drawPlayerTable(result.players, 'C', '#c-stats');
 
 		var firstPlayer;
 
@@ -193,39 +184,16 @@ function updateSimilarPlayers(data, player) {
 
 // data here is a player
 function updatePlayersInTables(data) {
+	var classText = 'player-picked';
+	if (data.ownerid == 1) {
+		classText = 'player-mine';
+	}
 	$("tbody#hitter-stats th").filter(function() {
 	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
 	$("tbody#sp-stats th").filter(function() {
 	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#rp-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#fb-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#sb-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#tb-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#ss-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#mi-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#ci-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#of-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
-	$("tbody#c-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').find('td.player-price').html('$' + data.price);
+	}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
 }
 
 // data here is all players

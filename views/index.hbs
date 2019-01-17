@@ -411,7 +411,19 @@
 										</div>
 									</div>
 									<div class="col-4">
-										<h5>Relievers</h5>
+										<select id="stats-table-position" class="selectpicker" data-width="75px">
+											<option>C</option>
+											<option>1B</option>
+											<option>2B</option>
+											<option>SS</option>
+											<option>3B</option>
+											<option>MI</option>
+											<option>CI</option>
+											<option>OF</option>
+											<option>U</option>
+											<option>SP</option>
+											<option>RP</option>
+										</select>
 										<div class="stat-box">
 											<table class="table table-sm player-table">
 												<thead>
@@ -430,195 +442,6 @@
 												</tbody>
 											</table>
 										</div>
-									</div>
-								</div>
-							</div>
-					</div>
-					<div class="row margin-above">
-							<div class="col">
-								<div class="row">
-									<div class="col-4">
-										<h5>1B</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="fb-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="col-4">
-										<h5>2B</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="sb-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="col-4">
-										<h5>3B</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="tb-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-					</div>
-					<div class="row margin-above">
-							<div class="col">
-								<div class="row">
-									<div class="col-4">
-										<h5>SS</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="ss-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="col-4">
-										<h5>MI</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="mi-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="col-4">
-										<h5>CI</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="ci-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-					</div>
-					<div class="row margin-above">
-							<div class="col">
-								<div class="row">
-									<div class="col-4">
-										<h5>OF</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="of-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="col-4">
-										<h5>C</h5>
-										<div class="stat-box-small">
-											<table class="table table-sm player-table">
-												<thead>
-													<tr>
-												      <th scope="col">Name</th>
-												      <th class="column-center" scope="col">HR</th>
-												      <th class="column-center" scope="col">OBP</th>
-												      <th class="column-center" scope="col">R</th>
-												      <th class="column-center" scope="col">RBI</th>
-												      <th class="column-center" scope="col">SB</th>
-												      <th class="column-center" scope="col">$V</th>
-												      <th class="column-center" scope="col">$P</th>
-												    </tr>
-												</thead>
-												<tbody id="c-stats">
-												</tbody>
-											</table>
-										</div>
-									</div>
-									<div class="col-4">
-										
 									</div>
 								</div>
 							</div>
