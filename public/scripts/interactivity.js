@@ -142,8 +142,9 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 		}
 	}
 
-	var val1, val2, val3, val4, val5;
+	var val1, val2, val3, val4, val5, colAlign;
 	if (valMode) {
+		colAlign = 'column-right';
 		val1 = player.stat1;
 		val2 = player.stat2;
 		val3 = player.stat3;
@@ -156,18 +157,19 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 			val5 = val5.toFixed(2);
 		}
 	} else {
-		val1 = player.value1.toFixed(0);
-		val2 = player.value2.toFixed(0);
-		val3 = player.value3.toFixed(0);
-		val4 = player.value4.toFixed(0);
-		val5 = player.value5.toFixed(0);
+		colAlign = 'column-center';
+		val1 = "$" + player.value1.toFixed(0);
+		val2 = "$" + player.value2.toFixed(0);
+		val3 = "$" + player.value3.toFixed(0);
+		val4 = "$" + player.value4.toFixed(0);
+		val5 = "$" + player.value5.toFixed(0);
 	}
 
 	var htmlString;
 	if (isPicked) {
-		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + val1 + '</td><td class="column-center">$' +  val2 + '</td><td class="column-center">$' + val3 + '</td><td class="column-center">$' + val4 + '</td><td class="column-center">$' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + player.price + '</td>';
+		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="' + colAlign + '">' + val1 + '</td><td class="' + colAlign + '">' +  val2 + '</td><td class="' + colAlign + '">' + val3 + '</td><td class="' + colAlign + '">' + val4 + '</td><td class="' + colAlign + '">' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + player.price + '</td>';
 	} else {
-		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + val1 + '</td><td class="column-center">$' +  val2 + '</td><td class="column-center">$' + val3 + '</td><td class="column-center">$' + val4 + '</td><td class="column-center">$' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price"></td>';
+		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="' + colAlign + '">' + val1 + '</td><td class="' + colAlign + '">' +  val2 + '</td><td class="' + colAlign + '">' + val3 + '</td><td class="' + colAlign + '">' + val4 + '</td><td class="' + colAlign + '">' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price"></td>';
 	}
 
 	$(tableID).filter(function() {
