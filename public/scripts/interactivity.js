@@ -2,6 +2,7 @@
 const PlayersUrl = 'https://frozen-shore-95322.herokuapp.com/players';
 var teams = ['Joe', 'Brian', 'Jim', 'Rich', 'Chris', 'Adam', 'Jody', 'Craig', 'Alan', 'Stu'];
 var draftNumber = 0;
+var allPlayers;
 
 $(document).ready(function() {
 	
@@ -20,7 +21,7 @@ $(document).ready(function() {
 		drawPlayerTable(result.players, 'U', '#hitter-stats');
 		drawPlayerTable(result.players, 'P', '#sp-stats');
 
-		var firstPlayer;
+		var allPlayers = result.players; 
 
 		for(i = 0; i < result.players.length; i++) {
 			if (result.players[i].ownerid == null) { 
@@ -111,6 +112,11 @@ $(document).ready(function() {
 		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
+	});
+
+	$('#stats-table-position').change(function () {
+		var activeTablePos = $('#stats-table-position').find(":selected").text();
+		drawPlayerTable(allPlayers, activeTablePos, "#category-stats")
 	});
 
 });
