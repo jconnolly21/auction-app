@@ -195,6 +195,10 @@ ul li {
   color: #2458B3;
 }
 
+.draft-log-box {
+  height: 750px;
+}
+
 .player-link:visited {
   color: #2458B3;
 }
