@@ -181,15 +181,31 @@ ul li {
   font-size: 10pt;
 }
 
-.player-table tbody {
-  display: block;
-  overflow: scroll;
-  height: 350px;
-  width: 100%;
+.player-table {
+    width: 100%;
 }
+.player-table thead, .player-table tbody, .player-table tr, .player-table td, .player-table th { display: block; }
 
-.player-table thead tr {
-  display: block;
+.player-table tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.player-table thead th {
+    height: 30px;
+    /*text-align: left;*/
+}
+.player-table tbody {
+    height: 120px;
+    overflow-y: auto;
+}
+.player-table thead {
+    /* fallback */
+}
+.player-table tbody td, .player-table thead th {
+    width: 19.2%;
+    float: left;
 }
 
 .stats-table {
