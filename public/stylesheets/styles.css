@@ -144,8 +144,14 @@ ul li {
 }
 
 .roster-box {
-  height: 450px;
+  height: 380px;
   overflow: scroll;
+}
+
+.border-under {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-color: #dddddd;
 }
 
 .thin-border {
