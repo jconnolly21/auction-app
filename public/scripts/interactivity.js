@@ -189,8 +189,8 @@ function updateHitterPitcherBudgets(data) {
 			pRem -= data[i].price;
 		}
 	}
-	$("#hitter-budget").text("Hitter: $" + hRem);
-	$("#pitcher-budget").text("Pitcher: $" + pRem);
+	$("#hitter-budget").text("Hitting: $" + hRem);
+	$("#pitcher-budget").text("Pitching: $" + pRem);
 }
 
 // data here is a single player
