@@ -150,8 +150,8 @@ ul li {
 
 .border-under {
   border-bottom-style: solid;
-  border-bottom-width: 3px;
-  border-color: #dddddd;
+  border-bottom-width: 1px;
+  border-color: #eeeeee;
 }
 
 .thin-border {
