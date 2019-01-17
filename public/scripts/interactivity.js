@@ -430,7 +430,11 @@ function updateBudgets(data) {
 
 // data here is a single player
 function updateDetails(data) {
-	$("#nominated-player").text(data.name);
+	var printName = data.name;
+	if (printName.length > 18) {
+		printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
+	}
+	$("#nominated-player").text(printName);
 	var playerDetails = data.team + ' - ' + data.elig;
 	$("#player-details").text(playerDetails);
 	var suggestedVal = '<b>Suggested Value: $' + data.value.toString(); + '</b>';
