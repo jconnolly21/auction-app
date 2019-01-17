@@ -165,6 +165,15 @@ ul li {
   border-color: #eeeeee;
 }
 
+.thin-border-bottom-right {
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #eeeeee;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #eeeeee;
+}
+
 .column-center {
   text-align: center;
 }
