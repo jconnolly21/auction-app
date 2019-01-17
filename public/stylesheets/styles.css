@@ -230,7 +230,8 @@ ul li {
 
 #active-stats-team {
   margin: 0;
-  height: 25px;
+  height: 15px;
+  font-size: 9pt;
 }
 
 .margin-above {
