@@ -122,7 +122,8 @@ $(document).ready(function() {
 	$('body').on('click', '.player-link', function(e) {
 		var tableID = "#" + $(e.target).parent().parent().parent().attr('id') + " th";
 		var playerName = $(e.target).text();
-		swapStatsValues(tableID, playerName);
+		var isPicked = $(e.target).parent().parent().hasClass('player-picked');
+		swapStatsValues(tableID, playerName, isPicked);
 		e.preventDefault();
 	});
 
@@ -131,19 +132,19 @@ $(document).ready(function() {
 // ---- UI Helper Functions ----
 
 // data here is a single player
-function swapStatsValues(tableID, playerName) {
-	console.log(tableID);
-	console.log(playerName);
+function swapStatsValues(tableID, playerName, isPicked) {
 	var player;
 	for (var i = 0; i < allPlayers.length; i++) {
 		if (allPlayers[i].name == playerName) {
 			player = allPlayers[i];
 		}
 	}
-	console.log(player);
-
-	var htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + player.value1.toFixed(0) + '</td><td class="column-center">$' +  player.value2.toFixed(0) + '</td><td class="column-center">$' + player.value3.toFixed(0) + '</td><td class="column-center">$' + player.value4.toFixed(0) + '</td><td class="column-center">$' + player.value5.toFixed(0) + '</td><td class="column-center">$' + player.value + '</td><td class="column-right player-price">$' + '</td>';
-	console.log(htmlString);
+	var htmlString;
+	if (isPicked) {
+		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + player.value1.toFixed(0) + '</td><td class="column-center">$' +  player.value2.toFixed(0) + '</td><td class="column-center">$' + player.value3.toFixed(0) + '</td><td class="column-center">$' + player.value4.toFixed(0) + '</td><td class="column-center">$' + player.value5.toFixed(0) + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + player.price + '</td>';
+	} else {
+		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + player.value1.toFixed(0) + '</td><td class="column-center">$' +  player.value2.toFixed(0) + '</td><td class="column-center">$' + player.value3.toFixed(0) + '</td><td class="column-center">$' + player.value4.toFixed(0) + '</td><td class="column-center">$' + player.value5.toFixed(0) + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price"></td>';
+	}
 
 	$(tableID).filter(function() {
 	    return $(this).text() == playerName;
