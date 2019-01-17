@@ -124,7 +124,6 @@ $(document).ready(function() {
 		var playerName = $(e.target).text();
 		var isPicked = $(e.target).parent().parent().hasClass('player-picked');
 		var valMode = $(e.target).parent().parent().hasClass('val-mode');
-		console.log(valMode);
 		$(e.target).parent().parent().toggleClass('val-mode');
 		swapStatsValues(tableID, playerName, isPicked, valMode);
 		e.preventDefault();
@@ -151,10 +150,10 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 		val4 = player.stat4;
 		val5 = player.stat5;
 		if (player.type == "Hitter") {
-			stat2 = stat2.toFixed(3);
+			val2 = val2.toFixed(3);
 		} else {
-			stat1 = stat1.toFixed(2);
-			stat5 = stat5.toFixed(2);
+			val1 = val1.toFixed(2);
+			val5 = val5.toFixed(2);
 		}
 	} else {
 		val1 = player.value1.toFixed(0);
