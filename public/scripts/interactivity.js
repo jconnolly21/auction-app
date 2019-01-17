@@ -142,7 +142,7 @@ function swapStatsValues(tableID, playerName) {
 	}
 	console.log(player);
 
-	var htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-right">$' + player.value1.toFixed(0) + '</td><td class="column-right">$' +  player.value2.toFixed(0) + '</td><td class="column-right">$' + player.value3.toFixed(0) + '</td><td class="column-right">$' + player.value4.toFixed(0) + '</td><td class="column-right">$' + player.value5.toFixed(0) + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + '</td>';
+	var htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + player.value1.toFixed(0) + '</td><td class="column-center">$' +  player.value2.toFixed(0) + '</td><td class="column-center">$' + player.value3.toFixed(0) + '</td><td class="column-center">$' + player.value4.toFixed(0) + '</td><td class="column-center">$' + player.value5.toFixed(0) + '</td><td class="column-center">$' + player.value + '</td><td class="column-right player-price">$' + '</td>';
 	console.log(htmlString);
 
 	$(tableID).filter(function() {
