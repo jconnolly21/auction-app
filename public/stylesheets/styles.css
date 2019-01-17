@@ -149,7 +149,7 @@ ul li {
 }
 
 .roster-box {
-  height: 380px;
+  height: 365px;
   overflow: scroll;
 }
 
@@ -290,9 +290,3 @@ ul li {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-
-#active-stats-team {
-  margin: 0;
-  height: 20px !important;
-  font-size: 9pt !important;
-}
