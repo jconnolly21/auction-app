@@ -256,7 +256,11 @@ function drawPlayerTable(data, cat, catID) {
 		if (eligiblePlayers[j].ownerid == null) {
 			htmlString += '<tr class="player-list"><th scope="row"><a class="player-link" href="#">' + eligiblePlayers[j].name + '</a></th><td class="column-right">' + stat1 + '</td><td class="column-right">' + stat2 + '</td><td class="column-right">' + stat3 + '</td><td class="column-right">' + stat4 + '</td><td class="column-right">' + stat5 + '</td><td class="column-right">$' + eligiblePlayers[j].value + '</td><td class="column-right player-price"></td></tr>'; 
 		} else {
-			htmlString += '<tr class="player-list player-picked"><th scope="row"><a class="player-link" href="#">' + eligiblePlayers[j].name + '</a></th><td class="column-right">' + stat1 + '</td><td class="column-right">' + stat2 + '</td><td class="column-right">' + stat3 + '</td><td class="column-right">' + stat4 + '</td><td class="column-right">' + stat5 + '</td><td class="column-right">$' + eligiblePlayers[j].value + '</td><td class="column-right player-price">$' + eligiblePlayers[j].price + '</td></tr>'; 
+			var classText = 'player-picked';
+			if (eligiblePlayers[j].ownerid == 1) {
+				classText = 'player-picked player-mine';
+			} 
+			htmlString += '<tr class="player-list ' + classText + '"><th scope="row"><a class="player-link" href="#">' + eligiblePlayers[j].name + '</a></th><td class="column-right">' + stat1 + '</td><td class="column-right">' + stat2 + '</td><td class="column-right">' + stat3 + '</td><td class="column-right">' + stat4 + '</td><td class="column-right">' + stat5 + '</td><td class="column-right">$' + eligiblePlayers[j].value + '</td><td class="column-right player-price">$' + eligiblePlayers[j].price + '</td></tr>'; 
 		}
 	}
 

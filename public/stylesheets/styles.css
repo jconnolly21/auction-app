@@ -215,6 +215,10 @@ ul li {
   text-decoration: line-through;
 }
 
+.player-mine {
+  background-color: #97F3EB;
+}
+
 .stat-box {
   height: 500px;
   overflow: scroll;
