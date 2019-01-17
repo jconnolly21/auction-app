@@ -124,6 +124,7 @@ $(document).ready(function() {
 		var playerName = $(e.target).text();
 		var isPicked = $(e.target).parent().parent().hasClass('player-picked');
 		var valMode = $(e.target).parent().parent().hasClass('val-mode');
+		console.log(valMode);
 		$(e.target).parent().parent().toggleClass('val-mode');
 		swapStatsValues(tableID, playerName, isPicked, valMode);
 		e.preventDefault();
