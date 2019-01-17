@@ -119,9 +119,45 @@ $(document).ready(function() {
 		drawPlayerTable(allPlayers, activeTablePos, "#category-stats")
 	});
 
+	$('body').on('click', '.player-link', function(e) {
+		var tableID = "#" + $(e.target).parent().parent().parent().attr('id') + " th";
+		var playerName = $(e.target).text();
+		swapStatsValues(tableID, playerName);
+		e.preventDefault();
+	});
+
 });
 
 // ---- UI Helper Functions ----
+
+// data here is a single player
+function swapStatsValues(tableID, playerName) {
+	console.log(tableID);
+	console.log(playerName);
+	var player;
+	for (var i = 0; i < allPlayers.length; i++) {
+		if (allPlayers[i].name == playerName) {
+			player = allPlayers[i];
+		}
+	}
+	console.log(player);
+
+	var htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-right">$' + player.value1.toFixed(0) + '</td><td class="column-right">$' +  player.value2.toFixed(0) + '</td><td class="column-right">$' + player.value3.toFixed(0) + '</td><td class="column-right">$' + player.value4.toFixed(0) + '</td><td class="column-right">$' + player.value5.toFixed(0) + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + '</td>';
+	console.log(htmlString);
+
+	$(tableID).filter(function() {
+	    return $(this).text() == playerName;
+	}).closest("tr").html(htmlString);
+}
+
+// <th scope="row"><a class="player-link" href="#">Mookie Betts</a></th>
+// <td class="column-right">29</td>
+// <td class="column-right">0.385</td>
+// <td class="column-right">115</td>
+// <td class="column-right">92</td>
+// <td class="column-right">26</td>
+// <td class="column-right">$48</td>
+// <td class="column-right player-price">$3</td>
 
 // data here is a single teams roster
 function updateHitterPitcherBudgets(data) {
