@@ -254,6 +254,9 @@ function updatePlayersInTables(data) {
 	$("tbody#sp-stats th").filter(function() {
 	    return $(this).text() == data.name;
 	}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
+	$("tbody#category-stats th").filter(function() {
+	    return $(this).text() == data.name;
+	}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
 }
 
 // data here is all players
@@ -266,6 +269,22 @@ function drawPlayerTable(data, cat, catID) {
 			eligiblePlayers.push(data[i]);
 		}
 	}
+	if (catID == '#category-stats') {
+		var headerHTMLString = '<th scope="col">Name</th>';
+		if (['C','1B','2B','SS','3B','MI','CI','OF','U'].indexOf(cat) != -1) {
+			var hitCats = ['HR','OBP','R','RBI','SB','$V','$P'];
+			for (var i = 0; i < hitCats.length; i++) {
+				headerHTMLString += '<th class="column-center" scope="col">' + hitCats[i] + '</th>';
+			}
+		} else {
+			var pitCats = ['ERA','K','S','W','WHIP','$V','$P'];
+			for (var i = 0; i < pitCats.length; i++) {
+				headerHTMLString += '<th class="column-center" scope="col">' + pitCats[i] + '</th>';
+			}
+		}
+		$('#category-stats').parent().find('thead').find('tr').html(headerHTMLString);
+	}
+
 	var htmlString = '';
 	for (var j = 0; j < eligiblePlayers.length; j++) {
 		var stat1 = eligiblePlayers[j].stat1;
