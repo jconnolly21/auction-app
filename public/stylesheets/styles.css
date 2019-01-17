@@ -220,11 +220,6 @@ ul li {
 }
 
 .stat-box {
-  height: 500px;
-  overflow: scroll;
-}
-
-.stat-box-small {
   height: 300px;
   overflow: scroll;
 }
