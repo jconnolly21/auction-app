@@ -181,6 +181,11 @@ ul li {
   margin-top: 42px;
 }
 
+.budget-table {
+  font-size: 10pt;
+  margin-top: 5px;
+}
+
 .main-details {
   margin-top: 10px;
   margin-left: 10px;
@@ -200,8 +205,8 @@ ul li {
   overflow: scroll;
 }
 
-.margin-below {
-  margin-bottom: 15px;
+.margin-above {
+  margin-top: 25px;
 }
 
 .dropbtn {
