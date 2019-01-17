@@ -228,7 +228,9 @@ ul li {
   background-color: rgb(240,248,255);
 }
 
-
+#active-stats-team {
+  margin: 0;
+}
 
 .margin-above {
   margin-top: 25px;
