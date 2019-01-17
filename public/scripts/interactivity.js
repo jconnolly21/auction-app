@@ -20,6 +20,7 @@ $(document).ready(function() {
 		
 		drawPlayerTable(result.players, 'U', '#hitter-stats');
 		drawPlayerTable(result.players, 'P', '#sp-stats');
+		drawPlayerTable(result.players, 'C', '#category-stats');
 
 		allPlayers = result.players; 
 
