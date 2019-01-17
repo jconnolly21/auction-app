@@ -130,15 +130,17 @@
 										</div>
 										<div class="row">
 											<div class="col">
-												<select id="active-stats-team" class="selectpicker" data-width="90px">
-													{{#each data}}
-													<option data-subtext='{{display}}'>{{owner}}</option>
-													{{/each}}
-												</select>
+												
 												<table class="table">
 													<thead>
 														<tr>
-													      <th scope="col"></th>
+													      <th scope="col">
+													      	<select id="active-stats-team" class="selectpicker" data-width="90px">
+																{{#each data}}
+																<option data-subtext='{{display}}'>{{owner}}</option>
+																{{/each}}
+															</select>
+													      </th>
 													      <th class="column-right" scope="col">HR</th>
 													      <th class="column-right" scope="col">OBP</th>
 													      <th class="column-right" scope="col">R</th>
