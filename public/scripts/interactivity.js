@@ -123,7 +123,9 @@ $(document).ready(function() {
 		var tableID = "#" + $(e.target).parent().parent().parent().attr('id') + " th";
 		var playerName = $(e.target).text();
 		var isPicked = $(e.target).parent().parent().hasClass('player-picked');
-		swapStatsValues(tableID, playerName, isPicked);
+		var valMode = $(e.target).parent().parent().hasClass('val-mode');
+		$(e.target).parent().parent().toggleClass('val-mode');
+		swapStatsValues(tableID, playerName, isPicked, valMode);
 		e.preventDefault();
 	});
 
@@ -132,33 +134,46 @@ $(document).ready(function() {
 // ---- UI Helper Functions ----
 
 // data here is a single player
-function swapStatsValues(tableID, playerName, isPicked) {
+function swapStatsValues(tableID, playerName, isPicked, valMode) {
 	var player;
 	for (var i = 0; i < allPlayers.length; i++) {
 		if (allPlayers[i].name == playerName) {
 			player = allPlayers[i];
 		}
 	}
+
+	var val1, val2, val3, val4, val5;
+	if (valMode) {
+		val1 = player.stat1;
+		val2 = player.stat2;
+		val3 = player.stat3;
+		val4 = player.stat4;
+		val5 = player.stat5;
+		if (player.type == "Hitter") {
+			stat2 = stat2.toFixed(3);
+		} else {
+			stat1 = stat1.toFixed(2);
+			stat5 = stat5.toFixed(2);
+		}
+	} else {
+		val1 = player.value1.toFixed(0);
+		val2 = player.value2.toFixed(0);
+		val3 = player.value3.toFixed(0);
+		val4 = player.value4.toFixed(0);
+		val5 = player.value5.toFixed(0);
+	}
+
 	var htmlString;
 	if (isPicked) {
-		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + player.value1.toFixed(0) + '</td><td class="column-center">$' +  player.value2.toFixed(0) + '</td><td class="column-center">$' + player.value3.toFixed(0) + '</td><td class="column-center">$' + player.value4.toFixed(0) + '</td><td class="column-center">$' + player.value5.toFixed(0) + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + player.price + '</td>';
+		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + val1 + '</td><td class="column-center">$' +  val2 + '</td><td class="column-center">$' + val3 + '</td><td class="column-center">$' + val4 + '</td><td class="column-center">$' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + player.price + '</td>';
 	} else {
-		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + player.value1.toFixed(0) + '</td><td class="column-center">$' +  player.value2.toFixed(0) + '</td><td class="column-center">$' + player.value3.toFixed(0) + '</td><td class="column-center">$' + player.value4.toFixed(0) + '</td><td class="column-center">$' + player.value5.toFixed(0) + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price"></td>';
+		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="column-center">$' + val1 + '</td><td class="column-center">$' +  val2 + '</td><td class="column-center">$' + val3 + '</td><td class="column-center">$' + val4 + '</td><td class="column-center">$' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price"></td>';
 	}
 
 	$(tableID).filter(function() {
 	    return $(this).text() == playerName;
 	}).closest("tr").html(htmlString);
 }
-
-// <th scope="row"><a class="player-link" href="#">Mookie Betts</a></th>
-// <td class="column-right">29</td>
-// <td class="column-right">0.385</td>
-// <td class="column-right">115</td>
-// <td class="column-right">92</td>
-// <td class="column-right">26</td>
-// <td class="column-right">$48</td>
-// <td class="column-right player-price">$3</td>
 
 // data here is a single teams roster
 function updateHitterPitcherBudgets(data) {
