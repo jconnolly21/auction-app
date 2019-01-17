@@ -181,6 +181,17 @@ ul li {
   font-size: 10pt;
 }
 
+.player-table tbody {
+  display: block;
+  overflow: scroll;
+  height: 350px;
+  width: 100%;
+}
+
+.player-table thead tr {
+  display: block;
+}
+
 .stats-table {
   font-size: 10pt;
   margin-top: 42px;
@@ -219,10 +230,7 @@ ul li {
   background-color: rgb(240,248,255);
 }
 
-.stat-box {
-  height: 300px;
-  overflow: scroll;
-}
+
 
 .margin-above {
   margin-top: 25px;
