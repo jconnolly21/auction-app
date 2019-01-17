@@ -21,7 +21,7 @@ $(document).ready(function() {
 		drawPlayerTable(result.players, 'U', '#hitter-stats');
 		drawPlayerTable(result.players, 'P', '#sp-stats');
 
-		var allPlayers = result.players; 
+		allPlayers = result.players; 
 
 		for(i = 0; i < result.players.length; i++) {
 			if (result.players[i].ownerid == null) { 
