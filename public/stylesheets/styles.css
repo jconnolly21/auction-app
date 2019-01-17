@@ -210,6 +210,11 @@ ul li {
   text-decoration: line-through;
 }
 
+.player-picked a {
+  color: #A7B6C2;
+  text-decoration: line-through;
+}
+
 .stat-box {
   height: 500px;
   overflow: scroll;
