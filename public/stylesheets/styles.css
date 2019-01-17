@@ -1,6 +1,5 @@
 .app-window {
   width: 90%;
-  height: 100%;
   margin: auto;
 }
 
@@ -206,6 +205,9 @@ ul li {
 }
 
 .budget-table {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #eee;
   font-size: 10pt;
   margin-top: 5px;
 }
