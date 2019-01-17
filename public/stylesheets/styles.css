@@ -200,6 +200,10 @@ ul li {
   text-decoration: none;
 }
 
+.player-link:visited {
+  color: #1F4B99;
+}
+
 .budget-table {
   font-size: 10pt;
   margin-top: 5px;
