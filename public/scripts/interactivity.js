@@ -44,16 +44,17 @@ $(document).ready(function() {
 				updateDraftLog(result.players[i]);
 			}
 		}
-		updateDetails(firstPlayer);
-		updateStatsRankings(firstPlayer);
-		updateSimilarPlayers(availablePlayers, firstPlayer);
-		updatePositionOptions(firstPlayer);
 
 		draftNumber += 1;
 		updateNominateList(availablePlayers);
 		updateBudgets(rosters);
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
+
+		updateDetails(firstPlayer);
+		updateStatsRankings(firstPlayer);
+		updateSimilarPlayers(availablePlayers, firstPlayer);
+		updatePositionOptions(firstPlayer);
 	});
 
 	$("#nominate-list").change(function() {
