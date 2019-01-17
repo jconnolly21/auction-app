@@ -46,6 +46,7 @@ $(document).ready(function() {
 		updateBudgets(rosters);
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
+		updateHitterPitcherBudgets(rosters[0]);
 	});
 
 	$("#nominate-list").change(function() {
@@ -92,6 +93,8 @@ $(document).ready(function() {
 		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
+
+		updateHitterPitcherBudgets(rosters[0]);
 	});
 
 	$('body').on('click', '#pos-switcher', function(e) {
@@ -122,6 +125,21 @@ $(document).ready(function() {
 });
 
 // ---- UI Helper Functions ----
+
+// data here is a single teams roster
+function updateHitterPitcherBudgets(data) {
+	var hRem = 156;
+	var pRem = 104;
+	for (var i = 0; i < data.length; i++) {
+		if (data[i].type == "Hitter") {
+			hRem -= data[i].price;
+		} else {
+			pRem -= data[i].price;
+		}
+	}
+	$("#hitter-budget").text("Hitter: $" + hRem);
+	$("#pitcher-budget").text("Pitcher: $" + pRem);
+}
 
 // data here is a single player
 function updatePositionOptions(data) {
