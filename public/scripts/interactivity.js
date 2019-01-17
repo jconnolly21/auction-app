@@ -34,10 +34,6 @@ $(document).ready(function() {
 		for(i = 0; i < result.players.length; i++) {
 			if (result.players[i].ownerid == null) { 
 				availablePlayers.push(result.players[i]);
-				var playerNominated = $('#nominate-list').find(":selected").text();
-				if (result.players[i].name == playerNominated) {
-					firstPlayer = result.players[i];
-				}
 			} else {
 				draftNumber = Math.max(draftNumber, result.players[i].draftnumber)
 				rosters[result.players[i].ownerid - 1].push(result.players[i]);
@@ -50,11 +46,6 @@ $(document).ready(function() {
 		updateBudgets(rosters);
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
-
-		updateDetails(firstPlayer);
-		updateStatsRankings(firstPlayer);
-		updateSimilarPlayers(availablePlayers, firstPlayer);
-		updatePositionOptions(firstPlayer);
 	});
 
 	$("#nominate-list").change(function() {
