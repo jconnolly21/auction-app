@@ -206,6 +206,7 @@ ul li {
 
 #draft-log-box {
   height: 710px;
+  overflow: scroll;
 }
 
 .player-link:visited {
