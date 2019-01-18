@@ -157,17 +157,17 @@ function swapStatsValuesTotals(valMode, data) {
 		var teamTotals = [0,0,0,0,0,0,0,0,0,0];
 		for (var i = 0; i < data.length; i++) {
 			if (data[i].type == 'Hitter'){
-				teamTotals[0] += data[i].value1;
-				teamTotals[1] += data[i].value2;
-				teamTotals[2] += data[i].value3;
-				teamTotals[3] += data[i].value4;
-				teamTotals[4] += data[i].value5;
+				teamTotals[0] += '$' + data[i].value1.toFixed(0);
+				teamTotals[1] += '$' + data[i].value2.toFixed(0);
+				teamTotals[2] += '$' + data[i].value3.toFixed(0);
+				teamTotals[3] += '$' + data[i].value4.toFixed(0);
+				teamTotals[4] += '$' + data[i].value5.toFixed(0);
 			} else {
-				teamTotals[5] += data[i].value1;
-				teamTotals[6] += data[i].value2;
-				teamTotals[7] += data[i].value3;
-				teamTotals[8] += data[i].value4;
-				teamTotals[9] += data[i].value5;
+				teamTotals[5] += '$' + data[i].value1.toFixed(0);
+				teamTotals[6] += '$' + data[i].value2.toFixed(0);
+				teamTotals[7] += '$' + data[i].value3.toFixed(0);
+				teamTotals[8] += '$' + data[i].value4.toFixed(0);
+				teamTotals[9] += '$' + data[i].value5.toFixed(0);
 			}
 		}
 		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
@@ -175,7 +175,7 @@ function swapStatsValuesTotals(valMode, data) {
 			htmlString += '<td class="column-right">' + teamTotals[i] + '</td>';
 		}
 		$('#team-stats').html(htmlString);
-		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td>')
+		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td>')
 	}	
 }
 
