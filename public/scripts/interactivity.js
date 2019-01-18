@@ -156,18 +156,19 @@ function swapStatsValuesTotals(valMode, data) {
 	} else {
 		var teamTotals = [0,0,0,0,0,0,0,0,0,0];
 		for (var i = 0; i < data.length; i++) {
+			var priceMultiplier = data[i].value / data[i].price;
 			if (data[i].type == 'Hitter'){
-				teamTotals[0] += data[i].value1;
-				teamTotals[1] += data[i].value2;
-				teamTotals[2] += data[i].value3;
-				teamTotals[3] += data[i].value4;
-				teamTotals[4] += data[i].value5;
+				teamTotals[0] += data[i].value1 * priceMultiplier;
+				teamTotals[1] += data[i].value2 * priceMultiplier;
+				teamTotals[2] += data[i].value3 * priceMultiplier;
+				teamTotals[3] += data[i].value4 * priceMultiplier;
+				teamTotals[4] += data[i].value5 * priceMultiplier;
 			} else {
-				teamTotals[5] += data[i].value1;
-				teamTotals[6] += data[i].value2;
-				teamTotals[7] += data[i].value3;
-				teamTotals[8] += data[i].value4;
-				teamTotals[9] += data[i].value5;
+				teamTotals[5] += data[i].value1 * priceMultiplier;
+				teamTotals[6] += data[i].value2 * priceMultiplier;
+				teamTotals[7] += data[i].value3 * priceMultiplier;
+				teamTotals[8] += data[i].value4 * priceMultiplier;
+				teamTotals[9] += data[i].value5 * priceMultiplier;
 			}
 		}
 		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
@@ -178,18 +179,6 @@ function swapStatsValuesTotals(valMode, data) {
 		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td>')
 	}	
 }
-
-// <th scope="row">Targets</th>
-// <td class="column-right">300</td>
-// <td class="column-right">0.340</td>
-// <td class="column-right">1000</td>
-// <td class="column-right">950</td>
-// <td class="column-right">125</td>
-// <td class="column-right">3.60</td>
-// <td class="column-right">1300</td>
-// <td class="column-right">75</td>
-// <td class="column-right">90</td>
-// <td class="column-right">1.20</td>
 
 // data here is a single player
 function swapStatsValues(tableID, playerName, isPicked, valMode) {
