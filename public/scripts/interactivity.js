@@ -131,8 +131,8 @@ $(document).ready(function() {
 	});
 
 	$('body').on('click', '#swap-vals-stats', function(e) {
-		var valMode = $(e.target).hasClass('val-mode');
-		$(e.target).toggleClass('val-mode');
+		var valMode = $(e.target).parent().parent().parent().hasClass('val-mode');
+		$(e.target).parent().parent().parent().toggleClass('val-mode');
 
 		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
