@@ -268,6 +268,8 @@ function drawPlayerTable(data, cat, catID) {
 		posArr = data[i].elig.split(',');
 		if (posArr.indexOf(cat) != -1) {
 			eligiblePlayers.push(data[i]);
+		} else if (cat == 'P' && data[i].type == 'Pitcher') {
+			eligiblePlayers.push(data[i]);
 		}
 	}
 	if (catID == '#category-stats') {
@@ -332,7 +334,11 @@ function updateRosterTable(data) {
 	var filledBy = new Array(23).fill(' ');
 
 	for (var i = 0; i < data.length; i++) {
-		var pos = positions.indexOf(data[i].rosterspot);
+		var cleanRosSpot = data[i].rosterspot;
+		if (cleanRosSpot == 'RP' || cleanRosSpot == 'SP') {
+			cleanRosSpot = 'P';
+		}
+		var pos = positions.indexOf(cleanRosSpot);
 		positions[pos] += '*';
 		filledBy[pos] = data[i];
 	}
