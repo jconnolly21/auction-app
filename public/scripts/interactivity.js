@@ -136,7 +136,7 @@ $(document).ready(function() {
 
 		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
-		var activeRoster = rosters[activeRosterTeamIndex]
+		var activeRoster = rosters[activeStatsTeamIndex]
 
 		swapStatsValuesTotals(valMode, activeRoster);
 		e.preventDefault();
