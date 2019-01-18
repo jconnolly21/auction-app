@@ -156,7 +156,7 @@ function swapStatsValuesTotals(valMode, data) {
 	} else {
 		var teamTotals = [0,0,0,0,0,0,0,0,0,0];
 		for (var i = 0; i < data.length; i++) {
-			var priceMultiplier = data[i].value / data[i].price;
+			var priceMultiplier = data[i].price / data[i].value;
 			if (data[i].type == 'Hitter'){
 				teamTotals[0] += data[i].value1 * priceMultiplier;
 				teamTotals[1] += data[i].value2 * priceMultiplier;
