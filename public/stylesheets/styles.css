@@ -227,6 +227,19 @@ ul li {
   text-decoration: none;
 }
 
+#swap-vals-stats {
+  color: #245BB3;
+}
+
+#swap-vals-stats:visited {
+  color: #245BB3;
+}
+
+#swap-vals-stats:hover {
+  color: #669EFF;
+  text-decoration: none;
+}
+
 .budget-table {
   border-style: solid;
   border-width: 1px;
