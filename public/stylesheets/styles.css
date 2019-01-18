@@ -27,7 +27,16 @@ ul li {
   color: white;
 }
 
-.pos-P {
+.pos-SP {
+  background-color: #DB2C6F;
+  text-align: center;
+  border-radius: 5px;
+  height: 18px;
+  width: 30px;
+  color: white;
+}
+
+.pos-RP {
   background-color: #DB2C6F;
   text-align: center;
   border-radius: 5px;
