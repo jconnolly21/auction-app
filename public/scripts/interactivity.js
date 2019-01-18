@@ -130,9 +130,66 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
+	$('body').on('click', '#swap-vals-stats', function(e) {
+		var valMode = $(e.target).hasClass('val-mode');
+		$(e.target).toggleClass('val-mode');
+
+		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
+		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
+		var activeRoster = rosters[activeRosterTeamIndex]
+
+		swapStatsValuesTotals(valMode, activeRoster);
+		e.preventDefault();
+	});
+
 });
 
 // ---- UI Helper Functions ----
+
+// data here is a single roster
+function swapStatsValuesTotals(valMode, data) {
+	var vals = new Array(10);
+
+	if (valMode) {
+		updateTeamTotals(data);
+		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">300</td><td class="column-right">0.340</td><td class="column-right">1000</td><td class="column-right">950</td><td class="column-right">125</td><td class="column-right">3.60</td><td class="column-right">1300</td><td class="column-right">75</td><td class="column-right">90</td><td class="column-right">1.20</td>');
+	} else {
+		var teamTotals = [0,0,0,0,0,0,0,0,0,0];
+		for (var i = 0; i < data.length; i++) {
+			if (data[i].type == 'Hitter'){
+				teamTotals[0] += data[i].value1;
+				teamTotals[1] += data[i].value2;
+				teamTotals[2] += data[i].value3;
+				teamTotals[3] += data[i].value4;
+				teamTotals[4] += data[i].value5;
+			} else {
+				teamTotals[5] += data[i].value1;
+				teamTotals[6] += data[i].value2;
+				teamTotals[7] += data[i].value3;
+				teamTotals[8] += data[i].value4;
+				teamTotals[9] += data[i].value5;
+			}
+		}
+		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
+		for (var i = 0; i < teamTotals.length; i++) {
+			htmlString += '<td class="column-right">' + teamTotals[i] + '</td>';
+		}
+		$('#team-stats').html(htmlString);
+		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$31.20</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td><td class="column-right">$20.80</td>')
+	}	
+}
+
+// <th scope="row">Targets</th>
+// <td class="column-right">300</td>
+// <td class="column-right">0.340</td>
+// <td class="column-right">1000</td>
+// <td class="column-right">950</td>
+// <td class="column-right">125</td>
+// <td class="column-right">3.60</td>
+// <td class="column-right">1300</td>
+// <td class="column-right">75</td>
+// <td class="column-right">90</td>
+// <td class="column-right">1.20</td>
 
 // data here is a single player
 function swapStatsValues(tableID, playerName, isPicked, valMode) {
@@ -393,7 +450,7 @@ function updateTeamTotals(data) {
 			totalAb += data[i].countstat;
 		}
 	}
-	var htmlString = '<th scope="row">Totals</th>';
+	var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
 	for (var i = 0; i < teamTotals.length; i++) {
 		htmlString += '<td class="column-right">' + teamTotals[i] + '</td>';
 	}
