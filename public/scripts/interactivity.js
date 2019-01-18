@@ -370,7 +370,11 @@ function updateDraftLog(data) {
 	if (printName.length > 12) {
 		printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
 	}
-	htmlString += '<tr><th scope="row">' + data.draftnumber + '.</th><td>' + printName + ' <span class="teamname">(' + data.team + ')</span></td><td class="column-center"><div class="pos-' + data.rosterspot + '""><b>' + data.rosterspot + '</b></div></td><td class="column-right">$' + data.price + '</td></tr>';
+	var draftNumClean = data.draftnumber;
+	if (draftNumClean == 0) {
+		draftNumClean = 'K';
+	}
+	htmlString += '<tr><th scope="row">' + draftNumClean + '.</th><td>' + printName + ' <span class="teamname">(' + data.team + ')</span></td><td class="column-center"><div class="pos-' + data.rosterspot + '""><b>' + data.rosterspot + '</b></div></td><td class="column-right">$' + data.price + '</td></tr>';
 	$('#draft-log').prepend(htmlString);
 }
 
