@@ -176,7 +176,7 @@ function swapStatsValuesTotals(valMode, data) {
 			htmlString += '<td class="column-right">$' + teamTotals[i].toFixed(0) + '</td>';
 		}
 		$('#team-stats').html(htmlString);
-		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$32</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td><td class="column-right">$20</td>')
+		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$18</td><td class="column-right">$18</td><td class="column-right">$18</td><td class="column-right">$18</td><td class="column-right">$18</td>')
 	}	
 }
 
