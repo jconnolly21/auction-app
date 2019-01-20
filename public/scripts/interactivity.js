@@ -15,6 +15,9 @@ $(document).ready(function() {
 	// Available Players array
 	var availablePlayers = [];
 
+	$(function () {
+  		$('[data-toggle="popover"]').popover()
+	});
 	
 	$.getJSON(PlayersUrl, function(result){
 		
