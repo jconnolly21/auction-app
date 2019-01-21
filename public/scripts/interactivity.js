@@ -495,7 +495,7 @@ function updateDetails(data) {
 	}
 	$("#nominated-player").text(printName);
 	var playerDetails = data.team + ' - ' + data.elig;
-	$("#player-details").text(playerDetails);
+	$("#player-details").text(playerDetails + ' ');
 	var suggestedVal = '<b>Suggested Value: $' + data.value.toString(); + '</b>';
 	$("#suggested-val").html(suggestedVal);
 }
