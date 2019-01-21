@@ -14,10 +14,6 @@ $(document).ready(function() {
 
 	// Available Players array
 	var availablePlayers = [];
-
-	$(function () {
-  		$('[data-toggle="popover"]').popover()
-	});
 	
 	$.getJSON(PlayersUrl, function(result){
 		
@@ -505,6 +501,10 @@ function updateDetails(data) {
 	$("#player-details").text(playerDetails + ' ');
 	var suggestedVal = '<b>Suggested Value: $' + data.value.toString(); + '</b>';
 	$("#suggested-val").html(suggestedVal);
+
+	$(function () {
+  		$('[data-toggle="popover"]').popover()
+	});
 }
 
 // data here is a single player
