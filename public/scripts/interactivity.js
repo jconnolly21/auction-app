@@ -493,6 +493,13 @@ function updateDetails(data) {
 	if (printName.length > 18) {
 		printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
 	}
+	var notesSection;
+	if (data.notes) {
+		notesSection = '<a href="#" data-toggle="popover" title="Player Notes" data-content="' + date.notes + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+	} else {
+		notesSection = '<a href="#" data-toggle="popover" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+	}
+	
 	$("#nominated-player").text(printName);
 	var playerDetails = data.team + ' - ' + data.elig;
 	$("#player-details").text(playerDetails + ' ');
