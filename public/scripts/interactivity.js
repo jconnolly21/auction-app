@@ -491,9 +491,9 @@ function updateDetails(data) {
 	}
 	var notesSection;
 	if (data.notes) {
-		notesSection = ' <a href="#" data-toggle="popover" title="Player Notes" data-content="' + data.notes + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="' + data.notes + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
 	} else {
-		notesSection = ' <a href="#" data-toggle="popover" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
 	}
 	
 	$("#nominated-player").html(printName + notesSection);
@@ -503,7 +503,7 @@ function updateDetails(data) {
 	$("#suggested-val").html(suggestedVal);
 
 	$(function () {
-  		$('[data-toggle="popover"]').popover()
+  		$('[data-toggle="popover"]').popover({trigger: 'focus'})
 	});
 }
 
