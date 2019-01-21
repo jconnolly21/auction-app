@@ -495,12 +495,12 @@ function updateDetails(data) {
 	}
 	var notesSection;
 	if (data.notes) {
-		notesSection = '<a href="#" data-toggle="popover" title="Player Notes" data-content="' + date.notes + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+		notesSection = ' <a href="#" data-toggle="popover" title="Player Notes" data-content="' + data.notes + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
 	} else {
-		notesSection = '<a href="#" data-toggle="popover" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+		notesSection = ' <a href="#" data-toggle="popover" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
 	}
 	
-	$("#nominated-player").text(printName);
+	$("#nominated-player").html(printName + notesSection);
 	var playerDetails = data.team + ' - ' + data.elig;
 	$("#player-details").text(playerDetails + ' ');
 	var suggestedVal = '<b>Suggested Value: $' + data.value.toString(); + '</b>';
