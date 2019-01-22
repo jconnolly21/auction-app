@@ -199,7 +199,7 @@ ul li {
   font-size: 10pt;
 }
 
-.green-table th {
+.green-table thead {
   background-color: #3DCC91;
 }
 
@@ -252,7 +252,7 @@ ul li {
   margin-top: 5px;
 }
 
-.budget-table th {
+.budget-table thead {
   background-color: #FFB366;
 }
 
