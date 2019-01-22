@@ -199,6 +199,10 @@ ul li {
   font-size: 10pt;
 }
 
+.player-table thead {
+  background-color: #F5F8FA;
+}
+
 .stats-table {
   font-size: 10pt;
   margin-top: 42px;
