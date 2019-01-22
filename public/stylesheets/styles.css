@@ -199,6 +199,10 @@ ul li {
   font-size: 10pt;
 }
 
+.green-table th {
+  background-color: #3DCC91;
+}
+
 .stats-table {
   font-size: 10pt;
   margin-top: 42px;
@@ -246,6 +250,10 @@ ul li {
   border-color: #eee;
   font-size: 10pt;
   margin-top: 5px;
+}
+
+.budget-table th {
+  background-color: #FFB366;
 }
 
 .main-details {
