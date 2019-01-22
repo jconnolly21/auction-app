@@ -175,7 +175,7 @@ function swapStatsValuesTotals(valMode, data) {
 			htmlString += '<td class="column-right">$' + teamTotals[i].toFixed(0) + '</td>';
 		}
 		$('#team-stats').html(htmlString);
-		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$34</td><td class="column-right">$18</td><td class="column-right">$18</td><td class="column-right">$18</td><td class="column-right">$18</td><td class="column-right">$18</td>')
+		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$35</td><td class="column-right">$21</td><td class="column-right">$35</td><td class="column-right">$30</td><td class="column-right">$27</td><td class="column-right">$22</td><td class="column-right">$18</td><td class="column-right">$22</td><td class="column-right">$25</td><td class="column-right">$26</td>');
 	}	
 }
 
@@ -225,8 +225,8 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 
 // data here is a single teams roster
 function updateHitterPitcherBudgets(data) {
-	var hRem = 156;
-	var pRem = 104;
+	var hRem = 148;
+	var pRem = 112;
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].type == "Hitter") {
 			hRem -= data[i].price;
