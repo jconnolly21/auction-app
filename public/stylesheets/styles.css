@@ -199,13 +199,13 @@ ul li {
   font-size: 10pt;
 }
 
-.green-table thead {
-  background-color: #D8E1E8;
-}
-
 .stats-table {
   font-size: 10pt;
   margin-top: 42px;
+}
+
+.stats-table thead {
+  background-color: #F5F8FA;
 }
 
 .stats-table-fixed {
@@ -253,7 +253,7 @@ ul li {
 }
 
 .budget-table thead {
-  background-color: #D8E1E8;
+  background-color: #F5F8FA;
 }
 
 .main-details {
