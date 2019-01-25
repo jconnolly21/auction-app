@@ -50,6 +50,7 @@ $(document).ready(function() {
 				updateStatsRankings(availablePlayers[i]);
 				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
 				updatePositionOptions(availablePlayers[i]);
+				$('#bid-quantity').val(availablePlayers[i].value);
 			}
 		}
 	});
