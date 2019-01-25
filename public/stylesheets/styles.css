@@ -19,7 +19,7 @@ ul li {
 }
 
 .pos-OF {
-  background-color: #D13913;
+  background-color: #669EFF;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -28,7 +28,7 @@ ul li {
 }
 
 .pos-SP {
-  background-color: #DB2C6F;
+  background-color: #29A634;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -37,7 +37,7 @@ ul li {
 }
 
 .pos-RP {
-  background-color: #DB2C6F;
+  background-color: #00B3A4;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -46,7 +46,7 @@ ul li {
 }
 
 .pos-SS {
-  background-color: #8F398F;
+  background-color: #1F4B99;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -55,7 +55,7 @@ ul li {
 }
 
 .pos-1B {
-  background-color: #7157D9;
+  background-color: #8F398F;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -73,7 +73,7 @@ ul li {
 }
 
 .pos-3B {
-  background-color: #00B3A4;
+  background-color: #D13913;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -82,7 +82,7 @@ ul li {
 }
 
 .pos-C {
-  background-color: #238C2C;
+  background-color: #DB2C6F;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -91,7 +91,7 @@ ul li {
 }
 
 .pos-U {
-  background-color: #87A629;
+  background-color: #96622D;
   text-align: center;
   border-radius: 5px;
   height: 18px;
@@ -109,7 +109,7 @@ ul li {
 }
 
 .pos-CI {
-  background-color: #96622D;
+  background-color: #9BBF30;
   text-align: center;
   border-radius: 5px;
   height: 18px;
