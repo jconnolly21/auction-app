@@ -66,9 +66,9 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 
 	var htmlString;
 	if (isPicked) {
-		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="' + colAlign + '">' + val1 + '</td><td class="' + colAlign + '">' +  val2 + '</td><td class="' + colAlign + '">' + val3 + '</td><td class="' + colAlign + '">' + val4 + '</td><td class="' + colAlign + '">' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price">$' + player.price + '</td>';
+		htmlString = '<th class="big-col" scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="small-col ' + colAlign + '">' + val1 + '</td><td class="small-col ' + colAlign + '">' +  val2 + '</td><td class="small-col ' + colAlign + '">' + val3 + '</td><td class="small-col ' + colAlign + '">' + val4 + '</td><td class="small-col ' + colAlign + '">' + val5 + '</td><td class="small-col column-right">$' + player.value + '</td><td class="small-col column-right player-price">$' + player.price + '</td>';
 	} else {
-		htmlString = '<th scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="' + colAlign + '">' + val1 + '</td><td class="' + colAlign + '">' +  val2 + '</td><td class="' + colAlign + '">' + val3 + '</td><td class="' + colAlign + '">' + val4 + '</td><td class="' + colAlign + '">' + val5 + '</td><td class="column-right">$' + player.value + '</td><td class="column-right player-price"></td>';
+		htmlString = '<th class="big-col" scope="row"><a class="player-link" href="#">' + player.name + '</a></th><td class="small-col ' + colAlign + '">' + val1 + '</td><td class="small-col ' + colAlign + '">' +  val2 + '</td><td class="small-col ' + colAlign + '">' + val3 + '</td><td class="small-col ' + colAlign + '">' + val4 + '</td><td class="small-col ' + colAlign + '">' + val5 + '</td><td class="small-col column-right">$' + player.value + '</td><td class="small-col column-right player-price"></td>';
 	}
 
 	$(tableID).filter(function() {
