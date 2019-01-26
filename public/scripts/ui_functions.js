@@ -43,7 +43,7 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 
 	var val1, val2, val3, val4, val5, colAlign;
 	if (valMode) {
-		colAlign = 'column-right';
+		colAlign = 'column-center';
 		val1 = player.stat1;
 		val2 = player.stat2;
 		val3 = player.stat3;
