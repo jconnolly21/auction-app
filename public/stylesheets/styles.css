@@ -203,6 +203,38 @@ ul li {
   background-color: #F5F8FA;
 }
 
+.player-table {
+    width: 100% 
+}
+
+.player-table > thead,
+.player-table > tbody,
+.player-table > thead > tr,
+.player-table > tbody > tr,
+.player-table > thead > tr > th,
+.player-table > tbody > tr > td {
+    display: block;
+}
+
+.player-table > tbody > tr:after,
+.player-table > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.player-table > tbody {
+    overflow-y: scroll;
+    height: 350px;
+}
+
+.player-table > tbody > tr > td,
+.player-table > thead > tr > th {
+    width: 12%;
+    float: left;
+}
+
 .stats-table {
   font-size: 10pt;
   margin-top: 42px;
@@ -212,10 +244,10 @@ ul li {
   background-color: #F5F8FA;
 }
 
-.stats-table-fixed {
+/*.stats-table-fixed {
   overflow: scroll;
   height: 350px;
-}
+}*/
 
 .player-link {
   color: #2458B3;
