@@ -202,13 +202,13 @@ function drawPlayerTable(data, cat, catID) {
 		}
 
 		if (eligiblePlayers[j].ownerid == null) {
-			htmlString += '<tr class="player-list"><th class="big-col" scope="row"><a class="player-link" href="#">' + eligiblePlayers[j].name + '</a></th><td class="small-col column-right">' + stat1 + '</td><td class="small-col column-right">' + stat2 + '</td><td class="small-col column-right">' + stat3 + '</td><td class="small-col column-right">' + stat4 + '</td><td class="small-col column-right">' + stat5 + '</td><td class="small-col column-right">$' + eligiblePlayers[j].value + '</td><td class="small-col column-right player-price"></td></tr>'; 
+			htmlString += '<tr class="player-list"><th class="big-col" scope="row"><a class="player-link" href="#">' + eligiblePlayers[j].name + '</a></th><td class="small-col column-center">' + stat1 + '</td><td class="small-col column-center">' + stat2 + '</td><td class="small-col column-center">' + stat3 + '</td><td class="small-col column-center">' + stat4 + '</td><td class="small-col column-center">' + stat5 + '</td><td class="small-col column-center">$' + eligiblePlayers[j].value + '</td><td class="small-col column-center player-price"></td></tr>'; 
 		} else {
 			var classText = 'player-picked';
 			if (eligiblePlayers[j].ownerid == 1) {
 				classText = 'player-picked player-mine';
 			} 
-			htmlString += '<tr class="player-list ' + classText + '"><th class="big-col" scope="row"><a class="player-link" href="#">' + eligiblePlayers[j].name + '</a></th><td class="small-col column-right">' + stat1 + '</td><td class="small-col column-right">' + stat2 + '</td><td class="small-col column-right">' + stat3 + '</td><td class="small-col column-right">' + stat4 + '</td><td class="small-col column-right">' + stat5 + '</td><td class="small-col column-right">$' + eligiblePlayers[j].value + '</td><td class="small-col column-right player-price">$' + eligiblePlayers[j].price + '</td></tr>'; 
+			htmlString += '<tr class="player-list ' + classText + '"><th class="big-col" scope="row"><a class="player-link" href="#">' + eligiblePlayers[j].name + '</a></th><td class="small-col column-center">' + stat1 + '</td><td class="small-col column-center">' + stat2 + '</td><td class="small-col column-center">' + stat3 + '</td><td class="small-col column-center">' + stat4 + '</td><td class="small-col column-center">' + stat5 + '</td><td class="small-col column-center">$' + eligiblePlayers[j].value + '</td><td class="small-col column-center player-price">$' + eligiblePlayers[j].price + '</td></tr>'; 
 		}
 	}
 
