@@ -226,7 +226,7 @@ ul li {
 
 .player-table > tbody {
     overflow-y: scroll;
-    height: 350px;
+    height: 325px;
 }
 
 .big-col {
@@ -324,10 +324,6 @@ ul li {
   font-size: 16px;
   border: none;
   cursor: pointer;
-}
-
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-  background-color: #ffffdd;
 }
 
 /* Dropdown button on hover & focus */
