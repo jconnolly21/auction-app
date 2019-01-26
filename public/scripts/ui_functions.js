@@ -171,16 +171,16 @@ function drawPlayerTable(data, cat, catID) {
 		}
 	}
 	if (catID == '#category-stats') {
-		var headerHTMLString = '<th scope="col">Name</th>';
+		var headerHTMLString = '<th class="big-col" scope="col">Name</th>';
 		if (['C','1B','2B','SS','3B','MI','CI','OF','U'].indexOf(cat) != -1) {
 			var hitCats = ['HR','OBP','R','RBI','SB','$V','$P'];
 			for (var i = 0; i < hitCats.length; i++) {
-				headerHTMLString += '<th class="column-center" scope="col">' + hitCats[i] + '</th>';
+				headerHTMLString += '<th class="small-col column-center" scope="col">' + hitCats[i] + '</th>';
 			}
 		} else {
 			var pitCats = ['ERA','K','S','W','WHIP','$V','$P'];
 			for (var i = 0; i < pitCats.length; i++) {
-				headerHTMLString += '<th class="column-center" scope="col">' + pitCats[i] + '</th>';
+				headerHTMLString += '<th class="small-col column-center" scope="col">' + pitCats[i] + '</th>';
 			}
 		}
 		$('#category-stats').parent().find('thead').find('tr').html(headerHTMLString);
