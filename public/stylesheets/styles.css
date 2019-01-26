@@ -303,12 +303,10 @@ ul li {
 
 .player-picked {
   color: #A7B6C2 !important;
-  text-decoration: line-through;
 }
 
 .player-picked a {
   color: #A7B6C2 !important;
-  text-decoration: line-through;
 }
 
 .player-mine {
