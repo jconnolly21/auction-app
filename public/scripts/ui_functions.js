@@ -50,7 +50,7 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 		val4 = player.stat4;
 		val5 = player.stat5;
 		if (player.type == "Hitter") {
-			val2 = val2.toFixed(3);
+			val2 = val2.toFixed(3).toString().substring(1);
 		} else {
 			val1 = val1.toFixed(2);
 			val5 = val5.toFixed(2);
