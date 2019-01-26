@@ -229,10 +229,14 @@ ul li {
     height: 350px;
 }
 
-.player-table > tbody > tr > td,
-.player-table > thead > tr > th {
-    width: 12%;
-    float: left;
+.big-col {
+  width: 40%;
+  float: left;
+}
+
+.small-col {
+  width: 8%;
+  float: left;
 }
 
 .stats-table {
