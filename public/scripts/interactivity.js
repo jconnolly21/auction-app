@@ -16,7 +16,7 @@ $(document).ready(function() {
 	// Available Players array
 	var availablePlayers = [];
 	
-	$.getJSON(RotochampUrl, function(result){
+	$.getJSON(SteamerUrl, function(result){
 		
 		allPlayers = result.players; 
 
