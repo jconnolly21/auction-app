@@ -41,7 +41,7 @@ router.get('/players', function(req, res, next) {
   	} else {
   		console.log('Successfully connected to db from js req.')
       var queryString = 'select a.name, a.type, a.team, a.elig, a.stat1, a.stat2, a.stat3, a.stat4, a.stat5, a.countstat, b.price, b.ownerid, b.rosterspot, b.draftnumber, c.note from (steamer as a LEFT JOIN rosters as b on a.name = b.name) LEFT JOIN playernotes as c on a.name = c.name';
-  		client.query('SELECT * FROM steamer LEFT JOIN ;', (err, response) => {
+  		client.query(queryString, (err, response) => {
   			if (err) {
   				console.log('Error querying db.');
   				throw err;
