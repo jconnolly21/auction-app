@@ -31,12 +31,13 @@ ul li {
   display: inline-block;
 }
 
-.modal-header {
-  text-align: center;
+#modal-header {
+  margin: 0 auto;
 }
 
 .modal-section {
   margin-top: 15px;
+  padding-bottom: 15px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #eee;
