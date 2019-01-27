@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/players', function(req, res, next) {
+router.get('/steamer', function(req, res, next) {
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
