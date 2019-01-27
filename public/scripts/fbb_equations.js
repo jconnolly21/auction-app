@@ -50,11 +50,11 @@ function setHitterCatVals () {
 		poolVals[4] += hitters[i].stat5;
 	}
 	for (var i = 0; i < hitters.length; i++) {
-		hitters[i].value1 = parseFloat((hitterEconomy * .2) * (hitters[i].stat1 - hitterRVals[0]) / (poolVals[0] - (14*teams.length*hitterRVals[0])).toFixed(2));
-		hitters[i].value2 = parseFloat((hitterEconomy * .2) * (hitters[i].ewh - hitterRVals[1]) / (poolVals[1] - (14*teams.length*hitterRVals[1])).toFixed(2));
-		hitters[i].value3 = parseFloat((hitterEconomy * .2) * (hitters[i].stat3 - hitterRVals[2]) / (poolVals[2] - (14*teams.length*hitterRVals[2])).toFixed(2));
-		hitters[i].value4 = parseFloat((hitterEconomy * .2) * (hitters[i].stat4 - hitterRVals[3]) / (poolVals[3] - (14*teams.length*hitterRVals[3])).toFixed(2));
-		hitters[i].value5 = parseFloat((hitterEconomy * .2) * (hitters[i].stat5 - hitterRVals[4]) / (poolVals[4] - (14*teams.length*hitterRVals[4])).toFixed(2));
+		hitters[i].value1 = (hitterEconomy * .2) * (hitters[i].stat1 - hitterRVals[0]) / (poolVals[0] - (14*teams.length*hitterRVals[0]));
+		hitters[i].value2 = (hitterEconomy * .2) * (hitters[i].ewh - hitterRVals[1]) / (poolVals[1] - (14*teams.length*hitterRVals[1]));
+		hitters[i].value3 = (hitterEconomy * .2) * (hitters[i].stat3 - hitterRVals[2]) / (poolVals[2] - (14*teams.length*hitterRVals[2]));
+		hitters[i].value4 = (hitterEconomy * .2) * (hitters[i].stat4 - hitterRVals[3]) / (poolVals[3] - (14*teams.length*hitterRVals[3]));
+		hitters[i].value5 = (hitterEconomy * .2) * (hitters[i].stat5 - hitterRVals[4]) / (poolVals[4] - (14*teams.length*hitterRVals[4]));
 		hitters[i].value = Math.round(hitters[i].value1 + hitters[i].value2 + hitters[i].value3 + hitters[i].value4 + hitters[i].value5);
 	}
 }
