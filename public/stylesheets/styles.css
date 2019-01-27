@@ -31,10 +31,6 @@ ul li {
   display: inline-block;
 }
 
-#modal-header {
-  margin: 0 auto;
-}
-
 .modal-section {
   margin-top: 15px;
   padding-bottom: 15px;
