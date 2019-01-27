@@ -25,11 +25,13 @@ function initializeVars (data) {
 }
 
 function calculateHitterValues () {
-	setHitterRVals();
-	setHitterCatVals();
-	hitters.sort(function (a,b) {
-		return b.value - a.value;
-	});
+	for (var i = 0; i < 500; i++) {
+		setHitterRVals();
+		setHitterCatVals();
+		hitters.sort(function (a,b) {
+			return b.value - a.value;
+		});
+	}
 	for (var i = 0; i < 10; i++) {
 		console.log(hitters[i].name + ': $' + hitters[i].value);
 	}
@@ -60,7 +62,6 @@ function setHitterCatVals () {
 function setHitterRVals () {
 	var tempRVals = [0,0,0,0,0];
 	for (var i = (14 * teams.length); i < (14 * teams.length) + 14; i++) {
-		console.log('adding ' + hitters[i].name + ' to replacement set');
 		tempRVals[0] += hitters[i].stat1;
 		tempRVals[1] += hitters[i].ewh;
 		tempRVals[2] += hitters[i].stat3;
