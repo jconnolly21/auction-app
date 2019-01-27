@@ -73,6 +73,7 @@ function setPitcherCatVals () {
 		poolVals[3] += pitchers[i].stat4;
 		poolVals[4] += pitchers[i].wh;
 	}
+	console.log(poolVals);
 	for (var i = 0; i < pitchers.length; i++) {
 		pitchers[i].value1 = (pitcherEconomy * .2) * (pitchers[i].eer - pitcherRVals[0]) / (poolVals[0] - (9*teams.length*hitterRVals[0]));
 		pitchers[i].value2 = (pitcherEconomy * .2) * (pitchers[i].stat2 - pitcherRVals[1]) / (poolVals[1] - (9*teams.length*hitterRVals[1]));
