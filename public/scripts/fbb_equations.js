@@ -67,6 +67,7 @@ function setPitcherCatVals () {
 		pitchers[i].value3 = (pitcherEconomy * .2) * (pitchers[i].stat3 - pitcherRVals[2]) / (poolVals[2] - (9*teams.length*hitterRVals[2]));
 		pitchers[i].value4 = (pitcherEconomy * .2) * (pitchers[i].stat4 - pitcherRVals[3]) / (poolVals[3] - (9*teams.length*hitterRVals[3]));
 		pitchers[i].value5 = (pitcherEconomy * .2) * (pitchers[i].wh - pitcherRVals[4]) / (poolVals[4] - (9*teams.length*hitterRVals[4]));
+		pitchers[i].value = Math.round(pitchers[i].value1 + pitchers[i].value2 + pitchers[i].value3 + pitchers[i].value4 + pitchers[i].value5);
 	}
 }
 
