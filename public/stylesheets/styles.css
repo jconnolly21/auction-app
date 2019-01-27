@@ -31,6 +31,17 @@ ul li {
   display: inline-block;
 }
 
+.modal-header {
+  text-align: center;
+}
+
+.modal-section {
+  margin-top: 15px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #eee;
+}
+
 .pos-OF {
   background-color: #669EFF;
   text-align: center;
