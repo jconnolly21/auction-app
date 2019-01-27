@@ -17,19 +17,27 @@ $(document).ready(function() {
 	
 	$.getJSON(PlayersUrl, function(result){
 		
-		drawPlayerTable(result.players, 'U', '#hitter-stats');
-		drawPlayerTable(result.players, 'P', '#sp-stats');
-		drawPlayerTable(result.players, 'C', '#category-stats');
-
 		allPlayers = result.players; 
 
-		for(i = 0; i < result.players.length; i++) {
-			if (result.players[i].ownerid == null) { 
-				availablePlayers.push(result.players[i]);
+		initializeVars(allPlayers);
+		calculateHitterValues();
+		calculatePitcherValues();
+
+		allPlayers.sort(function (a,b) {
+			return b.value - a.value;
+		});
+
+		drawPlayerTable(allPlayers, 'U', '#hitter-stats');
+		drawPlayerTable(allPlayers, 'P', '#sp-stats');
+		drawPlayerTable(allPlayers, 'C', '#category-stats');
+
+		for(i = 0; i < allPlayers.length; i++) {
+			if (allPlayers[i].ownerid == null) { 
+				availablePlayers.push(allPlayers[i]);
 			} else {
-				draftNumber = Math.max(draftNumber, result.players[i].draftnumber)
-				rosters[result.players[i].ownerid - 1].push(result.players[i]);
-				updateDraftLog(result.players[i]);
+				draftNumber = Math.max(draftNumber, allPlayers[i].draftnumber)
+				rosters[allPlayers[i].ownerid - 1].push(allPlayers[i]);
+				updateDraftLog(allPlayers[i]);
 			}
 		}
 
