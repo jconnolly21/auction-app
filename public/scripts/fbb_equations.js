@@ -19,6 +19,8 @@ function initializeVars (data) {
 			addEWH(data[i]);
 			hitters.push(data[i]);
 		} else {
+			addWH(data[i]);
+			addEER(data[i]);
 			pitchers.push(data[i]);
 		}
 	}
@@ -32,12 +34,40 @@ function calculateHitterValues () {
 			return b.value - a.value;
 		});
 	}
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 5; i++) {
 		console.log(hitters[i].name + ': $' + hitters[i].value);
 	}
 }
 
 function calculatePitcherValues () {
+	for (var i = 0; i < 500; i++) {
+		setPitcherRVals();
+		setPitcherCatVals();
+		pitchers.sort(function (a,b) {
+			return b.value - a.value;
+		});
+	}
+	for (var i = 0; i < 5; i++) {
+		console.log(pitchers[i].name + ': $' + pitchers[i].value);
+	}
+}
+
+function setPitcherCatVals () {
+	var poolVals = [0,0,0,0,0];
+	for (var i = 0; i < (9 * teams.length); i++) {
+		poolVals[0] += pitchers[i].eer;
+		poolVals[1] += pitchers[i].stat2;
+		poolVals[2] += pitchers[i].stat3;
+		poolVals[3] += pitchers[i].stat4;
+		poolVals[4] += pitchers[i].wh;
+	}
+	for (var i = 0; i < pitchers.length; i++) {
+		pitchers[i].value1 = (pitcherEconomy * .2) * (pitchers[i].eer - pitcherRVals[0]) / (poolVals[0] - (9*teams.length*hitterRVals[0]));
+		pitchers[i].value2 = (pitcherEconomy * .2) * (pitchers[i].stat2 - pitcherRVals[1]) / (poolVals[1] - (9*teams.length*hitterRVals[1]));
+		pitchers[i].value3 = (pitcherEconomy * .2) * (pitchers[i].stat3 - pitcherRVals[2]) / (poolVals[2] - (9*teams.length*hitterRVals[2]));
+		pitchers[i].value4 = (pitcherEconomy * .2) * (pitchers[i].stat4 - pitcherRVals[3]) / (poolVals[3] - (9*teams.length*hitterRVals[3]));
+		pitchers[i].value5 = (pitcherEconomy * .2) * (pitchers[i].wh - pitcherRVals[4]) / (poolVals[4] - (9*teams.length*hitterRVals[4]));
+	}
 }
 
 function setHitterCatVals () {
@@ -59,6 +89,22 @@ function setHitterCatVals () {
 	}
 }
 
+function setPitcherRVals () {
+	var tempRVals = [0,0,0,0,0];
+	for (var i = (14 * teams.length); i < (14 * teams.length) + 18; i++) {
+		tempRVals[0] += pitchers[i].eer;
+		tempRVals[1] += pitchers[i].stat2;
+		tempRVals[2] += pitchers[i].stat3;
+		tempRVals[3] += pitchers[i].stat4;
+		tempRVals[4] += pitchers[i].wh;
+	}
+	pitcherRVals[0] = tempRVals[0] / 18;
+	pitcherRVals[1] = tempRVals[1] / 18;
+	pitcherRVals[2] = tempRVals[2] / 18;
+	pitcherRVals[3] = tempRVals[3] / 18;
+	pitcherRVals[4] = tempRVals[4] / 18;
+}
+
 function setHitterRVals () {
 	var tempRVals = [0,0,0,0,0];
 	for (var i = (14 * teams.length); i < (14 * teams.length) + 14; i++) {
@@ -75,6 +121,14 @@ function setHitterRVals () {
 	hitterRVals[4] = tempRVals[4] / 14;
 }
 
+function addEER (player) {
+	player.eer = (player.countstat*4/9) - (player.countstat*player.stat1/9);
+}
+
+function addWH (player) {
+	player.wh = (player.countstat*1.3) - (player.countstat*player.stat5);
+}
+
 function addEWH (player) {
-	player.ewh = (player.countstat*player.stat2) - (player.countstat*.325)
+	player.ewh = (player.countstat*player.stat2) - (player.countstat*.325);
 }
