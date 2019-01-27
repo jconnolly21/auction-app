@@ -22,6 +22,10 @@ ul li {
   float: right;
 }
 
+#settings-button {
+  margin-top: 5px;
+}
+
 #app-title {
   display: inline;
 }
