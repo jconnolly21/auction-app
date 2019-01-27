@@ -1,8 +1,8 @@
 var hitterEconomy;
 var pitcherEconomy;
 
-var hitterRVals;
-var pitcherRVals;
+var hitterRVals = [0,0,0,0,0];
+var pitcherRVals = [0,0,0,0,0];
 
 var hitterPitcherSplit = .65;
 
@@ -60,6 +60,7 @@ function setHitterCatVals () {
 function setHitterRVals () {
 	var tempRVals = [0,0,0,0,0];
 	for (var i = (14 * teams.length); i < (14 * teams.length) + 14; i++) {
+		console.log('adding ' + hitters[i].name + ' to replacement set');
 		tempRVals[0] += hitters[i].stat1;
 		tempRVals[1] += hitters[i].ewh;
 		tempRVals[2] += hitters[i].stat3;
@@ -74,5 +75,5 @@ function setHitterRVals () {
 }
 
 function addEWH (player) {
-	player.ewh = (player.countstat*player.stat2) - (player.countstat*.315)
+	player.ewh = (player.countstat*player.stat2) - (player.countstat*.325)
 }
