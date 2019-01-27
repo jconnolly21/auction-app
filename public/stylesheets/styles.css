@@ -18,6 +18,10 @@ ul li {
   box-shadow:         12px 0 6px -6px #eee;
 }
 
+#settings-menu {
+  float: right;
+}
+
 .pos-OF {
   background-color: #669EFF;
   text-align: center;
