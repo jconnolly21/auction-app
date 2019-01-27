@@ -22,6 +22,10 @@ ul li {
   float: right;
 }
 
+#app-title {
+  display: inline;
+}
+
 .pos-OF {
   background-color: #669EFF;
   text-align: center;
