@@ -50,6 +50,12 @@ function calculatePitcherValues () {
 	for (var i = 0; i < 5; i++) {
 		console.log(pitchers[i].name + ': $' + pitchers[i].value);
 	}
+	var checkSum = 0;
+	for (var i = 0; i < 90; i++) {
+		checkSum += pitchers[i].value;
+	}
+	console.log('Expected sum: $' + pitcherEconomy);
+	console.log('Actual sum: $' + checkSum);
 }
 
 function setPitcherCatVals () {
