@@ -73,13 +73,12 @@ function setPitcherCatVals () {
 		poolVals[3] += pitchers[i].stat4;
 		poolVals[4] += pitchers[i].wh;
 	}
-	console.log(poolVals);
 	for (var i = 0; i < pitchers.length; i++) {
-		pitchers[i].value1 = (pitcherEconomy * .2) * (pitchers[i].eer - pitcherRVals[0]) / (poolVals[0] - (9*teams.length*hitterRVals[0]));
-		pitchers[i].value2 = (pitcherEconomy * .2) * (pitchers[i].stat2 - pitcherRVals[1]) / (poolVals[1] - (9*teams.length*hitterRVals[1]));
-		pitchers[i].value3 = (pitcherEconomy * .2) * (pitchers[i].stat3 - pitcherRVals[2]) / (poolVals[2] - (9*teams.length*hitterRVals[2]));
-		pitchers[i].value4 = (pitcherEconomy * .2) * (pitchers[i].stat4 - pitcherRVals[3]) / (poolVals[3] - (9*teams.length*hitterRVals[3]));
-		pitchers[i].value5 = (pitcherEconomy * .2) * (pitchers[i].wh - pitcherRVals[4]) / (poolVals[4] - (9*teams.length*hitterRVals[4]));
+		pitchers[i].value1 = (pitcherEconomy * .2) * (pitchers[i].eer - pitcherRVals[0]) / (poolVals[0] - (9*teams.length*pitcherRVals[0]));
+		pitchers[i].value2 = (pitcherEconomy * .2) * (pitchers[i].stat2 - pitcherRVals[1]) / (poolVals[1] - (9*teams.length*pitcherRVals[1]));
+		pitchers[i].value3 = (pitcherEconomy * .2) * (pitchers[i].stat3 - pitcherRVals[2]) / (poolVals[2] - (9*teams.length*pitcherRVals[2]));
+		pitchers[i].value4 = (pitcherEconomy * .2) * (pitchers[i].stat4 - pitcherRVals[3]) / (poolVals[3] - (9*teams.length*pitcherRVals[3]));
+		pitchers[i].value5 = (pitcherEconomy * .2) * (pitchers[i].wh - pitcherRVals[4]) / (poolVals[4] - (9*teams.length*pitcherRVals[4]));
 		pitchers[i].value = Math.round(pitchers[i].value1 + pitchers[i].value2 + pitchers[i].value3 + pitchers[i].value4 + pitchers[i].value5);
 	}
 }
