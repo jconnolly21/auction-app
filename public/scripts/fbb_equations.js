@@ -37,7 +37,7 @@ function initializeVars (data) {
 }
 
 function calculateHitterValues () {
-	for (var i = 0; i < 500; i++) {
+	for (var i = 0; i < 100; i++) {
 		setHitterRVals();
 		setHitterCatVals();
 		hitters.sort(function (a,b) {
@@ -56,7 +56,7 @@ function calculateHitterValues () {
 }
 
 function calculatePitcherValues () {
-	for (var i = 0; i < 500; i++) {
+	for (var i = 0; i < 100; i++) {
 		setPitcherRVals();
 		setPitcherCatVals();
 		pitchers.sort(function (a,b) {
