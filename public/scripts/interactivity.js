@@ -151,6 +151,10 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
+	$('body').on('click', '#settings-button', function(e) {
+		e.preventDefault();
+	});
+
 });
 
 // ---- Other Helpers ----
