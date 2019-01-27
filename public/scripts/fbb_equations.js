@@ -15,7 +15,7 @@ function initializeVars (data) {
 	pitcherEconomy = teams.length*260*(1-hitterPitcherSplit);
 
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].type = 'Hitter') {
+		if (data[i].type == 'Hitter') {
 			addEWH(data[i]);
 			hitters.push(data[i]);
 		} else {
