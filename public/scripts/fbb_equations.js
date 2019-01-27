@@ -104,7 +104,7 @@ function setHitterCatVals () {
 
 function setPitcherRVals () {
 	var tempRVals = [0,0,0,0,0];
-	for (var i = (9 * teams.length); i < (9 * teams.length) + 9; i++) {
+	for (var i = (9 * teams.length); i < (9 * teams.length) + 18; i++) {
 		tempRVals[0] += pitchers[i].eer;
 		tempRVals[1] += pitchers[i].stat2;
 		tempRVals[2] += pitchers[i].stat3;
