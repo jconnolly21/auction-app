@@ -1,0 +1,565 @@
+﻿Mookie Betts,BOS,583,29,0.384,116,89,26
+Nolan Arenado,COL,587,36,0.362,97,110,3
+J.D. Martinez,BOS,546,40,0.384,99,117,5
+Christian Yelich,MIL,577,27,0.38,105,94,17
+Trea Turner,WSH,593,18,0.339,95,67,44
+Ronald Acuna,ATL,591,29,0.341,95,85,22
+Manny Machado,FA,575,33,0.353,84,96,9
+Bryce Harper,FA,501,32,0.393,95,92,11
+Aaron Judge,NYY,506,37,0.387,100,91,8
+Giancarlo Stanton,NYY,557,41,0.346,96,105,3
+Paul Goldschmidt,STL,574,31,0.384,100,96,12
+Freddie Freeman,ATL,571,27,0.377,91,91,8
+Trevor Story,COL,565,31,0.332,82,94,19
+Charlie Blackmon,COL,595,29,0.356,107,76,12
+Andrew Benintendi,BOS,580,18,0.362,96,86,19
+Juan Soto,WSH,537,28,0.387,93,91,7
+Kris Bryant,CHC,556,26,0.371,98,80,6
+Javier Baez,CHC,573,29,0.317,86,94,17
+Anthony Rizzo,CHC,561,29,0.367,86,100,7
+Rhys Hoskins,PHI,552,35,0.348,92,101,5
+Starling Marte,PIT,554,18,0.325,81,67,35
+Cody Bellinger,LAD,533,30,0.341,84,87,12
+Anthony Rendon,WSH,540,24,0.372,87,93,5
+Xander Bogaerts,BOS,562,21,0.35,86,90,11
+Ozzie Albies,ATL,594,21,0.311,92,68,15
+Lorenzo Cain,MIL,563,13,0.366,86,52,26
+Joey Votto,CIN,530,22,0.409,83,81,4
+Eugenio Suarez,CIN,539,29,0.346,78,89,4
+Matt Carpenter,STL,534,29,0.369,98,75,3
+Corey Seager,LAD,551,22,0.359,86,76,4
+Vladimir Guerrero Jr.,TOR,510,24,0.361,75,82,5
+Jean Segura,PHI,595,13,0.334,91,63,22
+Marcell Ozuna,STL,575,27,0.339,78,96,3
+Tommy Pham,TB,482,22,0.358,89,65,17
+A.J. Pollock,LAD,494,21,0.316,75,68,18
+Daniel Murphy,COL,502,20,0.356,74,76,5
+Gary Sanchez,NYY,443,28,0.312,71,79,2
+Gleyber Torres,NYY,529,24,0.335,71,87,9
+J.T. Realmuto,MIA,504,19,0.32,67,67,5
+Justin Turner,LAD,494,21,0.362,76,73,4
+Wil Myers,SD,509,22,0.326,71,70,20
+Josh Donaldson,ATL,471,27,0.359,79,75,4
+Yasiel Puig,CIN,475,26,0.342,69,74,14
+Jesus Aguilar,MIL,497,30,0.33,72,92,1
+Scooter Gennett,CIN,540,23,0.335,76,85,5
+Michael Conforto,NYM,534,29,0.346,83,84,4
+Aaron Hicks,NYY,460,22,0.354,78,71,10
+Andrew McCutchen,PHI,533,24,0.35,81,72,11
+Travis Shaw,MIL,508,28,0.336,74,87,6
+Robinson Cano,NYM,570,23,0.344,80,87,1
+Miguel Andujar,NYY,540,25,0.327,76,87,3
+David Dahl,COL,505,23,0.325,68,75,10
+Ender Inciarte,ATL,571,11,0.331,80,54,23
+David Peralta,ARI,543,24,0.341,77,74,5
+Brian Dozier,WSH,537,25,0.322,85,76,13
+Jose Peraza,CIN,600,12,0.313,74,57,23
+Jonathan Villar,BAL,522,15,0.321,65,55,36
+Max Muncy,LAD,426,27,0.357,70,70,3
+Rafael Devers,BOS,523,25,0.318,72,78,6
+Eric Hosmer,SD,589,21,0.341,78,79,6
+Victor Robles,WSH,476,12,0.326,67,53,26
+Mike Moustakas,FA,564,32,0.312,72,89,3
+Willson Contreras,CHC,456,15,0.333,55,64,5
+Ian Desmond,COL,489,18,0.315,70,70,17
+Gregory Polanco,PIT,405,18,0.332,59,61,10
+Wilson Ramos,NYM,385,17,0.332,42,63,1
+Ryan Braun,MIL,451,21,0.328,66,68,12
+Kyle Schwarber,CHC,460,29,0.342,70,67,4
+Harrison Bader,STL,487,16,0.308,69,55,17
+Buster Posey,SF,475,11,0.353,59,59,4
+Amed Rosario,NYM,551,11,0.296,70,55,22
+Cesar Hernandez,PHI,555,12,0.356,83,50,16
+Brandon Nimmo,NYM,517,18,0.355,82,59,9
+Adam Eaton,WSH,497,9,0.357,81,55,14
+Yadier Molina,STL,477,17,0.314,56,71,5
+Yasmani Grandal,MIL,398,21,0.338,55,62,1
+Odubel Herrera,PHI,555,20,0.319,71,68,8
+Paul DeJong,STL,462,22,0.303,65,70,2
+Justin Smoak,TOR,531,28,0.343,74,81,1
+Austin Meadows,TB,437,16,0.316,60,56,13
+DJ LeMahieu,NYY,509,12,0.335,79,56,7
+Luke Voit,NYY,375,20,0.341,56,62,1
+Josh Bell,PIT,517,17,0.352,74,73,3
+Jose Martinez,STL,410,15,0.354,54,62,2
+Franmil Reyes,SD,427,22,0.331,62,63,2
+Adam Jones,FA,556,19,0.31,66,68,5
+Yoenis Cespedes,NYM,175,10,0.334,27,30,2
+Jesse Winker,CIN,443,13,0.374,60,59,3
+Corey Dickerson,PIT,524,19,0.321,70,64,6
+Chris Taylor,LAD,522,16,0.326,78,63,12
+Eduardo Escobar,ARI,519,20,0.315,65,73,3
+Lourdes Gurriel Jr.,TOR,558,20,0.302,68,79,7
+Hunter Renfroe,SD,438,23,0.295,55,63,3
+Ian Happ,CHC,419,20,0.336,61,57,8
+Manuel Margot,SD,462,10,0.304,52,48,14
+Trey Mancini,BAL,552,23,0.312,68,67,1
+Willy Adames,TB,459,12,0.326,61,54,9
+Nick Markakis,ATL,575,12,0.352,70,77,1
+Didi Gregorius,NYY,273,13,0.325,42,43,4
+Jake Lamb,ARI,485,22,0.33,73,78,5
+Garrett Hampson,COL,316,7,0.34,42,31,15
+Evan Longoria,SF,561,21,0.303,66,74,4
+Ryan Zimmerman,WSH,430,22,0.328,60,72,2
+Joe Wendle,TB,490,8,0.321,62,59,16
+Ketel Marte,ARI,530,13,0.327,68,58,8
+Randal Grichuk,TOR,460,26,0.296,65,68,5
+Maikel Franco,PHI,489,23,0.308,59,75,1
+Jackie Bradley,BOS,490,17,0.317,73,67,13
+Matt Kemp,CIN,371,17,0.328,49,59,1
+Nick Senzel,CIN,329,12,0.35,45,42,8
+Kevin Kiermaier,TB,442,13,0.302,62,47,16
+Francisco Mejia,SD,303,9,0.29,32,38,1
+Brett Gardner,NYY,443,13,0.33,72,44,13
+Avisail Garcia,TB,372,17,0.321,53,55,3
+Joc Pederson,LAD,406,24,0.323,65,61,4
+Jed Lowrie,NYM,514,16,0.342,67,69,1
+Peter Alonso,NYM,390,21,0.318,51,61,2
+Steven Souza,ARI,480,20,0.321,62,65,12
+Tyler O'Neill,STL,227,13,0.315,37,38,4
+Danny Jansen,TOR,336,12,0.321,43,46,2
+Wilmer Flores,ARI,348,14,0.322,44,53,1
+Kendrys Morales,TOR,481,25,0.323,60,73,2
+Cedric Mullins,BAL,447,14,0.306,61,45,12
+Ian Kinsler,SD,427,13,0.305,59,44,12
+Brian Anderson,MIA,554,13,0.33,77,65,3
+Marwin Gonzalez,FA,477,17,0.329,60,68,5
+Scott Kingery,PHI,365,8,0.282,45,36,10
+Luis Urias,SD,459,8,0.319,59,41,5
+Scott Schebler,CIN,429,21,0.308,57,57,4
+Mike Zunino,TB,395,22,0.28,46,57,1
+Jeff McNeil,NYM,316,7,0.327,48,39,8
+Adam Duvall,ATL,465,20,0.278,58,71,4
+Jorge Alfaro,PHI,355,11,0.292,38,42,2
+Brandon Belt,SF,430,18,0.355,61,57,4
+Chris Davis,BAL,466,22,0.285,57,61,2
+Mark Trumbo,BAL,514,26,0.305,69,72,1
+Starlin Castro,MIA,566,15,0.319,70,61,6
+Dexter Fowler,STL,343,12,0.326,52,43,6
+Kevin Pillar,TOR,531,14,0.293,65,56,14
+Eduardo Nunez,BOS,387,10,0.316,50,44,12
+Orlando Arcia,MIL,486,10,0.299,50,48,11
+Eric Thames,MIL,278,17,0.329,48,41,5
+Yan Gomes,WSH,330,13,0.288,40,43,0
+Carlos Gonzalez,FA,424,15,0.32,58,57,4
+Colin Moran,PIT,446,13,0.325,52,61,1
+Troy Tulowitzki,NYY,283,11,0.314,34,41,2
+Francisco Cervelli,PIT,377,11,0.349,46,53,3
+Mitch Moreland,BOS,376,16,0.326,52,59,1
+Dansby Swanson,ATL,472,12,0.309,54,56,8
+Ryan McMahon,COL,308,11,0.326,39,44,3
+Greg Bird,NYY,213,11,0.305,27,34,1
+Fernando Tatis Jr.,SD,314,13,0.303,48,33,11
+Nick Williams,PHI,363,15,0.305,48,51,3
+Peter O'Brien,MIA,302,15,0.29,35,44,1
+Enrique Hernandez,LAD,380,17,0.327,57,51,4
+Todd Frazier,NYM,377,20,0.31,54,59,6
+Austin Hedges,SD,323,14,0.286,34,43,3
+Logan Morrison,FA,307,17,0.31,41,44,1
+Tucker Barnhart,CIN,413,10,0.326,42,46,2
+Phillip Ervin,CIN,209,5,0.312,27,30,7
+Elias Diaz,PIT,207,6,0.313,23,26,1
+Franchy Cordero,SD,254,8,0.303,32,30,9
+Dustin Pedroia,BOS,323,7,0.347,45,41,4
+Johan Camargo,ATL,343,12,0.326,43,48,1
+Addison Russell,CHC,251,6,0.306,32,29,2
+Teoscar Hernandez,TOR,437,20,0.304,62,57,7
+Joe Panik,SF,471,8,0.328,57,46,5
+Keon Broxton,NYM,362,14,0.286,47,41,20
+Hernan Perez,MIL,400,12,0.297,47,46,15
+Michael Taylor,WSH,292,9,0.293,38,31,17
+Austin Barnes,LAD,276,8,0.323,37,32,5
+Kurt Suzuki,WSH,279,11,0.31,35,41,1
+Adam Frazier,PIT,478,10,0.331,67,54,8
+Evan Gattis,FA,300,17,0.301,39,52,1
+Yandy Diaz,TB,353,4,0.353,47,41,3
+Matt Duffy,TB,435,5,0.337,55,44,11
+Alex Verdugo,LAD,391,12,0.329,48,46,5
+Aaron Altherr,PHI,254,9,0.304,33,36,4
+Josh Harrison,FA,397,9,0.297,49,43,7
+Travis Jankowski,SD,272,2,0.317,36,20,17
+Lewis Brinson,MIA,425,14,0.265,42,48,5
+Brandon Crawford,SF,530,15,0.321,62,66,5
+Ben Zobrist,CHC,430,11,0.354,62,53,3
+Carlos Gomez,FA,295,10,0.28,35,33,10
+Kolten Wong,STL,409,10,0.324,53,46,8
+Jedd Gyorko,STL,338,14,0.333,45,49,3
+Cameron Maybin,FA,223,4,0.33,29,22,11
+Matt Davidson,FA,278,13,0.289,32,41,0
+Jason Heyward,CHC,453,10,0.328,62,57,4
+Tyler Flowers,ATL,314,10,0.316,38,40,1
+Logan Forsythe,FA,206,3,0.321,26,18,2
+Nick Ahmed,ARI,497,15,0.29,57,60,7
+Jung-Ho Kang,PIT,249,11,0.319,32,40,2
+Raimel Tapia,COL,250,5,0.32,36,30,8
+J.D. Davis,TOR,27,0,0.281,4,2,1
+Brandon Lowe,TB,145,6,0.331,20,22,3
+Denard Span,FA,329,8,0.332,46,36,7
+Magneuris Sierra,MIA,187,1,0.268,20,15,5
+Steve Pearce,BOS,286,14,0.349,43,47,1
+Max Scherzer,WSH,209.8,2.84,271,0,17,0.99
+Chris Sale,BOS,184.6,2.61,247,0,16,0.98
+Jacob deGrom,NYM,207.5,2.66,244,0,15,1.06
+Aaron Nola,PHI,197.8,3.2,212,0,14,1.15
+Blake Snell,TB,186.3,3.1,216,0,15,1.19
+Clayton Kershaw,LAD,173.3,2.85,176,0,14,1.03
+Luis Severino,NYY,193.6,3.3,221,0,15,1.14
+Noah Syndergaard,NYM,174,3.14,183,0,13,1.18
+Walker Buehler,LAD,164,3.03,181,0,12,1.09
+James Paxton,NYY,164.8,3.49,199,0,13,1.16
+Edwin Diaz,NYM,65.6,2.3,102,38,4,0.95
+Stephen Strasburg,WSH,161.3,3.35,187,0,12,1.17
+Zack Greinke,ARI,197.8,3.65,194,0,14,1.16
+Patrick Corbin,WSH,184,3.31,204,0,14,1.2
+Kenley Jansen,LAD,63,2.82,80,39,3,0.94
+Jack Flaherty,STL,171.5,3.46,194,0,12,1.17
+Craig Kimbrel,FA,64.8,2.64,100,29,3,1.02
+Jameson Taillon,PIT,187.3,3.58,177,0,13,1.23
+Aroldis Chapman,NYY,57,2.45,92,36,3,1.07
+David Price,BOS,178.3,3.74,179,0,14,1.2
+Mike Foltynewicz,ATL,178.8,3.59,185,0,13,1.23
+Madison Bumgarner,SF,179.3,3.69,163,0,11,1.24
+Felipe Vazquez,PIT,67.3,2.64,83,35,3,1.14
+German Marquez,COL,183,3.87,198,0,12,1.28
+Robbie Ray,ARI,162.3,3.7,211,0,11,1.28
+Miles Mikolas,STL,190.5,3.51,148,0,14,1.16
+Zack Wheeler,NYM,179.6,3.55,178,0,12,1.23
+Masahiro Tanaka,NYY,162.3,3.9,165,0,12,1.17
+Raisel Iglesias,CIN,71.8,3.1,81,33,3,1.14
+Luis Castillo,CIN,166.8,3.91,168,0,10,1.21
+Charlie Morton,TB,162.6,3.43,181,0,12,1.23
+Sean Doolittle,WSH,56.5,2.51,71,31,3,0.87
+Carlos Martinez,STL,164.5,3.58,163,0,11,1.29
+Chris Archer,PIT,178.3,3.84,201,0,11,1.3
+Yu Darvish,CHC,125.8,3.88,142,0,8,1.23
+Josh Hader,MIL,74.8,2.35,122,8,4,0.95
+Kyle Hendricks,CHC,185.5,3.7,159,0,13,1.19
+Ken Giles,TOR,61.1,3.57,74,26,3,1.17
+Corey Knebel,MIL,61.5,2.89,94,27,3,1.13
+Wade Davis,COL,62.3,3.61,76,35,3,1.18
+Rich Hill,LAD,141.3,3.38,156,0,10,1.14
+Dallas Keuchel,FA,188.8,3.7,148,0,12,1.28
+Kirby Yates,SD,62.1,2.97,87,30,3,1.05
+J.A. Happ,NYY,166.5,3.84,171,0,13,1.22
+Cole Hamels,CHC,184.1,3.83,178,0,13,1.27
+Nick Pivetta,PHI,155.1,4.14,169,0,9,1.29
+Jose Quintana,CHC,175.3,3.88,170,0,12,1.28
+Eduardo Rodriguez,BOS,144.5,3.94,160,0,10,1.27
+Jon Lester,CHC,182.3,3.86,164,0,13,1.3
+Jonathan Gray,COL,162.8,4.15,169,0,10,1.31
+David Robertson,PHI,66.3,2.92,90,24,3,1.06
+Andrew Miller,STL,61,2.8,82,20,3,1.1
+Jake Arrieta,PHI,170.1,3.97,153,0,10,1.27
+Kevin Gausman,ATL,177,4.25,159,0,11,1.35
+Kenta Maeda,LAD,129,3.61,141,0,8,1.2
+Nathan Eovaldi,BOS,140.6,3.91,126,0,11,1.21
+Alex Wood,CIN,153.8,3.67,145,0,11,1.25
+Rick Porcello,BOS,185.8,4.08,173,0,13,1.23
+Zack Godley,ARI,173.3,4.06,176,0,12,1.38
+Kyle Freeland,COL,188.3,4.01,154,0,12,1.38
+Tyler Glasnow,TB,129.6,4.15,152,0,7,1.36
+Ross Stripling,LAD,117.5,3.43,122,1,8,1.19
+Brandon Morrow,CHC,48,2.86,50,26,3,1.14
+A.J. Minter,ATL,61.3,3.12,73,6,3,1.25
+Archie Bradley,ARI,65.3,3.45,69,26,3,1.23
+Hyun-Jin Ryu,LAD,116.5,3.44,117,0,9,1.19
+Sean Newcomb,ATL,162.3,3.89,165,0,11,1.36
+Dellin Betances,NYY,60.1,2.51,100,3,3,1.09
+Joey Lucchesi,SD,151.3,3.85,160,0,9,1.27
+Alex Reyes,STL,68.3,3.76,72,1,5,1.3
+Arodys Vizcaino,ATL,57.1,3.23,64,27,2,1.23
+Will Smith,SF,57.3,2.63,74,25,3,1.07
+Jordan Hicks,STL,66.1,3.58,62,16,3,1.38
+Luke Weaver,ARI,145.3,4.24,143,0,9,1.39
+Jeurys Familia,NYM,62.3,3.32,70,4,3,1.26
+Adam Ottavino,NYY,68.3,3.12,92,1,4,1.2
+Steven Matz,NYM,150.5,3.98,145,0,8,1.29
+Marcus Stroman,TOR,156.5,4.21,126,0,9,1.39
+Mychal Antonio Givens,BAL,68.3,3.53,74,25,2,1.19
+Dylan Bundy,BAL,174,4.8,173,0,9,1.34
+Seranthony Dominguez,PHI,69.1,2.93,88,9,3,1.05
+Joe Musgrove,PIT,150.8,3.97,131,0,10,1.27
+Jose Alvarado,TB,62,2.69,75,30,3,1.18
+Zach Britton,NYY,56,3.01,51,4,3,1.28
+Mike Soroka,ATL,32.1,3.58,27,0,3,1.35
+Jimmy Nelson,MIL,125.6,3.92,126,0,8,1.32
+Jeremy Jeffress,MIL,64.3,3.08,68,5,4,1.24
+Julio Teheran,ATL,173.3,4.32,155,0,10,1.29
+Chase Anderson,MIL,153.5,4.28,132,0,9,1.27
+Freddy Peralta,MIL,85.7,3.96,99,0,5,1.27
+Chad Green,NYY,67.8,2.79,86,1,4,1.04
+Sonny Gray,CIN,87.5,4.32,83,0,6,1.38
+Pedro Strop,CHC,59.5,2.95,62,7,3,1.13
+Drew Steckenrider,MIA,66.3,3.43,80,23,3,1.26
+Hector Neris,PHI,56.5,3.78,78,1,2,1.23
+Jeff Samardzija,SF,136.3,4.23,117,0,8,1.29
+Dereck Rodriguez,SF,155.8,3.83,121,0,9,1.27
+Mark Melancon,SF,50,3.37,43,6,2,1.37
+Julio Urias,LAD,71,3.52,68,0,6,1.31
+Keone Kela,PIT,58,3.14,75,2,3,1.11
+Michael Wacha,STL,124.3,4.09,110,0,9,1.37
+Dinelson Lamet,SD,52.4,4.18,61,0,3,1.31
+Jhoulys Chacin,MIL,182,3.99,151,0,12,1.29
+Gio Gonzalez,FA,119.1,4,106,0,8,1.35
+Anibal Sanchez,WSH,137,4.11,134,0,8,1.28
+Jacob Faria,TB,56,4.5,49,0,3,1.35
+Trevor Williams,PIT,159.1,3.96,121,0,10,1.32
+Trevor Richards,MIA,127.8,3.93,127,0,7,1.34
+Brad Brach,CHC,53.3,3.6,55,4,3,1.33
+Tanner Roark,CIN,168.5,4.23,147,0,10,1.31
+Caleb Smith,MIA,105.8,4.02,109,0,6,1.32
+Vince Velasquez,PHI,124.4,4.37,134,0,7,1.34
+Taijuan Walker,ARI,59.1,4.27,53,0,3,1.34
+Zach Eflin,PHI,138.8,4.47,125,0,9,1.32
+Bradley Boxberger,FA,49.1,4.22,64,1,3,1.39
+Aaron Sanchez,TOR,121.1,4.7,99,0,6,1.51
+Touki Toussaint,ATL,124.6,4.06,120,0,8,1.36
+Ryan Brasier,BOS,54,2.79,50,19,3,1.05
+Seth Lugo,NYM,82.5,3.28,80,1,4,1.16
+Yoshihisa Hirano,ARI,62.6,3.35,56,5,3,1.19
+Jordan Montgomery,NYY,39.6,4.09,37,0,3,1.29
+Derek Holland,SF,144.3,4.35,129,0,8,1.41
+Drew Pomeranz,SF,128,4.46,120,0,7,1.45
+Greg Holland,FA,48,4.13,51,1,2,1.45
+Anthony DeSclafani,CIN,138.3,4.54,131,0,8,1.3
+Brent Honeywell,TB,82.4,4.23,79,0,5,1.35
+Tyler Mahle,CIN,109.5,4.66,102,0,6,1.47
+Corbin Burnes,MIL,71.6,4.03,66,0,5,1.23
+Matthew Strahm,SD,78,3.4,85,1,4,1.21
+Luke Gregerson,STL,41.8,4.47,44,0,2,1.33
+Tyler Anderson,COL,162.1,4.33,151,0,9,1.31
+C.J. Edwards,CHC,56.3,3.2,75,4,3,1.25
+Dakota Hudson,STL,57.8,3.39,41,0,4,1.36
+Brandon Woodruff,MIL,115.5,4.4,104,1,7,1.36
+Alexander Claudio,MIL,59.3,3.46,40,4,3,1.29
+CC Sabathia,NYY,135.3,4.02,120,0,9,1.32
+Diego Castillo,TB,58.8,3.06,68,2,3,1.04
+Hunter Strickland,SF,49.4,3.71,44,2,3,1.38
+Yonny Chirinos,TB,96.3,3.81,79,0,6,1.25
+Luiz Gohara,ATL,19.3,4.03,19,0,1,1.31
+Domingo German,NYY,47.5,4.36,55,1,3,1.32
+Trevor Rosenthal,WSH,53.3,3.17,79,5,4,1.31
+Alex Cobb,BAL,164.3,4.67,116,0,8,1.39
+Pat Neshek,PHI,50.5,3.12,46,2,2,1.09
+Jose Castillo,SD,54,3,72,1,3,0.99
+Ervin Santana,FA,120,4.75,89,0,6,1.34
+Craig Stammen,SD,76.3,3.04,79,2,3,1.13
+Tyler Chatwood,CHC,50.8,4.65,42,0,3,1.59
+Max Fried,ATL,33,4.09,34,0,2,1.43
+Andrew Suarez,SF,158.3,4.07,129,0,9,1.32
+Matt Barnes,BOS,63.1,3.39,85,4,3,1.26
+Sandy Alcantara,MIA,95.3,4.11,75,0,6,1.37
+Jalen Beeks,TB,70.8,4.35,67,1,5,1.39
+Tony Watson,SF,59.3,3.15,58,4,3,1.16
+Jose Urena,MIA,169.6,4.22,129,0,10,1.31
+Pablo Lopez,MIA,45.6,3.8,38,0,3,1.25
+Caleb Ferguson,LAD,48,3.38,54,1,3,1.16
+Matt Shoemaker,TOR,118.8,4.45,109,0,6,1.32
+Ryne Stanek,TB,53.3,3.51,66,1,3,1.21
+Ryan Yarbrough,TB,134.8,4.09,117,0,9,1.31
+Steve Cishek,CHC,54.8,2.92,58,2,3,1.11
+Carson Smith,BOS,14,3.54,17,1,1,1.36
+Wei-Yin Chen,MIA,134.8,4.22,113,0,7,1.32
+Junior Guerra,MIL,67,4.3,63,0,3,1.36
+Jared Hughes,CIN,68.8,3.11,52,2,3,1.2
+Nathan Karns,FA,72,4.38,77,0,4,1.35
+Clay Buchholz,FA,124.3,4.17,95,0,7,1.29
+Amir Garrett,CIN,63.8,4.83,66,1,3,1.39
+Jonathan Loaisiga,NYY,29.3,4.15,35,0,3,1.39
+Jeremy Hellickson,FA,106,4.56,73,0,6,1.25
+Jason Vargas,NYM,118.6,4.41,104,0,8,1.33
+Joe Ross,WSH,128.8,4.42,115,0,8,1.34
+David Hernandez,CIN,65,3.25,65,1,3,1.13
+Nicholas Kingham,PIT,108.8,4.49,95,1,7,1.32
+Kyle Barraclough,WSH,56,3.94,64,3,3,1.37
+Cody Reed,CIN,45.5,4.35,44,0,3,1.42
+Robert Gsellman,NYM,74.8,4.21,63,1,4,1.34
+Dan Straily,MIA,148.8,4.4,129,0,7,1.33
+John Gant,STL,69.5,4.05,58,0,4,1.37
+Bryse Wilson,ATL,23.5,4.21,24,0,1,1.32
+Joe Kelly,LAD,61.3,3.45,65,2,3,1.29
+Seung-Hwan Oh,COL,65,3.63,70,3,3,1.18
+Reyes Moronta,SF,55.6,2.96,68,1,3,1.19
+Adam Wainwright,STL,100.5,4.3,87,0,7,1.42
+Tyler Thornburg,BOS,43.5,4.76,42,1,3,1.4
+Phil Maton,SD,47,4.07,53,1,2,1.41
+Ray Black,SF,34,4.37,48,0,2,1.19
+Chris Stratton,SF,104.8,4.66,81,0,6,1.46
+Matt Andriese,ARI,80.5,4.61,74,1,4,1.35
+John Brebbia,STL,56.8,3.45,62,1,3,1.14
+Darren O'Day,ATL,45.8,3.54,56,2,2,1.13
+Adam Conley,MIA,65.3,4.58,55,5,3,1.36
+Wade Miley,FA,105.6,4.35,83,0,6,1.45
+Justin Miller,WSH,53.3,4.18,58,2,3,1.25
+Wilmer Font,TB,39.8,5.04,39,0,2,1.36
+Michael Lorenzen,CIN,86,4,67,0,4,1.39
+Ryan Borucki,TOR,133.5,4.03,99,0,8,1.38
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Drew Ferguson,SF,156,5,0.318,19,18,3
+Stephen Wilkerson,BAL,214,5,0.288,24,22,4
+Abiatal Avelino,SF,71,2,0.308,8,8,2
+Blake Trahan,CIN,123,3,0.312,14,13,2
+Pablo Reyes,PIT,107,3,0.317,14,12,3

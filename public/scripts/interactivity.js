@@ -1,5 +1,6 @@
 
 const SteamerUrl = 'https://frozen-shore-95322.herokuapp.com/steamer';
+const RotochampUrl = 'https://frozen-shore-95322.herokuapp.com/rotochamp';
 var teams = ['Joe', 'Brian', 'Jim', 'Rich', 'Chris', 'Adam', 'Jody', 'Craig', 'Alan', 'Stu'];
 var draftNumber = 0;
 var allPlayers;
@@ -15,7 +16,7 @@ $(document).ready(function() {
 	// Available Players array
 	var availablePlayers = [];
 	
-	$.getJSON(SteamerUrl, function(result){
+	$.getJSON(RotochampUrl, function(result){
 		
 		allPlayers = result.players; 
 
