@@ -24,6 +24,16 @@ function initializeVars (data) {
 			pitchers.push(data[i]);
 		}
 	}
+
+	// Initial order for hitters is descending At Bats
+	hitters.sort(function (a,b) {
+		return b.countstat - a.countstat;
+	});
+
+	// Initial order for pitchers is descending 2*W + S 
+	pitchers.sort(function (a,b) {
+		return (2*b.stat4 + b.stat3) - (2*a.stat4 + a.stat3);
+	});
 }
 
 function calculateHitterValues () {
