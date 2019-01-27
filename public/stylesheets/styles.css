@@ -27,7 +27,7 @@ ul li {
 }
 
 #app-title {
-  display: inline;
+  display: inline-block;
 }
 
 .pos-OF {
