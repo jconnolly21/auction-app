@@ -37,6 +37,12 @@ function calculateHitterValues () {
 	for (var i = 0; i < 5; i++) {
 		console.log(hitters[i].name + ': $' + hitters[i].value);
 	}
+	var checkSum = 0;
+	for (var i = 0; i < 140; i++) {
+		checkSum += hitters[i].value;
+	}
+	console.log('Expected sum: $' + hitterEconomy);
+	console.log('Actual sum: $' + checkSum);
 }
 
 function calculatePitcherValues () {
