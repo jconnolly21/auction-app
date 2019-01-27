@@ -23,7 +23,8 @@ ul li {
 }
 
 #settings-button {
-  margin-top: 5px;
+  position: relative;
+  top: 15px;
 }
 
 #app-title {
