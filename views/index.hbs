@@ -72,15 +72,27 @@
 	      			<div class="modal-section row">
 	      				<div class="col-6">
 	      					<h5>Add Keeper</h5>
-	      					<select id="proj-source" class="selectpicker" data-size="10" data-live-search="true">
+	      					<select id="keeper-options" class="selectpicker" data-size="10" data-live-search="true">
 	      						<option>Max Scherzer</option>
 	      						<option>Mookie Betts</option>
 	      						<option>Carl Madson</option>
 	      						<option>Speedy Jones</option>
 	      					</select>
+	      					<select id="keeper-team" class="selectpicker">
+	      						<option>Joe</option>
+	      						<option>Jimmer</option>
+	      						<option>Rich</option>
+	      					</select>
+	      					$<input id="keeper-quantity" type="number" name="quantity" min="1" max="250">
+	      					<button id="keeper-submit" type="button" class="btn btn-success">Submit</button>
 	      				</div>
 	      				<div class="col-6">
 	      					<h5>Keeper List</h5>
+	      				</div>
+	      			</div>
+	      			<div class="modal-section row">
+	      				<div class="col text-right">
+	      					<button id="settings-submit" type="button" class="btn btn-success">Save Changes</button>
 	      				</div>
 	      			</div>
 	      		</div>
