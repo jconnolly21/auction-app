@@ -255,6 +255,16 @@ $(document).ready(function() {
 				}
 			}
 		}
+
+		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
+		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
+		updateRosterTable(rosters[activeRosterTeamIndex]);
+
+		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
+		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
+		updateTeamTotals(rosters[activeStatsTeamIndex]);
+
+		updateHitterPitcherBudgets(rosters[0]);
 	});
 
 });
