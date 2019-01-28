@@ -273,6 +273,7 @@ $(document).ready(function() {
 			return b.value - a.value;
 		});
 		updateNominateList(availablePlayers);
+		updateKeeperOptions(availablePlayers);
 
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
@@ -315,6 +316,7 @@ $(document).ready(function() {
 			return b.value - a.value;
 		});
 		updateNominateList(availablePlayers);
+		updateKeeperOptions(availablePlayers);
 
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
