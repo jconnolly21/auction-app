@@ -248,10 +248,21 @@ $(document).ready(function() {
 		$(e.target).parent().parent().remove();
 			for (var i = 0; i < allPlayers.length; i++) {
 				if (allPlayers[i].name == clickedPlayer) {
+					// Remove from roster
+					for (var j = 0; j < rosters[allPlayers[i].ownerid-1]; j++) {
+						if (rosters[allPlayers[i].ownerid-1][j].name == clickedPlayer) {
+							// Find player in roster and remove
+							rosters[allPlayers[i].ownerid-1].splice(j,1);
+						}
+					}
+
+					// Set ownership props to null
 					allPlayers[i].ownerid = null;
 					allPlayers[i].price = null;
 					allPlayers[i].rosterspot = null;
 					allPlayers[i].draftnumber = null;
+
+					// Add to Available Players & un-highlight in tables
 					availablePlayers.push(allPlayers[i]);
 					updatePlayersInTables(allPlayers[i]);
 				}
@@ -280,10 +291,21 @@ $(document).ready(function() {
 		var removedPlayer = $('#revert-list').find(":selected").text();
 		for (var i = 0; i < allPlayers.length; i++) {
 			if (allPlayers[i].name == removedPlayer) {
+				// Remove from roster
+				for (var j = 0; j < rosters[allPlayers[i].ownerid-1]; j++) {
+					if (rosters[allPlayers[i].ownerid-1][j].name == removedPlayer) {
+						// Find player in roster and remove
+						rosters[allPlayers[i].ownerid-1].splice(j,1);
+					}
+				}
+
+				// Set ownership props to null
 				allPlayers[i].ownerid = null;
 				allPlayers[i].price = null;
 				allPlayers[i].rosterspot = null;
 				allPlayers[i].draftnumber = null;
+
+				// Add to available players and un-highlight in tables
 				availablePlayers.push(allPlayers[i]);
 				updatePlayersInTables(allPlayers[i]);
 			}

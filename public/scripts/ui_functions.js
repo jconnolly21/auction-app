@@ -143,7 +143,7 @@ function updateSimilarPlayers(data, player) {
 
 // data here is the rosters 2d array
 function setRevertList(data) {
-	var htmlString = '';
+	var htmlString = '<option>Pick a Player</option>';
 	for (var i = 0; i < data.length; i++) {
 		for (var j = 0; j < data[i].length; j++) {
 			htmlString += '<option>' + data[i][j].name + '</option>';
