@@ -51,59 +51,59 @@ $(document).ready(function() {
 		updateHitterPitcherBudgets(rosters[0]);
 	});
 
-	$('#proj-source').change(function () {
-		var projSource;
-		if ($('#proj-source').find(":selected").text() == 'RotoChamp') {
-			projSource = RotochampUrl;
-		} else {
-			projSource = SteamerUrl;
-		}
+	// $('#proj-source').change(function () {
+	// 	var projSource;
+	// 	if ($('#proj-source').find(":selected").text() == 'RotoChamp') {
+	// 		projSource = RotochampUrl;
+	// 	} else {
+	// 		projSource = SteamerUrl;
+	// 	}
 		
-		$.getJSON(projSource, function(result){
+	// 	$.getJSON(projSource, function(result){
 		
-			allPlayers = result.players; 
+	// 		allPlayers = result.players; 
 	
-			initializeVars(allPlayers);
-			calculateHitterValues();
-			calculatePitcherValues();
+	// 		initializeVars(allPlayers);
+	// 		calculateHitterValues();
+	// 		calculatePitcherValues();
 	
-			allPlayers.sort(function (a,b) {
-				return b.value - a.value;
-			});
+	// 		allPlayers.sort(function (a,b) {
+	// 			return b.value - a.value;
+	// 		});
 	
-			drawPlayerTable(allPlayers, 'U', '#hitter-stats');
-			drawPlayerTable(allPlayers, 'P', '#sp-stats');
-			drawPlayerTable(allPlayers, 'C', '#category-stats');
+	// 		drawPlayerTable(allPlayers, 'U', '#hitter-stats');
+	// 		drawPlayerTable(allPlayers, 'P', '#sp-stats');
+	// 		drawPlayerTable(allPlayers, 'C', '#category-stats');
 	
-			availablePlayers = [];
+	// 		availablePlayers = [];
 
-			var rosters = new Array(10);
-			for (var i = 0; i < rosters.length; i++) {
-				rosters[i] = new Array(0);
-			}
+	// 		var rosters = new Array(10);
+	// 		for (var i = 0; i < rosters.length; i++) {
+	// 			rosters[i] = new Array(0);
+	// 		}
 	
-			for(i = 0; i < allPlayers.length; i++) {
-				if (allPlayers[i].ownerid == null) { 
-					availablePlayers.push(allPlayers[i]);
-				} else {
-					draftNumber = Math.max(draftNumber, allPlayers[i].draftnumber)
-					rosters[allPlayers[i].ownerid - 1].push(allPlayers[i]);
-					updateDraftLog(allPlayers[i]);
-					if (allPlayers[i].draftnumber == 0) {
-						updateKeeperList(allPlayers[i]);
-					}
-				}
-			}
+	// 		for(i = 0; i < allPlayers.length; i++) {
+	// 			if (allPlayers[i].ownerid == null) { 
+	// 				availablePlayers.push(allPlayers[i]);
+	// 			} else {
+	// 				draftNumber = Math.max(draftNumber, allPlayers[i].draftnumber)
+	// 				rosters[allPlayers[i].ownerid - 1].push(allPlayers[i]);
+	// 				updateDraftLog(allPlayers[i]);
+	// 				if (allPlayers[i].draftnumber == 0) {
+	// 					updateKeeperList(allPlayers[i]);
+	// 				}
+	// 			}
+	// 		}
 	
-			draftNumber += 1;
-			updateNominateList(availablePlayers);
-			updateKeeperOptions(availablePlayers)
-			updateBudgets(rosters);
-			updateRosterTable(rosters[0]);
-			updateTeamTotals(rosters[0]);
-			updateHitterPitcherBudgets(rosters[0]);
-		});
-	});
+	// 		draftNumber += 1;
+	// 		updateNominateList(availablePlayers);
+	// 		updateKeeperOptions(availablePlayers)
+	// 		updateBudgets(rosters);
+	// 		updateRosterTable(rosters[0]);
+	// 		updateTeamTotals(rosters[0]);
+	// 		updateHitterPitcherBudgets(rosters[0]);
+	// 	});
+	// });
 
 	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
