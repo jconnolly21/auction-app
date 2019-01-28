@@ -64,12 +64,12 @@ $(document).ready(function() {
 			for (var i = 0; i < allPlayers.length; i++) {
 				for (var j = 0; j < result.players.length; j++) {
 					if (allPlayers[i].name == result.players[j].name) {
-						allPlayers[j].stat1 = result.players[j].stat1;
-						allPlayers[j].stat2 = result.players[j].stat2;
-						allPlayers[j].stat3 = result.players[j].stat3;
-						allPlayers[j].stat4 = result.players[j].stat4;
-						allPlayers[j].stat5 = result.players[j].stat5;
-						allPlayers[j].countstat = result.players[j].countstat;
+						allPlayers[i].stat1 = result.players[j].stat1;
+						allPlayers[i].stat2 = result.players[j].stat2;
+						allPlayers[i].stat3 = result.players[j].stat3;
+						allPlayers[i].stat4 = result.players[j].stat4;
+						allPlayers[i].stat5 = result.players[j].stat5;
+						allPlayers[i].countstat = result.players[j].countstat;
 					}
 				}
 			} 
