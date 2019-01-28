@@ -49,6 +49,7 @@ $(document).ready(function() {
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
 		updateHitterPitcherBudgets(rosters[0]);
+		setRevertList(rosters);
 	});
 
 	$('#proj-source').change(function () {
@@ -144,6 +145,8 @@ $(document).ready(function() {
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
 		updateHitterPitcherBudgets(rosters[0]);
+
+		setRevertList(rosters);
 	});
 
 	$("#keeper-submit").click(function() {
@@ -179,6 +182,8 @@ $(document).ready(function() {
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
 		updateHitterPitcherBudgets(rosters[0]);
+
+		setRevertList(rosters);
 	});
 
 	$('body').on('click', '#pos-switcher', function(e) {
@@ -267,6 +272,8 @@ $(document).ready(function() {
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
 		updateHitterPitcherBudgets(rosters[0]);
+
+		setRevertList(rosters);
 	});
 
 	$('#revert-pick').click(function () {
@@ -296,6 +303,8 @@ $(document).ready(function() {
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
 		updateHitterPitcherBudgets(rosters[0]);
+
+		setRevertList(rosters);
 	});
 
 });

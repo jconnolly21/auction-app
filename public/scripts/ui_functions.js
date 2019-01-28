@@ -141,6 +141,18 @@ function updateSimilarPlayers(data, player) {
 	$("#similar-players").html("<li>" + closestPlayers[0].name + " - " + closestPlayers[0].team + " - " + closestPlayers[0].elig + " - $" + closestPlayers[0].value + "</li>" + "<li>" + closestPlayers[1].name + " - " + closestPlayers[1].team + " - " + closestPlayers[1].elig + " - $" + closestPlayers[1].value + "</li>")
 }
 
+// data here is the rosters 2d array
+function setRevertList(data) {
+	var htmlString = '';
+	for (var i = 0; i < data.length; i++) {
+		for (var j = 0; j < data[i].length; j++) {
+			htmlString += '<option>' + data[i][j].name + '</option>';
+		}
+	}
+	$('#revert-list').html(htmlString);
+	$('#revert-list').selectpicker('refresh');
+}
+
 // data here is a player
 function updatePlayersInTables(data) {
 	if (data.ownerid != null) {
