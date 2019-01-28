@@ -256,9 +256,7 @@ function updateDraftLog(data) {
 
 // data here is a player
 function updateKeeperList(data) {
-	var htmlString = '';
-	var printName = data.name;
-	htmlString += '<tr><td class="keeper-big">' + printName + '</td><td class="keeper-small column-center">' + teams[data.ownerid-1] + '</td><td class="keeper-small column-center">$' + data.price + '</td><td class="keeper-small column-center remove-keeper"><a href="#">X</a></td></tr>';
+	var htmlString = '<tr><td class="keeper-big">' + data.name + '</td><td class="keeper-small column-center">' + teams[data.ownerid-1] + '</td><td class="keeper-small column-center">$' + data.price + '</td><td class="keeper-small column-center remove-keeper"><a href="#">X</a></td></tr>';
 	$('#keeper-list').prepend(htmlString);
 }
 

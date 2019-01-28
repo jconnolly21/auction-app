@@ -290,6 +290,11 @@ $(document).ready(function() {
 
 	$('#revert-pick').click(function () {
 		var removedPlayer = $('#revert-list').find(":selected").text();
+
+		$("tbody#keeper-list td").filter(function() {
+		    return $(this).text() == removedPlayer;
+		}).closest("tr").remove();
+
 		for (var i = 0; i < allPlayers.length; i++) {
 			if (allPlayers[i].name == removedPlayer) {
 				// Remove from roster
