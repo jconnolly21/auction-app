@@ -58,7 +58,8 @@ ul li {
 }
 
 .keeper-table {
-  width: 100% 
+  width: 100%;
+  font-size: 9pt;
 }
 
 .keeper-table > thead,
