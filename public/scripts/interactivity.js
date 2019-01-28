@@ -4,7 +4,7 @@ const RotochampUrl = 'https://frozen-shore-95322.herokuapp.com/rotochamp';
 var teams = ['Joe', 'Brian', 'Jim', 'Rich', 'Chris', 'Adam', 'Jody', 'Craig', 'Alan', 'Stu'];
 var draftNumber = 0;
 var allPlayers;
-
+var availablePlayers = [];
 $(document).ready(function() {
 	
 	// Rosters array
@@ -12,9 +12,6 @@ $(document).ready(function() {
 	for (var i = 0; i < rosters.length; i++) {
 		rosters[i] = new Array(0);
 	}
-
-	// Available Players array
-	var availablePlayers = [];
 	
 	$.getJSON(SteamerUrl, function(result){
 		
@@ -172,6 +169,8 @@ $(document).ready(function() {
 					allPlayers[i].price = null;
 					allPlayers[i].rosterspot = null;
 					allPlayers[i].draftnumber = null;
+					availablePlayers.push(allPlayers[i]);
+					updateNominateList(availablePlayers);
 				}
 			}
 		}
