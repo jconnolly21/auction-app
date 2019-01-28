@@ -43,6 +43,46 @@ ul li {
   border-bottom-color: #eee;
 }
 
+.keeper-table thead {
+  background-color: #F5F8FA;
+}
+
+.keeper-table {
+    width: 100% 
+}
+
+.keeper-table > thead,
+.keeper-table > tbody,
+.keeper-table > thead > tr,
+.keeper-table > tbody > tr,
+.keeper-table > thead > tr > th,
+.keeper-table > tbody > tr > td {
+    display: block;
+}
+
+.keeper-table > tbody > tr:after,
+.keeper-table > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.keeper-table > tbody {
+    overflow-y: scroll;
+    height: 200px;
+}
+
+.keeper-big {
+  width: 50%;
+  float: left;
+}
+
+.keeper-small {
+  width: 16%;
+  float: left;
+}
+
 .pos-OF {
   background-color: #669EFF;
   text-align: center;
