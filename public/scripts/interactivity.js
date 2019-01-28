@@ -249,7 +249,7 @@ $(document).ready(function() {
 			for (var i = 0; i < allPlayers.length; i++) {
 				if (allPlayers[i].name == clickedPlayer) {
 					// Remove from roster
-					for (var j = 0; j < rosters[allPlayers[i].ownerid-1]; j++) {
+					for (var j = 0; j < rosters[allPlayers[i].ownerid-1].length; j++) {
 						if (rosters[allPlayers[i].ownerid-1][j].name == clickedPlayer) {
 							// Find player in roster and remove
 							rosters[allPlayers[i].ownerid-1].splice(j,1);
@@ -292,11 +292,9 @@ $(document).ready(function() {
 		for (var i = 0; i < allPlayers.length; i++) {
 			if (allPlayers[i].name == removedPlayer) {
 				// Remove from roster
-				for (var j = 0; j < rosters[allPlayers[i].ownerid-1]; j++) {
-					console.log(rosters[allPlayers[i].ownerid-1][j]);
+				for (var j = 0; j < rosters[allPlayers[i].ownerid-1].length; j++) {
 					if (rosters[allPlayers[i].ownerid-1][j].name == removedPlayer) {
 						// Find player in roster and remove
-						console.log('made it here');
 						rosters[allPlayers[i].ownerid-1].splice(j,1);
 					}
 				}
