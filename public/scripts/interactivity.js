@@ -146,6 +146,41 @@ $(document).ready(function() {
 		updateHitterPitcherBudgets(rosters[0]);
 	});
 
+	$("#keeper-submit").click(function() {
+		var playerNominated = $('#keeper-options').find(":selected").text();
+		var teamPurchasing = $('#keeper-team').find(":selected").text();
+		var bidAmount = $('#keeper-quantity').val();
+
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				var purchasedPlayer = availablePlayers.splice(i,1)[0];
+				var rosterSpot = purchasedPlayer.split(',')[0];
+				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
+				purchasedPlayer.rosterspot = rosterSpot;
+				purchasedPlayer.price = bidAmount;
+				purchasedPlayer.draftnumber = 0;
+				updatePlayersInTables(purchasedPlayer);
+				updateDraftLog(purchasedPlayer);
+				updateKeeperList(purchasedPlayer);
+				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
+			}
+		}
+
+		updateNominateList(availablePlayers);
+		updateKeeperOptions(availablePlayers);
+		updateBudgets(rosters);
+
+		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
+		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
+		updateRosterTable(rosters[activeRosterTeamIndex]);
+
+		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
+		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
+		updateTeamTotals(rosters[activeStatsTeamIndex]);
+
+		updateHitterPitcherBudgets(rosters[0]);
+	});
+
 	$('body').on('click', '#pos-switcher', function(e) {
 		var newPos = $(e.target).text();
 		var playerName = $(e.target).val();
