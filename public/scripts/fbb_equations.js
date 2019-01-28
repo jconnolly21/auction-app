@@ -1,18 +1,24 @@
 var hitterEconomy;
 var pitcherEconomy;
 
-var hitterRVals = [0,0,0,0,0];
-var pitcherRVals = [0,0,0,0,0];
+var hitterRVals;
+var pitcherRVals;
 
 var hitterPitcherSplit = .65;
 
-var hitters = new Array(0);
-var pitchers = new Array(0);
+var hitters;
+var pitchers;
 
 function initializeVars (data) {
 
 	hitterEconomy = teams.length*260*(hitterPitcherSplit);
 	pitcherEconomy = teams.length*260*(1-hitterPitcherSplit);
+
+	hitterRVals = [0,0,0,0,0];
+	pitcherRVals = [0,0,0,0,0];
+
+	hitters = new Array(0);
+	pitchers = new Array(0);
 
 	for (var i = 0; i < data.length; i++) {
 		if (data[i].type == 'Hitter') {
