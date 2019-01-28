@@ -239,7 +239,6 @@ $(document).ready(function() {
 
 	$('body').on('click', '.remove-keeper', function(e) {
 		var clickedPlayer = $(e.target).parent().parent().find('td').html();
-		console.log(clickedPlayer);
 		if ($(e.target).parent().parent().is('tr')) {
 		$(e.target).parent().parent().remove();
 			for (var i = 0; i < allPlayers.length; i++) {
@@ -253,6 +252,35 @@ $(document).ready(function() {
 			}
 		}
 
+		availablePlayers.sort(function (a,b) {
+			return b.value - a.value;
+		});
+		updateNominateList(availablePlayers);
+		updatePlayersInTables(allPlayers[i]);
+
+		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
+		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
+		updateRosterTable(rosters[activeRosterTeamIndex]);
+
+		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
+		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
+		updateTeamTotals(rosters[activeStatsTeamIndex]);
+
+		updateHitterPitcherBudgets(rosters[0]);
+	});
+
+	$('#revert-pick').click(function () {
+		var removedPlayer = $('#revert-list').find(":selected").text();
+		for (var i = 0; i < allPlayers.length; i++) {
+			if (allPlayers[i].name == removedPlayer) {
+				allPlayers[i].ownerid = null;
+				allPlayers[i].price = null;
+				allPlayers[i].rosterspot = null;
+				allPlayers[i].draftnumber = null;
+				availablePlayers.push(allPlayers[i]);
+			}
+		}
+		
 		availablePlayers.sort(function (a,b) {
 			return b.value - a.value;
 		});
