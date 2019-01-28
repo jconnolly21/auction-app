@@ -39,6 +39,9 @@ $(document).ready(function() {
 				draftNumber = Math.max(draftNumber, allPlayers[i].draftnumber)
 				rosters[allPlayers[i].ownerid - 1].push(allPlayers[i]);
 				updateDraftLog(allPlayers[i]);
+				if (allPlayers[i].draftnumber == 0) {
+					updateKeeperList(allPlayers[i]);
+				}
 			}
 		}
 

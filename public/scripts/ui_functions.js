@@ -230,6 +230,17 @@ function updateDraftLog(data) {
 	$('#draft-log').prepend(htmlString);
 }
 
+// data here is a player
+function updateKeeperList(data) {
+	var htmlString = '';
+	var printName = data.name;
+	if (printName.length > 20) {
+		printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
+	}
+	htmlString += '<tr><td class="keeper-big">' + printName + '</td><td class="keeper-small column-center">' + teams[data.ownerid-1] + '</td><td class="keeper-small column-center">$' + data.price + '</td><td class="keeper-small column-center"><a href="#">X</a></td></tr>';
+	$('#keeper-list').prepend(htmlString);
+}
+
 // data here is a single teams roster
 function updateRosterTable(data) {
 	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
