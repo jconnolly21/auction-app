@@ -248,6 +248,7 @@ $(document).ready(function() {
 					allPlayers[i].rosterspot = null;
 					allPlayers[i].draftnumber = null;
 					availablePlayers.push(allPlayers[i]);
+					updatePlayersInTables(allPlayers[i]);
 				}
 			}
 		}
@@ -256,7 +257,6 @@ $(document).ready(function() {
 			return b.value - a.value;
 		});
 		updateNominateList(availablePlayers);
-		updatePlayersInTables(allPlayers[i]);
 
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
@@ -278,14 +278,14 @@ $(document).ready(function() {
 				allPlayers[i].rosterspot = null;
 				allPlayers[i].draftnumber = null;
 				availablePlayers.push(allPlayers[i]);
+				updatePlayersInTables(allPlayers[i]);
 			}
 		}
-		
+
 		availablePlayers.sort(function (a,b) {
 			return b.value - a.value;
 		});
 		updateNominateList(availablePlayers);
-		updatePlayersInTables(allPlayers[i]);
 
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
