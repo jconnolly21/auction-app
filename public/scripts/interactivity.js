@@ -265,6 +265,7 @@ $(document).ready(function() {
 					// Add to Available Players & un-highlight in tables
 					availablePlayers.push(allPlayers[i]);
 					updatePlayersInTables(allPlayers[i]);
+					removeFromDraftLog(allPlayers[i]);
 				}
 			}
 		}
@@ -315,6 +316,7 @@ $(document).ready(function() {
 				// Add to available players and un-highlight in tables
 				availablePlayers.push(allPlayers[i]);
 				updatePlayersInTables(allPlayers[i]);
+				removeFromDraftLog(allPlayers[i]);
 			}
 		}
 
@@ -334,7 +336,7 @@ $(document).ready(function() {
 
 		updateHitterPitcherBudgets(rosters[0]);
 		updateBudgets(rosters);
-		
+
 		setRevertList(rosters);
 	});
 

@@ -254,6 +254,16 @@ function updateDraftLog(data) {
 	$('#draft-log').prepend(htmlString);
 }
 
+function removeFromDraftLog(data) {
+	var printName = data.name;
+	if (printName.length > 12) {
+		printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
+	}
+	$("#draft-log td").filter(function() {
+		return $(this).text() == (printName + ' (' + data.team + ')');
+	}).closest("tr").remove();
+}
+
 // data here is a player
 function updateKeeperList(data) {
 	var htmlString = '<tr><td class="keeper-big">' + data.name + '</td><td class="keeper-small column-center">' + teams[data.ownerid-1] + '</td><td class="keeper-small column-center">$' + data.price + '</td><td class="keeper-small column-center remove-keeper"><a href="#">X</a></td></tr>';
