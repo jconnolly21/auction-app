@@ -154,7 +154,7 @@ $(document).ready(function() {
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
-				var rosterSpot = purchasedPlayer.split(',')[0];
+				var rosterSpot = purchasedPlayer.elig.split(',')[0];
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
 				purchasedPlayer.rosterspot = rosterSpot;
 				purchasedPlayer.price = bidAmount;
