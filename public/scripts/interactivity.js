@@ -284,6 +284,7 @@ $(document).ready(function() {
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
 		updateHitterPitcherBudgets(rosters[0]);
+		updateBudgets(rosters);
 
 		setRevertList(rosters);
 	});
@@ -332,7 +333,8 @@ $(document).ready(function() {
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
 		updateHitterPitcherBudgets(rosters[0]);
-
+		updateBudgets(rosters);
+		
 		setRevertList(rosters);
 	});
 
