@@ -160,6 +160,22 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
+	$('body').on('click', '.remove-keeper', function(e) {
+		var clickedPlayer = $(e.target).parent().parent().find('td').html();
+		console.log(clickedPlayer);
+		console.log($(e.target).parent().parent().html());
+		$(e.target).parent().parent().remove();
+		for (var i = 0; i < allPlayers.length; i++) {
+			if (allPlayers[i].name == clickedPlayer) {
+				console.log(allPlayers[i].name)
+				allPlayers[i].ownerid = null;
+				allPlayers[i].price = null;
+				allPlayers[i].rosterspot = null;
+				allPlayers[i].draftnumber = null;
+			}
+		}
+	});
+
 });
 
 // ---- Other Helpers ----
