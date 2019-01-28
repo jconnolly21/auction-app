@@ -43,12 +43,15 @@ ul li {
   border-bottom-color: #eee;
 }
 
+#keeper-header-margin {
+  margin-bottom: 15px;
+}
+
 .keeper-table thead {
   background-color: #F5F8FA;
 }
 
 .keeper-table {
-  margin-top: 10px;
   width: 100% 
 }
 
