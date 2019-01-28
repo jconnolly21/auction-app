@@ -44,7 +44,7 @@ ul li {
 }
 
 #keeper-header-margin {
-  margin-bottom: 17px;
+  margin-bottom: 18px;
 }
 
 .keeper-table thead {
@@ -74,7 +74,7 @@ ul li {
 
 .keeper-table > tbody {
     overflow-y: scroll;
-    height: 245px;
+    height: 240px;
 }
 
 .keeper-big {
