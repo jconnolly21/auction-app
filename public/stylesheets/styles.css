@@ -48,7 +48,8 @@ ul li {
 }
 
 .keeper-table {
-    width: 100% 
+  margin-top: 10px;
+  width: 100% 
 }
 
 .keeper-table > thead,
@@ -70,7 +71,7 @@ ul li {
 
 .keeper-table > tbody {
     overflow-y: scroll;
-    height: 190px;
+    height: 250px;
 }
 
 .keeper-big {
