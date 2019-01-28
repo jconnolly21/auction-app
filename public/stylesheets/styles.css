@@ -47,6 +47,12 @@ ul li {
   margin-bottom: 17px;
 }
 
+.keeper-divider {
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #eee;
+}
+
 .keeper-table thead {
   background-color: #F5F8FA;
 }
