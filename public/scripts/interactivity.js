@@ -171,6 +171,7 @@ $(document).ready(function() {
 					allPlayers[i].draftnumber = null;
 					availablePlayers.push(allPlayers[i]);
 					updateNominateList(availablePlayers);
+					updatePlayersInTables(allPlayers[i]);
 				}
 			}
 		}

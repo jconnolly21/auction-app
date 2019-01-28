@@ -143,19 +143,31 @@ function updateSimilarPlayers(data, player) {
 
 // data here is a player
 function updatePlayersInTables(data) {
-	var classText = 'player-picked';
-	if (data.ownerid == 1) {
-		classText = 'player-mine';
+	if (data.ownerid != null) {
+		var classText = 'player-picked';
+		if (data.ownerid == 1) {
+			classText = 'player-mine';
+		}
+		$("tbody#hitter-stats th").filter(function() {
+		    return $(this).text() == data.name;
+		}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
+		$("tbody#sp-stats th").filter(function() {
+		    return $(this).text() == data.name;
+		}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
+		$("tbody#category-stats th").filter(function() {
+		    return $(this).text() == data.name;
+		}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
+	} else {
+		$("tbody#hitter-stats th").filter(function() {
+		    return $(this).text() == data.name;
+		}).closest("tr").removeClass('player-picked').removeClass('player-mine').find('td.player-price').html('');
+		$("tbody#sp-stats th").filter(function() {
+		    return $(this).text() == data.name;
+		}).closest("tr").removeClass('player-picked').removeClass('player-mine').find('td.player-price').html('');
+		$("tbody#category-stats th").filter(function() {
+		    return $(this).text() == data.name;
+		}).closest("tr").removeClass('player-picked').removeClass('player-mine').find('td.player-price').html('');
 	}
-	$("tbody#hitter-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
-	$("tbody#sp-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
-	$("tbody#category-stats th").filter(function() {
-	    return $(this).text() == data.name;
-	}).closest("tr").addClass('player-picked').addClass(classText).find('td.player-price').html('$' + data.price);
 }
 
 // data here is all players
