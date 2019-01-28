@@ -381,3 +381,14 @@ function updateNominateList(data) {
 	}
 	$("#nominate-list").selectpicker('refresh');
 }
+
+// data here is a list of players
+function updateKeeperOptions(data) {
+	$("#keeper-options").html('');
+	var htmlString = '';
+	for (var i = 0; i < data.length; i++) {
+		htmlString = ('<option data-subtext="$' + data[i].value + ' (' + data[i].team + ') ' + data[i].elig + '">' + data[i].name + '</option>');
+		$("#keeper-options").append(htmlString);
+	}
+	$("#keeper-options").selectpicker('refresh');
+}

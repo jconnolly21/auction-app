@@ -44,6 +44,7 @@ $(document).ready(function() {
 
 		draftNumber += 1;
 		updateNominateList(availablePlayers);
+		updateKeeperOptions(availablePlayers)
 		updateBudgets(rosters);
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
@@ -86,6 +87,7 @@ $(document).ready(function() {
 		draftNumber += 1;
 
 		updateNominateList(availablePlayers);
+		updateKeeperOptions(availablePlayers);
 		updateBudgets(rosters);
 
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
