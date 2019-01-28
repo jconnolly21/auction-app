@@ -244,17 +244,20 @@ $(document).ready(function() {
 		$(e.target).parent().parent().remove();
 			for (var i = 0; i < allPlayers.length; i++) {
 				if (allPlayers[i].name == clickedPlayer) {
-					console.log(allPlayers[i].name)
 					allPlayers[i].ownerid = null;
 					allPlayers[i].price = null;
 					allPlayers[i].rosterspot = null;
 					allPlayers[i].draftnumber = null;
 					availablePlayers.push(allPlayers[i]);
-					updateNominateList(availablePlayers);
-					updatePlayersInTables(allPlayers[i]);
 				}
 			}
 		}
+
+		availablePlayers.sort(function (a,b) {
+			return b.value - a.value;
+		});
+		updateNominateList(availablePlayers);
+		updatePlayersInTables(allPlayers[i]);
 
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
