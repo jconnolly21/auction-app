@@ -295,7 +295,8 @@ $(document).ready(function() {
 				for (var j = 0; j < rosters[allPlayers[i].ownerid-1]; j++) {
 					if (rosters[allPlayers[i].ownerid-1][j].name == removedPlayer) {
 						// Find player in roster and remove
-						console.log(rosters[allPlayers[i].ownerid-1].splice(j,1));
+						console.log('made it here');
+						rosters[allPlayers[i].ownerid-1].splice(j,1);
 					}
 				}
 
