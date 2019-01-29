@@ -384,9 +384,9 @@ function updateDetails(data) {
 	}
 	var notesSection;
 	if (data.note) {
-		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="' + data.note + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="' + data.note + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16"></a>';
 	} else {
-		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16" height="24"></a>';
+		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16"></a>';
 	}
 	
 	$("#nominated-player").html(printName + notesSection);
