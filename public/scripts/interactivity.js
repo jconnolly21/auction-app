@@ -89,7 +89,9 @@ $(document).ready(function() {
 	
 			drawPlayerTable(allPlayers, 'U', '#hitter-stats');
 			drawPlayerTable(allPlayers, 'P', '#sp-stats');
-			drawPlayerTable(allPlayers, 'C', '#category-stats');
+			
+			var activeTablePos = $('#stats-table-position').find(":selected").text();
+			drawPlayerTable(allPlayers, activeTablePos, "#category-stats");
 
 			updateNominateList(availablePlayers);
 			updateKeeperOptions(availablePlayers)
@@ -213,7 +215,7 @@ $(document).ready(function() {
 
 	$('#stats-table-position').change(function () {
 		var activeTablePos = $('#stats-table-position').find(":selected").text();
-		drawPlayerTable(allPlayers, activeTablePos, "#category-stats")
+		drawPlayerTable(allPlayers, activeTablePos, "#category-stats");
 	});
 
 	$('body').on('click', '.player-link', function(e) {
