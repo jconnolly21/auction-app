@@ -62,14 +62,14 @@ function calculateHitterValues () {
 }
 
 function calculatePitcherValues () {
-	for (var i = 0; i < 1; i++) {
+	for (var i = 0; i < 500; i++) {
 		setPitcherRVals();
 		setPitcherCatVals();
 		pitchers.sort(function (a,b) {
 			return b.value - a.value;
 		});
 	}
-	for (var i = 0; i < 25; i++) {
+	for (var i = 0; i < 5; i++) {
 		console.log(pitchers[i].name + ': $' + pitchers[i].value);
 	}
 	var checkSum = 0;
