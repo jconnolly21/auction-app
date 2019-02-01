@@ -99,9 +99,9 @@ $(document).ready(function() {
 		});
 	});
 
-	$("body").on('change', '#nominate-list', function() {
+	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
-
+		
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				updateDetails(availablePlayers[i]);
@@ -112,20 +112,6 @@ $(document).ready(function() {
 			}
 		}
 	});
-
-	// $("#nominate-list").change(function() {
-	// 	var playerNominated = $('#nominate-list').find(":selected").text();
-		
-	// 	for(i = 0; i < availablePlayers.length; i++) {
-	// 		if(availablePlayers[i].name == playerNominated) {
-	// 			updateDetails(availablePlayers[i]);
-	// 			updateStatsRankings(availablePlayers[i]);
-	// 			updateSimilarPlayers(availablePlayers, availablePlayers[i]);
-	// 			updatePositionOptions(availablePlayers[i]);
-	// 			$('#bid-quantity').val(availablePlayers[i].value);
-	// 		}
-	// 	}
-	// });
 
 	$("#bid-accepted").click(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
@@ -209,6 +195,24 @@ $(document).ready(function() {
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
 		for (var i = 0; i < rosters[activeRosterTeamIndex].length; i++) {
 			if (rosters[activeRosterTeamIndex][i].name == playerName) {
+				rosters[activeRosterTeamIndex][i].rosterspot = newPos;
+			}
+		}
+		updateRosterTable(rosters[activeRosterTeamIndex]);
+	});
+
+	$('body').on('change', '.pos-chooser', function(e) {
+		var newPos = $(e.target).find(':selected').text();
+		var playerName = $(e.target).parent().parent().find('td').html();
+		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
+		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
+		
+		for (var i = 0; i < rosters[activeRosterTeamIndex].length; i++) {
+			var checkName = rosters[activeRosterTeamIndex][i].name;
+			if (checkName.length > 15) {
+				checkName = checkName.split(' ')[0][0] + '.' + checkName.substring(checkName.indexOf(' '));
+			}
+			if (checkName == playerName) {
 				rosters[activeRosterTeamIndex][i].rosterspot = newPos;
 			}
 		}

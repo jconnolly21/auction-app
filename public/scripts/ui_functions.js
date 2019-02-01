@@ -292,14 +292,15 @@ function updateRosterTable(data) {
 	for (var i = 0; i < positions.length; i++) {
 		if (filledBy[i] != ' ') {
 			elig = filledBy[i].elig.split(',');
-			eligString = '';
+			eligString = '<select class="pos-switcher">';
 			for (var j = 0; j < elig.length; j++) {
 				if (positions[i].slice(0,-1) != elig[j]) {
 					if (elig[j] != 'SP' && elig[j] != 'RP') {
-						eligString += '<button value="' + filledBy[i].name + '" id="pos-switcher" type="button">' + elig[j] + '</button>';
+						eligString += '<option>' + elig[j] + '</option>';
 					}
 				}
 			}
+			eligString += '</select>';
 			var printName = filledBy[i].name;
 			if (printName.length > 15) {
 				printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
