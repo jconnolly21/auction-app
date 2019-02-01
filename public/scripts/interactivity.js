@@ -188,20 +188,7 @@ $(document).ready(function() {
 		setRevertList(rosters);
 	});
 
-	$('body').on('click', '#pos-switcher', function(e) {
-		var newPos = $(e.target).text();
-		var playerName = $(e.target).val();
-		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
-		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
-		for (var i = 0; i < rosters[activeRosterTeamIndex].length; i++) {
-			if (rosters[activeRosterTeamIndex][i].name == playerName) {
-				rosters[activeRosterTeamIndex][i].rosterspot = newPos;
-			}
-		}
-		updateRosterTable(rosters[activeRosterTeamIndex]);
-	});
-
-	$('body').on('change', '.pos-chooser', function(e) {
+	$('body').on('change', '.pos-switcher', function(e) {
 		var newPos = $(e.target).find(':selected').text();
 		var playerName = $(e.target).parent().parent().find('td').html();
 		var activeRosterTeam = $('#active-roster-team').find(":selected").text();
