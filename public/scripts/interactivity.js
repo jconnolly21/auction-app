@@ -99,9 +99,9 @@ $(document).ready(function() {
 		});
 	});
 
-	$("#nominate-list").change(function() {
+	$("body").on('change', '#nominate-list', function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
-		
+
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				updateDetails(availablePlayers[i]);
@@ -112,6 +112,20 @@ $(document).ready(function() {
 			}
 		}
 	});
+
+	// $("#nominate-list").change(function() {
+	// 	var playerNominated = $('#nominate-list').find(":selected").text();
+		
+	// 	for(i = 0; i < availablePlayers.length; i++) {
+	// 		if(availablePlayers[i].name == playerNominated) {
+	// 			updateDetails(availablePlayers[i]);
+	// 			updateStatsRankings(availablePlayers[i]);
+	// 			updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+	// 			updatePositionOptions(availablePlayers[i]);
+	// 			$('#bid-quantity').val(availablePlayers[i].value);
+	// 		}
+	// 	}
+	// });
 
 	$("#bid-accepted").click(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
