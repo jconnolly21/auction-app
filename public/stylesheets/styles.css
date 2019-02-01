@@ -279,7 +279,6 @@ ul li {
 
 .player-table {
   font-size: 9pt;
-  margin-bottom: 5px;
 }
 
 .player-table thead {
@@ -309,7 +308,7 @@ ul li {
 
 .player-table > tbody {
     overflow-y: scroll;
-    height: 335px;
+    height: 334px;
 }
 
 .big-col {
@@ -331,10 +330,9 @@ ul li {
   background-color: #F5F8FA;
 }
 
-/*.stats-table-fixed {
-  overflow: scroll;
-  height: 350px;
-}*/
+.stats-table-fixed {
+  margin-bottom: 5px;
+}
 
 .player-link {
   color: #2458B3;
