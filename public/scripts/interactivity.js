@@ -122,7 +122,7 @@ $(document).ready(function() {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
-				purchasedPlayer.rosterspot = findAvailableRosterSpot(purchasedPlayer, teams[teams.indexOf(teamPurchasing)]);
+				purchasedPlayer.rosterspot = findAvailableRosterSpot(purchasedPlayer, rosters[teams.indexOf(teamPurchasing)]);
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = draftNumber;
 				updatePlayersInTables(purchasedPlayer);
