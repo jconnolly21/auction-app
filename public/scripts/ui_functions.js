@@ -76,21 +76,6 @@ function swapStatsValues(tableID, playerName, isPicked, valMode) {
 	}).closest("tr").html(htmlString);
 }
 
-// data here is a single teams roster
-function updateHitterPitcherBudgets(data) {
-	var hRem = 148;
-	var pRem = 112;
-	for (var i = 0; i < data.length; i++) {
-		if (data[i].type == "Hitter") {
-			hRem -= data[i].price;
-		} else {
-			pRem -= data[i].price;
-		}
-	}
-	$("#hitter-budget").text("Hitting: $" + hRem);
-	$("#pitcher-budget").text("Pitching: $" + pRem);
-}
-
 // data here is availablePlayers, and player is a certain player
 function updateSimilarPlayers(data, player) {
 	var closestPlayers = new Array (0);

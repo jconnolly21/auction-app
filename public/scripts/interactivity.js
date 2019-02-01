@@ -48,7 +48,6 @@ $(document).ready(function() {
 		updateBudgets(rosters);
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
-		updateHitterPitcherBudgets(rosters[0]);
 		setRevertList(rosters);
 
 		var playerNominated = $('#nominate-list').find(":selected").text();
@@ -166,8 +165,6 @@ $(document).ready(function() {
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
-		updateHitterPitcherBudgets(rosters[0]);
-
 		setRevertList(rosters);
 
 		var playerNominated = $('#nominate-list').find(":selected").text();
@@ -212,8 +209,6 @@ $(document).ready(function() {
 		var activeStatsTeam = $('#active-stats-team').find(":selected").text();
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
-
-		updateHitterPitcherBudgets(rosters[0]);
 
 		setRevertList(rosters);
 
@@ -328,7 +323,6 @@ $(document).ready(function() {
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
-		updateHitterPitcherBudgets(rosters[0]);
 		updateBudgets(rosters);
 
 		setRevertList(rosters);
@@ -389,7 +383,6 @@ $(document).ready(function() {
 		var activeStatsTeamIndex = teams.indexOf(activeStatsTeam);
 		updateTeamTotals(rosters[activeStatsTeamIndex]);
 
-		updateHitterPitcherBudgets(rosters[0]);
 		updateBudgets(rosters);
 
 		setRevertList(rosters);
