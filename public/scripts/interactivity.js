@@ -50,6 +50,17 @@ $(document).ready(function() {
 		updateTeamTotals(rosters[0]);
 		updateHitterPitcherBudgets(rosters[0]);
 		setRevertList(rosters);
+
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				updateDetails(availablePlayers[i]);
+				updateStatsRankings(availablePlayers[i]);
+				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+				$('#bid-quantity').val(availablePlayers[i].value);
+			}
+		}
 	});
 
 	$('#proj-source').change(function () {
@@ -97,6 +108,17 @@ $(document).ready(function() {
 			updateKeeperOptions(availablePlayers)
 			updateTeamTotals(rosters[0]);
 		});
+
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				updateDetails(availablePlayers[i]);
+				updateStatsRankings(availablePlayers[i]);
+				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+				$('#bid-quantity').val(availablePlayers[i].value);
+			}
+		}
 	});
 
 	$("#nominate-list").change(function() {
@@ -147,6 +169,17 @@ $(document).ready(function() {
 		updateHitterPitcherBudgets(rosters[0]);
 
 		setRevertList(rosters);
+
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				updateDetails(availablePlayers[i]);
+				updateStatsRankings(availablePlayers[i]);
+				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+				$('#bid-quantity').val(availablePlayers[i].value);
+			}
+		}
 	});
 
 	$("#keeper-submit").click(function() {
@@ -183,6 +216,17 @@ $(document).ready(function() {
 		updateHitterPitcherBudgets(rosters[0]);
 
 		setRevertList(rosters);
+
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				updateDetails(availablePlayers[i]);
+				updateStatsRankings(availablePlayers[i]);
+				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+				$('#bid-quantity').val(availablePlayers[i].value);
+			}
+		}
 	});
 
 	$('body').on('change', '.pos-switcher', function(e) {
@@ -288,6 +332,17 @@ $(document).ready(function() {
 		updateBudgets(rosters);
 
 		setRevertList(rosters);
+
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				updateDetails(availablePlayers[i]);
+				updateStatsRankings(availablePlayers[i]);
+				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+				$('#bid-quantity').val(availablePlayers[i].value);
+			}
+		}
 	});
 
 	$('#revert-pick').click(function () {
@@ -338,6 +393,17 @@ $(document).ready(function() {
 		updateBudgets(rosters);
 
 		setRevertList(rosters);
+
+		var playerNominated = $('#nominate-list').find(":selected").text();
+		
+		for(i = 0; i < availablePlayers.length; i++) {
+			if(availablePlayers[i].name == playerNominated) {
+				updateDetails(availablePlayers[i]);
+				updateStatsRankings(availablePlayers[i]);
+				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+				$('#bid-quantity').val(availablePlayers[i].value);
+			}
+		}
 	});
 
 });
