@@ -91,17 +91,6 @@ function updateHitterPitcherBudgets(data) {
 	$("#pitcher-budget").text("Pitching: $" + pRem);
 }
 
-// data here is a single player
-function updatePositionOptions(data) {
-	var eligArr = data.elig.split(',');
-	var htmlString = '';
-	for (var i = 0; i < eligArr.length; i++) {
-		htmlString += '<option>' + eligArr[i] + '</option>';
-	}
-	$('#roster-spot').html(htmlString);
-	$('#roster-spot').selectpicker('refresh');
-}
-
 // data here is availablePlayers, and player is a certain player
 function updateSimilarPlayers(data, player) {
 	var closestPlayers = new Array (0);
