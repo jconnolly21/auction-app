@@ -13,7 +13,7 @@ $(document).ready(function() {
 		rosters[i] = new Array(0);
 	}
 	
-	$.getJSON(RotochampUrl, function(result){
+	$.getJSON(SteamerUrl, function(result){
 		
 		allPlayers = result.players; 
 
