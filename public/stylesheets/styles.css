@@ -279,6 +279,7 @@ ul li {
 
 .player-table {
   font-size: 9pt;
+  margin-bottom: 0px;
 }
 
 .player-table thead {
@@ -308,7 +309,7 @@ ul li {
 
 .player-table > tbody {
     overflow-y: scroll;
-    height: 325px;
+    height: 340px;
 }
 
 .big-col {
