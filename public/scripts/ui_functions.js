@@ -283,14 +283,25 @@ function findAvailableRosterSpot(player, roster) {
 		positions[positions.indexOf(cleanRosSpot)] += '*';
 	}
 
+	console.log(positions);
+
 	var elig = player.elig.split(',');
-	for (var i = 0; i < elig.length; i++) {
-		if (positions.indexOf(elig[i]) != -1 && availableSpot == ' ') {
-			availableSpot = elig[i];
+	if (player.type == 'Hitter') {
+		for (var i = 0; i < elig.length; i++) {
+			if (positions.indexOf(elig[i]) != -1 && availableSpot == ' ') {
+				console.log(elig[i]);
+				availableSpot = elig[i];
+			}
 		}
-	}
-	if (availableSpot == ' ') {
-		availableSpot = 'U';
+		if (availableSpot == ' ') {
+			availableSpot = 'U';
+		}
+	} else {
+		if (player.elig == 'SP') {
+			availableSpot = 'SP';
+		} else {
+			availableSpot = 'RP';
+		}
 	}
 	return availableSpot;
 }
