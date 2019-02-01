@@ -195,11 +195,7 @@ $(document).ready(function() {
 		var activeRosterTeamIndex = teams.indexOf(activeRosterTeam);
 		
 		for (var i = 0; i < rosters[activeRosterTeamIndex].length; i++) {
-			var checkName = rosters[activeRosterTeamIndex][i].name;
-			if (checkName.length > 15) {
-				checkName = checkName.split(' ')[0][0] + '.' + checkName.substring(checkName.indexOf(' '));
-			}
-			if (checkName == playerName) {
+			if (rosters[activeRosterTeamIndex][i].name == playerName) {
 				rosters[activeRosterTeamIndex][i].rosterspot = newPos;
 			}
 		}
