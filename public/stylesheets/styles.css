@@ -3,6 +3,11 @@
   margin: auto;
 }
 
+.pos-switcher {
+  border: 0px;
+  outline: 0px;
+}
+
 .hp-budgets {
   margin: 15px auto;
   text-align: right;
