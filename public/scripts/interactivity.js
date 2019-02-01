@@ -117,13 +117,12 @@ $(document).ready(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
-		var rosterSpot = $('#roster-spot').find(":selected").text();
 
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
-				purchasedPlayer.rosterspot = rosterSpot;
+				purchasedPlayer.rosterspot = findAvailableRosterSpot(purchasedPlayer, teams[teams.indexOf(teamPurchasing)]);
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = draftNumber;
 				updatePlayersInTables(purchasedPlayer);
@@ -159,9 +158,8 @@ $(document).ready(function() {
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
-				var rosterSpot = purchasedPlayer.elig.split(',')[0];
 				purchasedPlayer.ownerid = teams.indexOf(teamPurchasing) + 1;
-				purchasedPlayer.rosterspot = rosterSpot;
+				purchasedPlayer.rosterspot = findAvailableRosterSpot(purchasedPlayer, teams[teams.indexOf(teamPurchasing)]);
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = 0;
 				updatePlayersInTables(purchasedPlayer);

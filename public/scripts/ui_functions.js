@@ -270,9 +270,34 @@ function updateKeeperList(data) {
 	$('#keeper-list').prepend(htmlString);
 }
 
+// takes in a player and a roster
+function findAvailableRosterSpot(player, roster) {
+	var availableSpot = ' ';
+	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'];
+
+	for (var i = 0; i < roster.length; i++) {
+		var cleanRosSpot = roster[i].rosterspot;
+		if (cleanRosSpot == 'RP' || cleanRosSpot == 'SP') {
+			cleanRosSpot = 'P';
+		}
+		positions[positions.indexOf(cleanRosSpot)] += '*';
+	}
+
+	var elig = player.elig.split(',');
+	for (var i = 0; i < elig.length; i++) {
+		if (positions.indexOf(elig[i]) != -1 && availableSpot == ' ') {
+			availableSpot = elig[i];
+		}
+	}
+	if (availableSpot == ' ') {
+		availableSpot = 'U';
+	}
+	return availableSpot;
+}
+
 // data here is a single teams roster
 function updateRosterTable(data) {
-	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
+	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'];
 	var filledBy = new Array(23).fill(' ');
 
 	for (var i = 0; i < data.length; i++) {
