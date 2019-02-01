@@ -292,7 +292,7 @@ function updateRosterTable(data) {
 	for (var i = 0; i < positions.length; i++) {
 		if (filledBy[i] != ' ') {
 			elig = filledBy[i].elig.split(',');
-			eligString = '<select class="pos-switcher">';
+			eligString = '<select class="pos-switcher"><option>' + filledBy[i].rosterspot + '</option>';
 			for (var j = 0; j < elig.length; j++) {
 				if (positions[i].slice(0,-1) != elig[j]) {
 					if (elig[j] != 'SP' && elig[j] != 'RP') {
@@ -300,7 +300,7 @@ function updateRosterTable(data) {
 					}
 				}
 			}
-			eligString += '</select><option>' + filledBy[i].rosterspot + '</option>';
+			eligString += '</select>';
 			var printName = filledBy[i].name;
 			if (printName.length > 15) {
 				printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
