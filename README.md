@@ -10,8 +10,10 @@ The goal of this project is to create an application that assists a player when 
 The flexibility in a web application should allow further customization than what has been available through traditional spreadsheet tools. 
 
 ## TODO: 
-- Performance improvements (gets slower as more players are drafted).
 - Enable multi-league support, which will require:
-	1. Blah 1
-	2. Blah 2
-- Other stuff
+	1. A "login" page (no need for serious auth for now.. family use only)
+	2. More editability on league settings (# of owners, teams in pool, league rosters, categories, and more)
+	3. Postgres rosters table restructuring to accomodate multiple leagues (add leagueid column)
+- Edit player notes in the UI
+- Settings modal reformat / styling
+- "Bid Box" reformat / styling
