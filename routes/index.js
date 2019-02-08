@@ -1,7 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
+
 
 const { Client } = require('pg');
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -82,9 +87,11 @@ router.get('/rotochamp', function(req, res, next) {
 });
 
 router.post('/playerupdate', function(req, res, next) {
+  console.log(req.body);
   console.log(req.body.player);
   console.log(req.body.team);
   console.log(req.body.amount);
+  res.send({status: 'woohoo'});
 });
 
 module.exports = router;
