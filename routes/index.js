@@ -81,6 +81,10 @@ router.get('/rotochamp', function(req, res, next) {
   });
 });
 
-//router.put('')
+router.post('/playerupdate', function(req, res, next) {
+  console.log(req.body.player);
+  console.log(req.body.team);
+  console.log(req.body.amount);
+});
 
 module.exports = router;

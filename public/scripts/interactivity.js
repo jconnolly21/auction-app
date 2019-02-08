@@ -177,6 +177,14 @@ $(document).ready(function() {
 				$('#bid-quantity').val(availablePlayers[i].value);
 			}
 		}
+		var postData = {
+			"player" : playerNominated,
+			"team"   : teamPurchasing,
+			"amount" : bidAmount
+		};
+		$.post("https://frozen-shore-95322.herokuapp.com/playerupdate", function( postData ) {
+  			console.log("Sent playerupdate POST");
+		});
 	});
 
 	$("#keeper-submit").click(function() {
