@@ -111,7 +111,6 @@ router.post('/playerupdate', function(req, res, next) {
       });
     }
   });
-  res.send({status: 'sad le'});
 });
 
 router.post('/playerremove', function(req, res, next) {
