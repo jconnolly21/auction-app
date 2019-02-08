@@ -178,9 +178,9 @@ $(document).ready(function() {
 			}
 		}
 		var postData = {
-			"player" : playerNominated,
-			"team"   : teamPurchasing,
-			"amount" : bidAmount
+			player : playerNominated,
+			team   : teamPurchasing,
+			amount : bidAmount
 		};
 		$.post("https://frozen-shore-95322.herokuapp.com/playerupdate", function( postData ) {
   			console.log("Sent playerupdate POST");
