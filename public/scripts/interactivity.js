@@ -178,12 +178,17 @@ $(document).ready(function() {
 			}
 		}
 		var postData = {
-			player : playerNominated,
-			team   : teamPurchasing,
-			amount : bidAmount
+			"player" : playerNominated,
+			"team"   : teamPurchasing,
+			"amount" : bidAmount
 		};
-		$.post("https://frozen-shore-95322.herokuapp.com/playerupdate", function( postData ) {
-  			console.log("Sent playerupdate POST");
+		$.ajax({
+		    type: 'POST',
+		    url: 'https://frozen-shore-95322.herokuapp.com/playerupdate',
+		    data: postData, // or JSON.stringify ({name: 'jonas'}),
+		    success: function(data) { console.log('Success!!!') },
+		    contentType: "application/json",
+		    dataType: 'json'
 		});
 	});
 
