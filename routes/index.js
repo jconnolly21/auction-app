@@ -114,8 +114,30 @@ router.post('/playerupdate', function(req, res, next) {
 });
 
 router.post('/playerremove', function(req, res, next) {
-  console.log(req.body);
-  res.send({status: 'woohoo'});
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  client.connect(function (err, client, done) {
+    if (err) {
+      console.log('Cannot connect to db from js req.');
+      throw err;
+    } else {
+      console.log('Successfully connected to db from js req.')
+      var queryString = "DELETE FROM rosters WHERE name='" + req.body.player +"'";
+      console.log(queryString);
+      client.query(queryString, (err, response) => {
+        if (err) {
+          console.log('Error querying db.');
+          throw err;
+        } else {
+          console.log('Succesfully updated rosters table.')
+          res.send({status: 'hazaa!'});
+        }
+        client.end();
+      });
+    }
+  });
 });
 
 module.exports = router;
