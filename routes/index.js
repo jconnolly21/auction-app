@@ -87,8 +87,30 @@ router.get('/rotochamp', function(req, res, next) {
 });
 
 router.post('/playerupdate', function(req, res, next) {
-   console.log(req.body);
-  res.send({status: 'woohoo'});
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  client.connect(function (err, client, done) {
+    if (err) {
+      console.log('Cannot connect to db from js req.');
+      throw err;
+    } else {
+      console.log('Successfully connected to db from js req.')
+      var queryString = "INSERT INTO rosters(pid,name,price,ownerid,rosterspot,draftnumber) VALUES (CAST("+req.body.pid+" as INTEGER),"+req.body.player+", CAST("+req.body.amount+" as INTEGER), CAST("+req.body.ownerid+" as INTEGER), "+req.body.rosterspot+", CAST("+req.body.draftnumber+" as INTEGER));";
+      client.query(queryString, (err, response) => {
+        if (err) {
+          console.log('Error querying db.');
+          throw err;
+        } else {
+          console.log('Succesfully updated rosters table.')
+          res.send({status: 'hazaa!'});
+        }
+        client.end();
+      });
+    }
+  });
+  res.send({status: 'sad le'});
 });
 
 router.post('/playerremove', function(req, res, next) {
