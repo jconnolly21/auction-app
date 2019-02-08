@@ -182,7 +182,7 @@ $(document).ready(function() {
 			"team"   : 'team',
 			"amount" : 40
 		};
-		$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {player: "Trea Turner"}, function(result) {
+		$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {player: playerNominated, team: teamPurchasing, amount: bidAmount}, function(result) {
 			console.log(result);
 		});
 	});
