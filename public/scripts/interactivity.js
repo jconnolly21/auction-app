@@ -182,13 +182,8 @@ $(document).ready(function() {
 			"team"   : 'team',
 			"amount" : 40
 		};
-		$.ajax({
-		    type: 'POST',
-		    url: 'https://frozen-shore-95322.herokuapp.com/playerupdate',
-		    data: postData, // or JSON.stringify ({name: 'jonas'}),
-		    success: function(data) { console.log('Success!!!'); },
-		    contentType: "application/json",
-		    dataType: 'json'
+		$.post('https://frozen-shore-95322.herokuapp.com/rotochamp', {player: "Trea Turner"}, function(result) {
+			console.log(result);
 		});
 	});
 
