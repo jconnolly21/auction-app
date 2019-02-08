@@ -1,4 +1,4 @@
-# Fantasy Baseball ROTO Auction Assistant
+# Fantasy Baseball Auction Assistant
 
 The goal of this project is to create an application that assists a player when drafting in a fantasy baseball auction by performing a combination of useful tasks:
 
@@ -10,15 +10,10 @@ The goal of this project is to create an application that assists a player when 
 The flexibility in a web application should allow further customization than what has been available through traditional spreadsheet tools. 
 
 ## TODO: 
-- Enable write-back to Postgres:
-	- Player --> purchasing team id, price, draft order (which pick #).
-	- Team --> team names, owner names.
-- Major visual improvements to UI.
-- Performance improvements (gets slower as more players are drafted).
-- Allow user to customize league settings, add keepers, revert picks.
-
-Initializing Postgres with Player Data:
-
-``cat ~/Downloads/localfile.csv | \
-psql `heroku config:get DATABASE_URL` -c "COPY testonly FROM STDIN WITH (FORMAT CSV);"``
-
+- Enable multi-league support, which will require:
+	1. A "login" page (no need for serious auth for now.. family use only)
+	2. More editability on league settings (# of owners, teams in pool, league rosters, categories, and more)
+	3. Postgres rosters table restructuring to accomodate multiple leagues (add leagueid column)
+- Edit player notes in the UI
+- Settings modal reformat / styling
+- "Bid Box" reformat / styling
