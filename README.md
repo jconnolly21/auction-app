@@ -10,15 +10,8 @@ The goal of this project is to create an application that assists a player when 
 The flexibility in a web application should allow further customization than what has been available through traditional spreadsheet tools. 
 
 ## TODO: 
-- Enable write-back to Postgres:
-	- Player --> purchasing team, purchasing amount, roster position filled, draft order (which pick #).
-	- Team --> remaining budget.
-- Major visual improvements to UI.
 - Performance improvements (gets slower as more players are drafted).
-
-Initializing Postgres with Player Data:
-
-``cat ~/Downloads/localfile.csv | \
-psql `heroku config:get DATABASE_URL` -c "COPY testonly FROM STDIN WITH (FORMAT CSV);"``
-
-A little manipulation is needed after to massage the data into the right format.
+- Enable multi-league support, which will require:
+	1. Blah 1
+	2. Blah 2
+- Other stuff
