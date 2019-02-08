@@ -91,4 +91,9 @@ router.post('/playerupdate', function(req, res, next) {
   res.send({status: 'woohoo'});
 });
 
+router.post('/playerremove', function(req, res, next) {
+  console.log(req.body);
+  res.send({status: 'woohoo'});
+});
+
 module.exports = router;

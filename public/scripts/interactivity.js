@@ -292,7 +292,10 @@ $(document).ready(function() {
 	$('body').on('click', '.remove-keeper', function(e) {
 		var clickedPlayer = $(e.target).parent().parent().find('td').html();
 		if ($(e.target).parent().parent().is('tr')) {
-		$(e.target).parent().parent().remove();
+			$.post('https://frozen-shore-95322.herokuapp.com/playerremove', {player: clickedPlayer}, function(result) {
+				console.log(result);
+			});
+			$(e.target).parent().parent().remove();
 			for (var i = 0; i < allPlayers.length; i++) {
 				if (allPlayers[i].name == clickedPlayer) {
 					// Remove from roster
@@ -349,6 +352,10 @@ $(document).ready(function() {
 
 	$('#revert-pick').click(function () {
 		var removedPlayer = $('#revert-list').find(":selected").text();
+
+		$.post('https://frozen-shore-95322.herokuapp.com/playerremove', {player: removedPlayer}, function(result) {
+			console.log(result);
+		});
 
 		$("tbody#keeper-list td").filter(function() {
 		    return $(this).text() == removedPlayer;
