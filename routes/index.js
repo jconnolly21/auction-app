@@ -97,7 +97,7 @@ router.post('/playerupdate', function(req, res, next) {
       throw err;
     } else {
       console.log('Successfully connected to db from js req.')
-      var queryString = "INSERT INTO rosters(pid,name,price,ownerid,rosterspot,draftnumber) VALUES (CAST("+req.body.pid+" as INTEGER),'"+req.body.player+"', CAST("+req.body.amount+" as INTEGER), CAST("+req.body.ownerid+" as INTEGER), '"+req.body.rosterspot+"', CAST("+req.body.draftnumber+" as INTEGER))";
+      var queryString = "INSERT INTO rosters(pid,name,price,ownerid,rosterspot,draftnumber) VALUES ("+req.body.pid+",'"+req.body.player+"',"+req.body.amount+","+req.body.ownerid+",'"+req.body.rosterspot+"',"+req.body.draftnumber+")";
       console.log(queryString);
       client.query(queryString, (err, response) => {
         if (err) {

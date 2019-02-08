@@ -148,7 +148,7 @@ $(document).ready(function() {
 				updatePlayersInTables(purchasedPlayer);
 				updateDraftLog(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
-				$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {pid: purchasedPlayer.pid, player: purchasedPlayer.name, team: purchasedPlayer.ownerid, rosterspot: purchasedPlayer.rosterspot, amount: bidAmount, draftNumber: purchasedPlayer.draftNumber}, function(result) {
+				$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {pid: purchasedPlayer.pid, player: purchasedPlayer.name, ownerid: purchasedPlayer.ownerid, rosterspot: purchasedPlayer.rosterspot, amount: bidAmount, draftnumber: purchasedPlayer.draftnumber}, function(result) {
 					console.log(result);
 				});
 			}
@@ -198,7 +198,7 @@ $(document).ready(function() {
 				updateDraftLog(purchasedPlayer);
 				updateKeeperList(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
-				$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {pid: purchasedPlayer.pid, player: purchasedPlayer.name, team: purchasedPlayer.ownerid, rosterspot: purchasedPlayer.rosterspot, amount: bidAmount, draftNumber: purchasedPlayer.draftNumber}, function(result) {
+				$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {pid: purchasedPlayer.pid, player: purchasedPlayer.name, ownerid: purchasedPlayer.ownerid, rosterspot: purchasedPlayer.rosterspot, amount: bidAmount, draftnumber: purchasedPlayer.draftnumber}, function(result) {
 					console.log(result);
 				});
 			}
