@@ -45,7 +45,7 @@ router.get('/steamer', function(req, res, next) {
   		throw err;
   	} else {
   		console.log('Successfully connected to db from js req.')
-      var queryString = 'select a.name, a.type, a.team, a.elig, a.stat1, a.stat2, a.stat3, a.stat4, a.stat5, a.countstat, b.price, b.ownerid, b.rosterspot, b.draftnumber, c.note from (steamer as a LEFT JOIN rosters as b on a.name = b.name) LEFT JOIN playernotes as c on a.name = c.name';
+      var queryString = 'select a.pid, a.name, a.type, a.team, a.elig, a.stat1, a.stat2, a.stat3, a.stat4, a.stat5, a.countstat, b.price, b.ownerid, b.rosterspot, b.draftnumber, c.note from (steamer as a LEFT JOIN rosters as b on a.name = b.name) LEFT JOIN playernotes as c on a.name = c.name';
   		client.query(queryString, (err, response) => {
   			if (err) {
   				console.log('Error querying db.');
@@ -71,7 +71,7 @@ router.get('/rotochamp', function(req, res, next) {
       throw err;
     } else {
       console.log('Successfully connected to db from js req.')
-      var queryString = 'select a.name, a.type, a.team, a.elig, a.stat1, a.stat2, a.stat3, a.stat4, a.stat5, a.countstat, b.price, b.ownerid, b.rosterspot, b.draftnumber, c.note from (rotochamp as a LEFT JOIN rosters as b on a.name = b.name) LEFT JOIN playernotes as c on a.name = c.name';
+      var queryString = 'select a.pid, a.name, a.type, a.team, a.elig, a.stat1, a.stat2, a.stat3, a.stat4, a.stat5, a.countstat, b.price, b.ownerid, b.rosterspot, b.draftnumber, c.note from (rotochamp as a LEFT JOIN rosters as b on a.name = b.name) LEFT JOIN playernotes as c on a.name = c.name';
       client.query(queryString, (err, response) => {
         if (err) {
           console.log('Error querying db.');
@@ -87,7 +87,7 @@ router.get('/rotochamp', function(req, res, next) {
 });
 
 router.post('/playerupdate', function(req, res, next) {
-  console.log(req.body);
+   console.log(req.body);
   res.send({status: 'woohoo'});
 });
 

@@ -138,10 +138,6 @@ $(document).ready(function() {
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
 
-		$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {player: playerNominated, team: teamPurchasing, amount: bidAmount}, function(result) {
-			console.log(result);
-		});
-
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
@@ -152,6 +148,9 @@ $(document).ready(function() {
 				updatePlayersInTables(purchasedPlayer);
 				updateDraftLog(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
+				$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {pid: purchasedPlayer.pid, player: purchasedPlayer.name, team: purchasedPlayer.ownerid, rosterspot: purchasedPlayer.rosterspot, amount: bidAmount, draftNumber: purchasedPlayer.draftNumber}, function(result) {
+					console.log(result);
+				});
 			}
 		}
 
@@ -188,10 +187,6 @@ $(document).ready(function() {
 		var teamPurchasing = $('#keeper-team').find(":selected").text();
 		var bidAmount = $('#keeper-quantity').val();
 
-		$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {player: playerNominated, team: teamPurchasing, amount: bidAmount}, function(result) {
-			console.log(result);
-		});
-
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
@@ -203,6 +198,9 @@ $(document).ready(function() {
 				updateDraftLog(purchasedPlayer);
 				updateKeeperList(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
+				$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {pid: purchasedPlayer.pid, player: purchasedPlayer.name, team: purchasedPlayer.ownerid, rosterspot: purchasedPlayer.rosterspot, amount: bidAmount, draftNumber: purchasedPlayer.draftNumber}, function(result) {
+					console.log(result);
+				});
 			}
 		}
 
