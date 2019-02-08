@@ -138,6 +138,10 @@ $(document).ready(function() {
 		var teamPurchasing = $('#bidding-team').find(":selected").text();
 		var bidAmount = $('#bid-quantity').val();
 
+		$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {player: playerNominated, team: teamPurchasing, amount: bidAmount}, function(result) {
+			console.log(result);
+		});
+
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
 				var purchasedPlayer = availablePlayers.splice(i,1)[0];
@@ -177,20 +181,16 @@ $(document).ready(function() {
 				$('#bid-quantity').val(availablePlayers[i].value);
 			}
 		}
-		var postData = {
-			"player" : 'player',
-			"team"   : 'team',
-			"amount" : 40
-		};
-		$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {player: playerNominated, team: teamPurchasing, amount: bidAmount}, function(result) {
-			console.log(result);
-		});
 	});
 
 	$("#keeper-submit").click(function() {
 		var playerNominated = $('#keeper-options').find(":selected").text();
 		var teamPurchasing = $('#keeper-team').find(":selected").text();
 		var bidAmount = $('#keeper-quantity').val();
+
+		$.post('https://frozen-shore-95322.herokuapp.com/playerupdate', {player: playerNominated, team: teamPurchasing, amount: bidAmount}, function(result) {
+			console.log(result);
+		});
 
 		for(i = 0; i < availablePlayers.length; i++) {
 			if(availablePlayers[i].name == playerNominated) {
