@@ -1,6 +1,7 @@
 
 const SteamerUrl = 'https://frozen-shore-95322.herokuapp.com/steamer';
 const RotochampUrl = 'https://frozen-shore-95322.herokuapp.com/rotochamp';
+const TheBatURL = 'https://frozen-shore-95322.herokuapp.com/thebat';
 var teams = ['Joe', 'Brian', 'Jim', 'Rich', 'Chris', 'Adam', 'Jody', 'Craig', 'Alan', 'Stu'];
 var draftNumber = 0;
 var allPlayers;
@@ -66,7 +67,10 @@ $(document).ready(function() {
 		var projSource;
 		if ($('#proj-source').find(":selected").text() == 'RotoChamp') {
 			projSource = RotochampUrl;
-		} else {
+		} else if ($('#proj-source').find(":selected").text() == 'The Bat'){
+			projSource = TheBatURL;
+		}
+		else {
 			projSource = SteamerUrl;
 		}
 		
