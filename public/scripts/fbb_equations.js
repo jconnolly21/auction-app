@@ -9,6 +9,14 @@ var hitterPitcherSplit = .65;
 var hitters;
 var pitchers;
 
+function getHitterRVals() {
+	return hitterRVals;
+}
+
+function getPitcherRVals() {
+	return pitcherRVals;
+}
+
 function initializeVars (data) {
 
 	hitterEconomy = teams.length*260*(hitterPitcherSplit);

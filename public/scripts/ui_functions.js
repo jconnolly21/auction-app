@@ -4,31 +4,48 @@ function swapStatsValuesTotals(valMode, data) {
 
 	if (valMode) {
 		updateTeamTotals(data);
-		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">300</td><td class="column-right">0.340</td><td class="column-right">1000</td><td class="column-right">950</td><td class="column-right">125</td><td class="column-right">3.60</td><td class="column-right">1300</td><td class="column-right">75</td><td class="column-right">90</td><td class="column-right">1.20</td>');
 	} else {
 		var teamTotals = [0,0,0,0,0,0,0,0,0,0];
+		var numH = 0;
+		var numP = 0;
 		for (var i = 0; i < data.length; i++) {
-			var priceMultiplier = data[i].price / data[i].value;
 			if (data[i].type == 'Hitter'){
-				teamTotals[0] += data[i].value1 * priceMultiplier;
-				teamTotals[1] += data[i].value2 * priceMultiplier;
-				teamTotals[2] += data[i].value3 * priceMultiplier;
-				teamTotals[3] += data[i].value4 * priceMultiplier;
-				teamTotals[4] += data[i].value5 * priceMultiplier;
+				numH += 1;
+				teamTotals[0] += data[i].stat1;
+				teamTotals[1] += data[i].stat2;
+				teamTotals[2] += data[i].stat3;
+				teamTotals[3] += data[i].stat4;
+				teamTotals[4] += data[i].stat5;
 			} else {
-				teamTotals[5] += data[i].value1 * priceMultiplier;
-				teamTotals[6] += data[i].value2 * priceMultiplier;
-				teamTotals[7] += data[i].value3 * priceMultiplier;
-				teamTotals[8] += data[i].value4 * priceMultiplier;
-				teamTotals[9] += data[i].value5 * priceMultiplier;
+				numP += 1;
+				teamTotals[5] += data[i].stat1;
+				teamTotals[6] += data[i].stat2;
+				teamTotals[7] += data[i].stat3;
+				teamTotals[8] += data[i].stat4;
+				teamTotals[9] += data[i].stat5;
 			}
 		}
+		
+		hRVals = getHitterRVals();
+		pRVals = getPitcherRVals();
+
+		teamTotals[0] += (14-numH)*hRVals[0];
+		teamTotals[1] += (14-numH)*hRVals[1];
+		teamTotals[2] += (14-numH)*hRVals[2];
+		teamTotals[3] += (14-numH)*hRVals[3];
+		teamTotals[4] += (14-numH)*hRVals[4];
+
+		teamTotals[5] += (9-numP)*pRVals[0];
+		teamTotals[5] += (9-numP)*pRVals[1];
+		teamTotals[5] += (9-numP)*4; // cant get these vals directly due to way I model rVals
+		teamTotals[5] += (9-numP)*5; // same as above...
+		teamTotals[5] += (9-numP)*pRVals[4];
+
 		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
 		for (var i = 0; i < teamTotals.length; i++) {
-			htmlString += '<td class="column-right">$' + teamTotals[i].toFixed(0) + '</td>';
+			htmlString += '<td class="column-right">' + teamTotals[i].toFixed(0) + '</td>';
 		}
 		$('#team-stats').html(htmlString);
-		$('#totals-vals').html('<th scope="row">Targets</th><td class="column-right">$35</td><td class="column-right">$21</td><td class="column-right">$35</td><td class="column-right">$30</td><td class="column-right">$27</td><td class="column-right">$22</td><td class="column-right">$18</td><td class="column-right">$22</td><td class="column-right">$25</td><td class="column-right">$26</td>');
 	}	
 }
 
