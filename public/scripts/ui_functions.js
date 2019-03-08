@@ -53,7 +53,7 @@ function swapStatsValuesTotals(valMode, data) {
 			teamTotals[8] = teamTotals[8].toFixed(0);
 		teamTotals[9] = (((totalIp*teamTotals[9]) + (1.3*100*(9-numP)))/(totalIp + 100*(9-numP))).toFixed(2);
 
-		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
+		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Tot+RV</a></th>';
 		for (var i = 0; i < teamTotals.length; i++) {
 			htmlString += '<td class="column-right">' + teamTotals[i] + '</td>';
 		}
