@@ -249,15 +249,15 @@ function initializeDraftLog(data) {
 	});
 	var htmlString = '';
 	for (var i = 0; i < data.length; i++) {
-		var printName = data.name;
+		var printName = data[i].name;
 		if (printName.length > 12) {
 			printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
 		}
-		var draftNumClean = data.draftnumber;
+		var draftNumClean = data[i].draftnumber;
 		if (draftNumClean == 0) {
 			draftNumClean = 'K';
 		}
-		htmlString += '<tr><th scope="row">' + draftNumClean + '.</th><td>' + printName + ' <span class="teamname">(' + data.team + ')</span></td><td class="column-center"><div class="pos-' + data.rosterspot + '""><b>' + data.rosterspot + '</b></div></td><td class="column-right">$' + data.price + '</td></tr>';
+		htmlString += '<tr><th scope="row">' + draftNumClean + '.</th><td>' + printName + ' <span class="teamname">(' + data[i].team + ')</span></td><td class="column-center"><div class="pos-' + data[i].rosterspot + '""><b>' + data[i].rosterspot + '</b></div></td><td class="column-right">$' + data[i].price + '</td></tr>';
 	}
 	$('#draft-log').html(htmlString);
 }
