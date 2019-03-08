@@ -8,38 +8,43 @@ function swapStatsValuesTotals(valMode, data) {
 		var teamTotals = [0,0,0,0,0,0,0,0,0,0];
 		var numH = 0;
 		var numP = 0;
+		var totalIp = 0;
+		var totalAb = 0;
+
 		for (var i = 0; i < data.length; i++) {
 			if (data[i].type == 'Hitter'){
 				numH += 1;
 				teamTotals[0] += data[i].stat1;
-				teamTotals[1] += data[i].stat2;
+				teamTotals[1] = (((teamTotals[1]*totalAb) + (data[i].stat2*data[i].countstat))/(totalAb + data[i].countstat)).toFixed(3);
 				teamTotals[2] += data[i].stat3;
 				teamTotals[3] += data[i].stat4;
 				teamTotals[4] += data[i].stat5;
+				totalAb += data[i].countstat;
 			} else {
 				numP += 1;
-				teamTotals[5] += data[i].stat1;
+				teamTotals[5] = (((totalIp*teamTotals[5]) + (data[i].countstat*data[i].stat1))/(totalIp + data[i].countstat)).toFixed(2);
 				teamTotals[6] += data[i].stat2;
 				teamTotals[7] += data[i].stat3;
 				teamTotals[8] += data[i].stat4;
-				teamTotals[9] += data[i].stat5;
+				teamTotals[9] = (((totalIp*teamTotals[9]) + (data[i].countstat*data[i].stat5))/(totalIp + data[i].countstat)).toFixed(2);
+				totalIp += data[i].countstat;
 			}
 		}
 		
 		hRVals = getHitterRVals();
 		pRVals = getPitcherRVals();
 
-		teamTotals[0] += (14-numH)*hRVals[0];
-		teamTotals[1] += (14-numH)*hRVals[1];
+		teamTotals[0] += (((teamTotals[1]*totalAb) + (.325*450*(14-numH)))/(totalAb + (450*(14-numH)))).toFixed(3);;
+		teamTotals[1] = (14-numH)*.325;
 		teamTotals[2] += (14-numH)*hRVals[2];
 		teamTotals[3] += (14-numH)*hRVals[3];
 		teamTotals[4] += (14-numH)*hRVals[4];
 
-		teamTotals[5] += (9-numP)*pRVals[0];
+		teamTotals[5] = (((totalIp*teamTotals[5]) + (3.9*100*(9-numP)))/(totalIp + 100*(9-numP))).toFixed(2);
 		teamTotals[5] += (9-numP)*pRVals[1];
 		teamTotals[5] += (9-numP)*4; // cant get these vals directly due to way I model rVals
 		teamTotals[5] += (9-numP)*5; // same as above...
-		teamTotals[5] += (9-numP)*pRVals[4];
+		teamTotals[5] = (((totalIp*teamTotals[9]) + (1.3*100*(9-numP)))/(totalIp + 100*(9-numP))).toFixed(2);
 
 		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
 		for (var i = 0; i < teamTotals.length; i++) {
