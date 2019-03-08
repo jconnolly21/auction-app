@@ -366,6 +366,8 @@ $(document).ready(function() {
 		    return $(this).text() == removedPlayer;
 		}).closest("tr").remove();
 
+		var whenDrafted = 0;
+
 		for (var i = 0; i < allPlayers.length; i++) {
 			if (allPlayers[i].name == removedPlayer) {
 				// Remove from roster
@@ -375,6 +377,9 @@ $(document).ready(function() {
 						rosters[allPlayers[i].ownerid-1].splice(j,1);
 					}
 				}
+
+				// Find draft number
+				whenDrafted = allPlayers[i].draftnumber;
 
 				// Set ownership props to null
 				allPlayers[i].ownerid = null;
@@ -388,6 +393,20 @@ $(document).ready(function() {
 				removeFromDraftLog(allPlayers[i]);
 			}
 		}
+
+		var playersDrafted = new Array(0);
+
+		for (var i = 0; i < allPlayers.length; i++) {
+			if (allPlayers[i].draftnumber != null) {
+				if (allPlayers[i].draftnumber > whenDrafted) {
+					allPlayers[i].draftnumber = allPlayers[i].draftnumber - 1;
+				}
+				playersDrafted.push(allPlayers[i]);
+			}
+
+		}
+
+		initializeDraftLog(playersDrafted);
 
 		availablePlayers.sort(function (a,b) {
 			return b.value - a.value;
