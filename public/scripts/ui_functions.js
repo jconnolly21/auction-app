@@ -34,21 +34,21 @@ function swapStatsValuesTotals(valMode, data) {
 		hRVals = getHitterRVals();
 		pRVals = getPitcherRVals();
 
-		teamTotals[0] += (((teamTotals[1]*totalAb) + (.325*450*(14-numH)))/(totalAb + (450*(14-numH)))).toFixed(3);;
+		teamTotals[0] += (((teamTotals[1]*totalAb) + (.325*450*(14-numH)))/(totalAb + (450*(14-numH)))).toFixed(3);
 		teamTotals[1] = (14-numH)*.325;
 		teamTotals[2] += (14-numH)*hRVals[2];
 		teamTotals[3] += (14-numH)*hRVals[3];
 		teamTotals[4] += (14-numH)*hRVals[4];
 
 		teamTotals[5] = (((totalIp*teamTotals[5]) + (3.9*100*(9-numP)))/(totalIp + 100*(9-numP))).toFixed(2);
-		teamTotals[5] += (9-numP)*pRVals[1];
-		teamTotals[5] += (9-numP)*4; // cant get these vals directly due to way I model rVals
-		teamTotals[5] += (9-numP)*5; // same as above...
-		teamTotals[5] = (((totalIp*teamTotals[9]) + (1.3*100*(9-numP)))/(totalIp + 100*(9-numP))).toFixed(2);
+		teamTotals[6] += (9-numP)*pRVals[1];
+		teamTotals[7] += (9-numP)*4; // cant get these vals directly due to way I model rVals
+		teamTotals[8] += (9-numP)*5; // same as above...
+		teamTotals[9] = (((totalIp*teamTotals[9]) + (1.3*100*(9-numP)))/(totalIp + 100*(9-numP))).toFixed(2);
 
 		var htmlString = '<th scope="row"><a id="swap-vals-stats" href="#">Totals</a></th>';
 		for (var i = 0; i < teamTotals.length; i++) {
-			htmlString += '<td class="column-right">' + teamTotals[i].toFixed(0) + '</td>';
+			htmlString += '<td class="column-right">' + teamTotals[i] + '</td>';
 		}
 		$('#team-stats').html(htmlString);
 	}	
