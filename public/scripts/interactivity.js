@@ -30,13 +30,15 @@ $(document).ready(function() {
 		drawPlayerTable(allPlayers, 'P', '#sp-stats');
 		drawPlayerTable(allPlayers, 'C', '#category-stats');
 
+		var draftedPlayers = new Array(0);
+
 		for(i = 0; i < allPlayers.length; i++) {
 			if (allPlayers[i].ownerid == null) { 
 				availablePlayers.push(allPlayers[i]);
 			} else {
 				draftNumber = Math.max(draftNumber, allPlayers[i].draftnumber)
 				rosters[allPlayers[i].ownerid - 1].push(allPlayers[i]);
-				updateDraftLog(allPlayers[i]);
+				draftedPlayers.push(allPlayers[i]);
 				if (allPlayers[i].draftnumber == 0) {
 					updateKeeperList(allPlayers[i]);
 				}
@@ -50,6 +52,7 @@ $(document).ready(function() {
 		updateRosterTable(rosters[0]);
 		updateTeamTotals(rosters[0]);
 		setRevertList(rosters);
+		initializeDraftLog(draftedPlayers);
 
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		

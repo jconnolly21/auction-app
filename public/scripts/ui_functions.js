@@ -242,6 +242,26 @@ function drawPlayerTable(data, cat, catID) {
 	$(catID).html(htmlString);
 }
 
+// data here is a list of players
+function initializeDraftLog(data) {
+	data.sort(function (a,b) {
+		return b.draftnumber - a.draftnumber;
+	});
+	var htmlString = '';
+	for (var i = 0; i < data.length; i++) {
+		var printName = data.name;
+		if (printName.length > 12) {
+			printName = printName.split(' ')[0][0] + '.' + printName.substring(printName.indexOf(' '));
+		}
+		var draftNumClean = data.draftnumber;
+		if (draftNumClean == 0) {
+			draftNumClean = 'K';
+		}
+		htmlString += '<tr><th scope="row">' + draftNumClean + '.</th><td>' + printName + ' <span class="teamname">(' + data.team + ')</span></td><td class="column-center"><div class="pos-' + data.rosterspot + '""><b>' + data.rosterspot + '</b></div></td><td class="column-right">$' + data.price + '</td></tr>';
+	}
+	$('#draft-log').html(htmlString);
+}
+
 // data here is a player
 function updateDraftLog(data) {
 	var htmlString = '';
