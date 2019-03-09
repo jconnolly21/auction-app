@@ -298,7 +298,6 @@ function findAvailableRosterSpot(player, roster) {
 	var availableSpot = ' ';
 	var positions = ['C', '1B', '2B', 'SS', '3B', 'MI', 'CI', 'OF', 'OF', 'OF', 'OF', 'OF', 'U', 'U', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'];
 
-	console.log(roster);
 	for (var i = 0; i < roster.length; i++) {
 		var cleanRosSpot = roster[i].rosterspot;
 		if (cleanRosSpot == 'RP' || cleanRosSpot == 'SP') {
@@ -307,13 +306,10 @@ function findAvailableRosterSpot(player, roster) {
 		positions[positions.indexOf(cleanRosSpot)] += '*';
 	}
 
-	console.log(positions);
-
 	var elig = player.elig.split(',');
 	if (player.type == 'Hitter') {
 		for (var i = 0; i < elig.length; i++) {
 			if (positions.indexOf(elig[i]) != -1 && availableSpot == ' ') {
-				console.log(elig[i]);
 				availableSpot = elig[i];
 			}
 		}

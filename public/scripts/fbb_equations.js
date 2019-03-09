@@ -58,15 +58,12 @@ function calculateHitterValues () {
 			return b.value - a.value;
 		});
 	}
-	for (var i = 0; i < 5; i++) {
-		console.log(hitters[i].name + ': $' + hitters[i].value);
-	}
 	var checkSum = 0;
 	for (var i = 0; i < 140; i++) {
 		checkSum += hitters[i].value;
 	}
-	console.log('Expected sum: $' + hitterEconomy);
-	console.log('Actual sum: $' + checkSum);
+	console.log('Hitters - Expected sum: $' + hitterEconomy);
+	console.log('Hitters - Actual sum: $' + checkSum);
 }
 
 function calculatePitcherValues () {
@@ -77,15 +74,12 @@ function calculatePitcherValues () {
 			return b.value - a.value;
 		});
 	}
-	for (var i = 0; i < 5; i++) {
-		console.log(pitchers[i].name + ': $' + pitchers[i].value);
-	}
 	var checkSum = 0;
 	for (var i = 0; i < 90; i++) {
 		checkSum += pitchers[i].value;
 	}
-	console.log('Expected sum: $' + pitcherEconomy);
-	console.log('Actual sum: $' + checkSum);
+	console.log('Pitchers - Expected sum: $' + pitcherEconomy);
+	console.log('Pitchers - Actual sum: $' + checkSum);
 }
 
 function setPitcherCatVals () {
