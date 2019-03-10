@@ -63,7 +63,7 @@ function calculateHitterValues () {
 		checkSum += hitters[i].value;
 	}
 	console.log('Hitters - Expected sum: $' + hitterEconomy.toFixed(0));
-	console.log('Hitters - Actual sum: $' + checkSum).toFixed(0);
+	console.log('Hitters - Actual sum: $' + checkSum.toFixed(0));
 }
 
 function calculatePitcherValues () {
