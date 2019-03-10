@@ -14,7 +14,7 @@ $(document).ready(function() {
 		rosters[i] = new Array(0);
 	}
 	
-	$.getJSON(SteamerUrl, function(result){
+	$.getJSON(TheBatUrl, function(result){
 		
 		allPlayers = result.players; 
 
