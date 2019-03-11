@@ -150,7 +150,7 @@ router.post('/playerremove', function(req, res, next) {
       throw err;
     } else {
       console.log('Successfully connected to db from js req.')
-      var queryString = "DELETE FROM rosters WHERE name='" + req.body.name +"'";
+      var queryString = "DELETE FROM rosters WHERE name='" + req.body.player +"'";
       console.log(queryString);
       client.query(queryString, (err, response) => {
         if (err) {
