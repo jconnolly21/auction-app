@@ -437,9 +437,9 @@ function updateDetails(data) {
 	}
 	var notesSection;
 	if (data.note) {
-		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="' + data.note + '"><img border="0" src="images/notes_image.png" alt="Notes" width="16"></a>';
+		notesSection = ' <a href="' + data.note + '" target="_blank"><img border="0" src="images/notes_image.png" alt="Notes" width="16"></a>';
 	} else {
-		notesSection = ' <a href="#" tab-index="0" data-toggle="popover" data-trigger="focus" title="Player Notes" data-content="No notes about this player..."><img border="0" src="images/notes_image.png" alt="Notes" width="16"></a>';
+		notesSection = '';
 	}
 	
 	$("#nominated-player").html(printName + notesSection);
@@ -447,10 +447,6 @@ function updateDetails(data) {
 	$("#player-details").text(playerDetails + ' ');
 	var suggestedVal = '<b>Suggested Value: $' + data.value.toString(); + '</b>';
 	$("#suggested-val").html(suggestedVal);
-
-	$(function () {
-  		$('[data-toggle="popover"]').popover({trigger: 'focus'})
-	});
 }
 
 // data here is a single player
