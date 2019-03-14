@@ -52,7 +52,7 @@ $(document).ready(function() {
 			}
 		}
 
-		console.log("Inflation Rate: ", (totalBudget/totalValue).toFixed(0));
+		console.log("Inflation Rate: ", (totalBudget/totalValue).toFixed(3));
 
 		draftNumber += 1;
 		updateNominateList(availablePlayers);
