@@ -52,7 +52,7 @@ $(document).ready(function() {
 			}
 		}
 
-		console.log(totalValue.toFixed(0), totalBudget);
+		console.log("Inflation Rate: ", (totalBudget/totalValue).toFixed(0));
 
 		draftNumber += 1;
 		updateNominateList(availablePlayers);
@@ -75,66 +75,66 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#proj-source').change(function () {
-		var projSource;
-		if ($('#proj-source').find(":selected").text() == 'RotoChamp') {
-			projSource = RotochampUrl;
-		} else if ($('#proj-source').find(":selected").text() == 'The Bat'){
-			projSource = TheBatUrl;
-		}
-		else {
-			projSource = SteamerUrl;
-		}
+	// $('#proj-source').change(function () {
+	// 	var projSource;
+	// 	if ($('#proj-source').find(":selected").text() == 'RotoChamp') {
+	// 		projSource = RotochampUrl;
+	// 	} else if ($('#proj-source').find(":selected").text() == 'The Bat'){
+	// 		projSource = TheBatUrl;
+	// 	}
+	// 	else {
+	// 		projSource = SteamerUrl;
+	// 	}
 		
-		$.getJSON(projSource, function(result){
+	// 	$.getJSON(projSource, function(result){
 		
-			for (var i = 0; i < allPlayers.length; i++) {
-				for (var j = 0; j < result.players.length; j++) {
-					if (allPlayers[i].name == result.players[j].name) {
-						allPlayers[i].stat1 = result.players[j].stat1;
-						allPlayers[i].stat2 = result.players[j].stat2;
-						allPlayers[i].stat3 = result.players[j].stat3;
-						allPlayers[i].stat4 = result.players[j].stat4;
-						allPlayers[i].stat5 = result.players[j].stat5;
-						allPlayers[i].countstat = result.players[j].countstat;
-					}
-				}
-			} 
+	// 		for (var i = 0; i < allPlayers.length; i++) {
+	// 			for (var j = 0; j < result.players.length; j++) {
+	// 				if (allPlayers[i].name == result.players[j].name) {
+	// 					allPlayers[i].stat1 = result.players[j].stat1;
+	// 					allPlayers[i].stat2 = result.players[j].stat2;
+	// 					allPlayers[i].stat3 = result.players[j].stat3;
+	// 					allPlayers[i].stat4 = result.players[j].stat4;
+	// 					allPlayers[i].stat5 = result.players[j].stat5;
+	// 					allPlayers[i].countstat = result.players[j].countstat;
+	// 				}
+	// 			}
+	// 		} 
 	
-			initializeVars(allPlayers);
-			calculateHitterValues();
-			calculatePitcherValues();
+	// 		initializeVars(allPlayers);
+	// 		calculateHitterValues();
+	// 		calculatePitcherValues();
 	
-			allPlayers.sort(function (a,b) {
-				return b.value - a.value;
-			});
+	// 		allPlayers.sort(function (a,b) {
+	// 			return b.value - a.value;
+	// 		});
 
-			availablePlayers.sort(function (a,b) {
-				return b.value - a.value;
-			});
+	// 		availablePlayers.sort(function (a,b) {
+	// 			return b.value - a.value;
+	// 		});
 	
-			drawPlayerTable(allPlayers, 'U', '#hitter-stats');
-			drawPlayerTable(allPlayers, 'P', '#sp-stats');
+	// 		drawPlayerTable(allPlayers, 'U', '#hitter-stats');
+	// 		drawPlayerTable(allPlayers, 'P', '#sp-stats');
 			
-			var activeTablePos = $('#stats-table-position').find(":selected").text();
-			drawPlayerTable(allPlayers, activeTablePos, "#category-stats");
+	// 		var activeTablePos = $('#stats-table-position').find(":selected").text();
+	// 		drawPlayerTable(allPlayers, activeTablePos, "#category-stats");
 
-			updateNominateList(availablePlayers);
-			updateKeeperOptions(availablePlayers)
-			updateTeamTotals(rosters[0]);
-		});
+	// 		updateNominateList(availablePlayers);
+	// 		updateKeeperOptions(availablePlayers)
+	// 		updateTeamTotals(rosters[0]);
+	// 	});
 
-		var playerNominated = $('#nominate-list').find(":selected").text();
+	// 	var playerNominated = $('#nominate-list').find(":selected").text();
 		
-		for(i = 0; i < availablePlayers.length; i++) {
-			if(availablePlayers[i].name == playerNominated) {
-				updateDetails(availablePlayers[i]);
-				updateStatsRankings(availablePlayers[i]);
-				updateSimilarPlayers(availablePlayers, availablePlayers[i]);
-				$('#bid-quantity').val(availablePlayers[i].value);
-			}
-		}
-	});
+	// 	for(i = 0; i < availablePlayers.length; i++) {
+	// 		if(availablePlayers[i].name == playerNominated) {
+	// 			updateDetails(availablePlayers[i]);
+	// 			updateStatsRankings(availablePlayers[i]);
+	// 			updateSimilarPlayers(availablePlayers, availablePlayers[i]);
+	// 			$('#bid-quantity').val(availablePlayers[i].value);
+	// 		}
+	// 	}
+	// });
 
 	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
@@ -161,6 +161,10 @@ $(document).ready(function() {
 				purchasedPlayer.rosterspot = findAvailableRosterSpot(purchasedPlayer, rosters[teams.indexOf(teamPurchasing)]);
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = draftNumber;
+
+				totalValue -= purchasedPlayer.value;
+				totalBudget -= purchasedPlayer.price;
+
 				updatePlayersInTables(purchasedPlayer);
 				updateDraftLog(purchasedPlayer);
 				rosters[purchasedPlayer.ownerid - 1].push(purchasedPlayer);
@@ -210,6 +214,10 @@ $(document).ready(function() {
 				purchasedPlayer.rosterspot = findAvailableRosterSpot(purchasedPlayer, rosters[teams.indexOf(teamPurchasing)]);
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = 0;
+
+				totalValue -= purchasedPlayer.value;
+				totalBudget -= purchasedPlayer.price;
+
 				updatePlayersInTables(purchasedPlayer);
 				updateDraftLog(purchasedPlayer);
 				updateKeeperList(purchasedPlayer);
@@ -320,6 +328,9 @@ $(document).ready(function() {
 						}
 					}
 
+					totalValue += allPlayers[i].value;
+					totalBudget += allPlayers[i].price;
+
 					// Set ownership props to null
 					allPlayers[i].ownerid = null;
 					allPlayers[i].price = null;
@@ -389,6 +400,9 @@ $(document).ready(function() {
 
 				// Find draft number
 				whenDrafted = allPlayers[i].draftnumber;
+
+				totalValue += allPlayers[i].value;
+				totalBudget += allPlayers[i].price;
 
 				// Set ownership props to null
 				allPlayers[i].ownerid = null;
