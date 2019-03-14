@@ -6,6 +6,9 @@ var teams = ['Joe', 'Brian', 'Jim', 'Rich', 'Chris', 'Adam', 'Jody', 'Craig', 'A
 var draftNumber = 0;
 var allPlayers;
 var availablePlayers = [];
+var totalValue = 0;
+var totalBudget = 2600;
+
 $(document).ready(function() {
 	
 	// Rosters array
@@ -21,6 +24,8 @@ $(document).ready(function() {
 		initializeVars(allPlayers);
 		calculateHitterValues();
 		calculatePitcherValues();
+
+		console.log(totalValue.toFixed(0));
 
 		allPlayers.sort(function (a,b) {
 			return b.value - a.value;
@@ -42,8 +47,12 @@ $(document).ready(function() {
 				if (allPlayers[i].draftnumber == 0) {
 					updateKeeperList(allPlayers[i]);
 				}
+				totalValue -= allPlayers[i].value;
+				totalBudget -= allPlayers[i].price;
 			}
 		}
+
+		console.log(totalValue.toFixed(0), totalBudget);
 
 		draftNumber += 1;
 		updateNominateList(availablePlayers);

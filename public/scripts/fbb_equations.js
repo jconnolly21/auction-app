@@ -64,6 +64,7 @@ function calculateHitterValues () {
 	}
 	console.log('Hitters - Expected sum: $' + hitterEconomy.toFixed(0));
 	console.log('Hitters - Actual sum: $' + checkSum.toFixed(0));
+	totalValue += checkSum;
 }
 
 function calculatePitcherValues () {
@@ -80,6 +81,7 @@ function calculatePitcherValues () {
 	}
 	console.log('Pitchers - Expected sum: $' + pitcherEconomy.toFixed(0));
 	console.log('Pitchers - Actual sum: $' + checkSum.toFixed(0));
+	totalValue += checkSum;
 }
 
 function setPitcherCatVals () {
