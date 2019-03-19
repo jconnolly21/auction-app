@@ -9,13 +9,13 @@ var availablePlayers = [];
 var totalValue = 0;
 var totalBudget = 2600;
 
+// Rosters array
+var rosters = new Array(10);
+for (var i = 0; i < rosters.length; i++) {
+	rosters[i] = new Array(0);
+}
+
 $(document).ready(function() {
-	
-	// Rosters array
-	var rosters = new Array(10);
-	for (var i = 0; i < rosters.length; i++) {
-		rosters[i] = new Array(0);
-	}
 	
 	$.getJSON(TheBatUrl, function(result){
 		
