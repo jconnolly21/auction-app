@@ -82,6 +82,8 @@ $(document).ready(function() {
 	$.getJSON('https://frozen-shore-95322.herokuapp.com/mybudget', function(result) {
 		var budgetRows = result.budget;
 		
+		console.log('step one');
+
 		for (var i = 0; i < budgetRows.length; i++) {
 			myBudget[i].rosterspot = budgetRows[i].rosterspot;
 			myBudget[i].budget = budgetRows[i].budget;
@@ -89,6 +91,7 @@ $(document).ready(function() {
 
 		var contenders;
 
+		console.log('step two');
 		for (var i = 0; i < rosters[0].length; i++) {
 			contenders = [];
 			for (var j = 0; j < myBudget.length; j++) {
@@ -113,6 +116,7 @@ $(document).ready(function() {
 				}
 			}
 		}
+		console.log('step three');
 
 		for (var i = 0; i < myBudget.length; i++) {
 			if (myBudget[i].name) {
