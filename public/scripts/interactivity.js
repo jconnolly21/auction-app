@@ -86,7 +86,8 @@ $(document).ready(function() {
 
 	$("body").on("change", ".budget-amount", function(e) {
 		console.log(e);
-		console.log(parseInt(e.target.attributes.id.value.charAt(3)));	
+		console.log(e.target.attributes.id.value.substr(e.target.attributes.id.value.indexOf('-')));
+		console.log(parseInt(e.target.attributes.value.value));
 		// Get the value in budgets to change
 		// Get the new value for budget
 		// Change budget value in myBudget array
