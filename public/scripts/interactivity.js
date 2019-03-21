@@ -85,8 +85,8 @@ $(document).ready(function() {
 	});
 
 	$("body").on("change", ".budget-amount", function(e) {
-		console.log('woo');
-		console.log(e);
+		console.log(e.target.attributes.id.value);
+		console.log(parseInt(e.target.attributes.id.value.charAt(3)));		
 	});
 
 	$("#nominate-list").change(function() {
