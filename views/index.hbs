@@ -63,17 +63,6 @@
 	      			</div>
 	      			<div class="modal-section row">
 	      				<div class="col">
-	      					<h5>Projection Source</h5>
-	      					<select id="proj-source" class="selectpicker" data-width="150px">
-	      						<option>The Bat</option>
-	      						<!-- <option>Steamer</option>
-	      						<option>RotoChamp</option> -->
-	      					</select>
-
-	      				</div>
-	      			</div>
-	      			<div class="modal-section row">
-	      				<div class="col">
 	      					<h5>Revert Pick</h5>
 	      					<select id="revert-list" class="selectpicker modal-keeper-form" data-size="10" data-live-search="true">
 	      						<option>Max Scherzer</option>
@@ -82,26 +71,12 @@
 	      				</div>
 	      			</div>
 	      			<div class="modal-section row">
-	      				<div class="col-6 keeper-divider">
-	      					<h5>Add Keeper</h5>      					
-	      					Player: &nbsp;&nbsp;&nbsp;<select id="keeper-options" class="selectpicker modal-keeper-form" data-size="10" data-live-search="true">
-	      					</select><br>
-	      					Team: &nbsp;&nbsp;&nbsp;&nbsp;<select id="keeper-team" data-width="90px" class="selectpicker modal-keeper-form">
-	      						{{#each data}}
-								<option data-subtext='{{display}}'>{{owner}}</option>
-								{{/each}}
-	      					</select><br>
-	      					Price: &nbsp;&nbsp;&nbsp;&nbsp;$<input class="modal-keeper-form" id="keeper-quantity" style="height: 40px; width: 60px;" type="number" name="quantity" min="1" max="250"><br>
-
-	      					<button id="keeper-submit" type="button" class="btn btn-success modal-keeper-form">Submit</button>
-	      		
-	      				</div>
-	      				<div class="col-6">
-	      					<h5 id="keeper-header-margin">Keepers</h5>
-	      					<table class="table table-sm keeper-table">
-								<tbody id="keeper-list">
-								</tbody>
-							</table>
+	      				<div class="col">
+	      					<h5>Budget</h5>
+	      					<table class="table-sm table-borderless">
+	      						<tbody id="budget-row">
+	      						</tbody>
+	      					</table>
 	      				</div>
 	      			</div>
 	      			<div class="modal-section row">

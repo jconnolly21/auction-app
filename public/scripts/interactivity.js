@@ -75,66 +75,12 @@ $(document).ready(function() {
 		}
 	});
 
-	// $('#proj-source').change(function () {
-	// 	var projSource;
-	// 	if ($('#proj-source').find(":selected").text() == 'RotoChamp') {
-	// 		projSource = RotochampUrl;
-	// 	} else if ($('#proj-source').find(":selected").text() == 'The Bat'){
-	// 		projSource = TheBatUrl;
-	// 	}
-	// 	else {
-	// 		projSource = SteamerUrl;
-	// 	}
-		
-	// 	$.getJSON(projSource, function(result){
-		
-	// 		for (var i = 0; i < allPlayers.length; i++) {
-	// 			for (var j = 0; j < result.players.length; j++) {
-	// 				if (allPlayers[i].name == result.players[j].name) {
-	// 					allPlayers[i].stat1 = result.players[j].stat1;
-	// 					allPlayers[i].stat2 = result.players[j].stat2;
-	// 					allPlayers[i].stat3 = result.players[j].stat3;
-	// 					allPlayers[i].stat4 = result.players[j].stat4;
-	// 					allPlayers[i].stat5 = result.players[j].stat5;
-	// 					allPlayers[i].countstat = result.players[j].countstat;
-	// 				}
-	// 			}
-	// 		} 
-	
-	// 		initializeVars(allPlayers);
-	// 		calculateHitterValues();
-	// 		calculatePitcherValues();
-	
-	// 		allPlayers.sort(function (a,b) {
-	// 			return b.value - a.value;
-	// 		});
-
-	// 		availablePlayers.sort(function (a,b) {
-	// 			return b.value - a.value;
-	// 		});
-	
-	// 		drawPlayerTable(allPlayers, 'U', '#hitter-stats');
-	// 		drawPlayerTable(allPlayers, 'P', '#sp-stats');
-			
-	// 		var activeTablePos = $('#stats-table-position').find(":selected").text();
-	// 		drawPlayerTable(allPlayers, activeTablePos, "#category-stats");
-
-	// 		updateNominateList(availablePlayers);
-	// 		updateKeeperOptions(availablePlayers)
-	// 		updateTeamTotals(rosters[0]);
-	// 	});
-
-	// 	var playerNominated = $('#nominate-list').find(":selected").text();
-		
-	// 	for(i = 0; i < availablePlayers.length; i++) {
-	// 		if(availablePlayers[i].name == playerNominated) {
-	// 			updateDetails(availablePlayers[i]);
-	// 			updateStatsRankings(availablePlayers[i]);
-	// 			updateSimilarPlayers(availablePlayers, availablePlayers[i]);
-	// 			$('#bid-quantity').val(availablePlayers[i].value);
-	// 		}
-	// 	}
-	// });
+	$.getJSON('https://frozen-shore-95322.herokuapp.com/mybudget', function(result) {
+		var budgetRows = result.budget;
+		for (var i = 0; i < budgetRows.length; i++) {
+			$("#budget-row").append('<tr><td>' + budgetRows[i].rosterspot + '</td><td>' + budgetRows[i].budget + '</td></tr>');
+		}
+	});
 
 	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
