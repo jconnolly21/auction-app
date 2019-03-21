@@ -1,5 +1,6 @@
 
-function updateMyBudget(data) {
+// data here is from budget table
+function initializeMyBudget(data) {
 	for (var i = 0; i < data.length; i++) {
 		myBudget[i].rosterspot = data[i].rosterspot;
 		myBudget[i].budget = data[i].budget;
@@ -29,6 +30,40 @@ function updateMyBudget(data) {
 			}
 		}
 	}
+	for (var i = 0; i < myBudget.length; i++) {
+		if (myBudget[i].name) {
+			$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td>' + myBudget[i].name + '</td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
+		} else {
+			$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td></td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center"></td><td class="column-center"></td></tr>');
+		}
+	}
+}
+
+// data here is a single player
+function addToBudget(data) {
+	var contenders = [];	
+	for (var j = 0; j < myBudget.length; j++) {
+		if (rosters[0][i].rosterspot == myBudget[j].rosterspot && !myBudget[j].name) {
+			var obj = {};
+			obj.name = data.name;
+			obj.rosterspot = data.rosterspot;
+			obj.price = data.price;
+			obj.diff = myBudget[j].budget - data.price;
+			obj.budget = myBudget[j].budget;
+			contenders.push(obj);
+		}
+	}
+	contenders.sort(function (a,b) {
+		return Math.abs(a.diff) - Math.abs(b.diff);
+	});
+	for (var j = 0; j < myBudget.length; j++) {
+		if (myBudget[j].rosterspot == contenders[0].rosterspot && myBudget[j].budget == contenders[0].budget) {
+			myBudget[j].name = contenders[0].name;
+			myBudget[j].price = contenders[0].price;
+			myBudget[j].diff = contenders[0].diff;
+		}
+	}
+	$("#budget-rows").html("");
 	for (var i = 0; i < myBudget.length; i++) {
 		if (myBudget[i].name) {
 			$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td>' + myBudget[i].name + '</td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');

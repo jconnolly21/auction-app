@@ -80,7 +80,7 @@ $(document).ready(function() {
 
 		$.getJSON('https://frozen-shore-95322.herokuapp.com/mybudget', function(result) {
 			var budgetRows = result.budget;
-			updateMyBudget(budgetRows);
+			initializeMyBudget(budgetRows);
 		});
 	});
 
@@ -112,6 +112,10 @@ $(document).ready(function() {
 
 				totalValue -= purchasedPlayer.value;
 				totalBudget -= purchasedPlayer.price;
+
+				if (purchasedPlayer.ownerid == 1) {
+					addToBudget(purchasedPlayer);
+				}
 
 				updatePlayersInTables(purchasedPlayer);
 				updateDraftLog(purchasedPlayer);
