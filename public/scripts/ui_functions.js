@@ -61,6 +61,7 @@ function addToBudget(data) {
 			myBudget[j].name = contenders[0].name;
 			myBudget[j].price = contenders[0].price;
 			myBudget[j].diff = contenders[0].diff;
+			break;
 		}
 	}
 	$("#budget-rows").html("");
