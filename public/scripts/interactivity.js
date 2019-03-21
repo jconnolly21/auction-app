@@ -84,6 +84,10 @@ $(document).ready(function() {
 		});
 	});
 
+	$(".budget-amount").change(function(e) {
+		console.log(e);
+	});
+
 	$("#nominate-list").change(function() {
 		var playerNominated = $('#nominate-list').find(":selected").text();
 		
