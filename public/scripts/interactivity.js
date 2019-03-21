@@ -356,6 +356,10 @@ $(document).ready(function() {
 				totalValue += allPlayers[i].value;
 				totalBudget += allPlayers[i].price;
 
+				if (allPlayers[i].ownerid == 1) {
+					removeFromBudget(allPlayers[i]);
+				}
+
 				// Set ownership props to null
 				allPlayers[i].ownerid = null;
 				allPlayers[i].price = null;

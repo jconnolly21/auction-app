@@ -73,6 +73,25 @@ function addToBudget(data) {
 	}
 }
 
+// data here is a single player
+function removeFromBudget(data) {
+	for (var j = 0; i < myBudget.length; j++) {
+		if (data.name == myBudget[j].name) {
+			myBudget[j].name = null;
+			myBudget[j].price = null;
+			myBudget[j].diff = null;
+		}
+	}
+	$("#budget-rows").html("");
+	for (var i = 0; i < myBudget.length; i++) {
+		if (myBudget[i].name) {
+			$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td>' + myBudget[i].name + '</td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
+		} else {
+			$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td></td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center"></td><td class="column-center"></td></tr>');
+		}
+	}
+}
+
 // data here is a single roster
 function swapStatsValuesTotals(valMode, data) {
 	var vals = new Array(10);
