@@ -80,50 +80,7 @@ $(document).ready(function() {
 
 		$.getJSON('https://frozen-shore-95322.herokuapp.com/mybudget', function(result) {
 			var budgetRows = result.budget;
-			
-			console.log('step one');
-	
-			for (var i = 0; i < budgetRows.length; i++) {
-				myBudget[i].rosterspot = budgetRows[i].rosterspot;
-				myBudget[i].budget = budgetRows[i].budget;
-			}
-	
-			var contenders;
-	
-			console.log('step two');
-			for (var i = 0; i < rosters[0].length; i++) {
-				contenders = [];
-				for (var j = 0; j < myBudget.length; j++) {
-					if (rosters[0][i].rosterspot == myBudget[j].rosterspot) {
-						var obj = {};
-						obj.name = rosters[0][i].name;
-						obj.rosterspot = rosters[0][i].rosterspot;
-						obj.price = rosters[0][i].price;
-						obj.diff = myBudget[j].budget - rosters[0][i].price;
-						obj.budget = myBudget[j].budget;
-						contenders.push(obj);
-					}
-				}
-				contenders.sort(function (a,b) {
-					return Math.abs(a.diff) - Math.abs(b.diff);
-				});
-				for (var j = 0; j < myBudget.length; j++) {
-					if (myBudget[j].rosterspot == contenders[0].rosterspot && myBudget[j].budget == contenders[0].budget) {
-						myBudget[j].name = contenders[0].name;
-						myBudget[j].price = contenders[0].price;
-						myBudget[j].diff = contenders[0].diff;
-					}
-				}
-			}
-			console.log('step three');
-	
-			for (var i = 0; i < myBudget.length; i++) {
-				if (myBudget[i].name) {
-					$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td>' + myBudget[i].name + '</td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
-				} else {
-					$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td></td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center"></td><td class="column-center"></td></tr>');
-				}
-			}
+			updateMyBudget(budgetRows);
 		});
 	});
 
