@@ -87,9 +87,23 @@ $(document).ready(function() {
 			myBudget[i].budget = budgetRows[i].budget;
 		}
 
+		for (var i = 0; i < rosters[0].length; i++) {
+			for (var j = 0; j < myBudget.length; j++) {
+				if (rosters[0][i].rosterspot == myBudget[j].rosterspot) {
+					myBudget[j].rosterspot += '*';
+					myBudget[j].name = rosters[0][i].name;
+					myBudget[j].price = rosters[0][i].price;
+					myBudget[j].diff = myBudget[j].budget - myBudget[j].price;
+				}
+			}
+		}
 
-		for (var i = 0; i < budgetRows.length; i++) {
-			$("#budget-rows").append('<tr><td>' + budgetRows[i].rosterspot + '</td><td></td><td class="column-center">$' + budgetRows[i].budget + '</td><td class="column-center"></td><td class="column-center"></td></tr>');
+		for (var i = 0; i < myBudget.length; i++) {
+			if (myBudget[i].name) {
+				$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td>' + myBudget[i].name + '</td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
+			} else {
+				$("#budget-rows").append('<tr><td>' + myBudget[i].rosterspot + '</td><td></td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center"></td><td class="column-center"></td></tr>');
+			}
 		}
 	});
 
