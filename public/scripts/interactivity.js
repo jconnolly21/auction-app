@@ -78,7 +78,7 @@ $(document).ready(function() {
 	$.getJSON('https://frozen-shore-95322.herokuapp.com/mybudget', function(result) {
 		var budgetRows = result.budget;
 		for (var i = 0; i < budgetRows.length; i++) {
-			$("#budget-rows").append('<tr><td>' + budgetRows[i].rosterspot + '</td><td>Harrison Bader</td><td>' + budgetRows[i].budget + '</td><td>$9</td><td>-5</td></tr>');
+			$("#budget-rows").append('<tr><td>' + budgetRows[i].rosterspot + '</td><td>Harrison Bader</td><td class="column-center">$' + budgetRows[i].budget + '</td><td class="column-center">$9</td><td class="column-center">$-5</td></tr>');
 		}
 	});
 
