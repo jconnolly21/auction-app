@@ -84,7 +84,8 @@ $(document).ready(function() {
 		});
 	});
 
-	$(".budget-amount").change(function(e) {
+	$("body").on("change", ".budget-amount", function(e) {
+		console.log('woo');
 		console.log(e);
 	});
 
