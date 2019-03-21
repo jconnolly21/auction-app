@@ -32,9 +32,9 @@ function initializeMyBudget(data) {
 	}
 	for (var i = 0; i < myBudget.length; i++) {
 		if (myBudget[i].name) {
-			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td>' + myBudget[i].name + '</td><td class="column-center">$<input id="of1-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
+			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td>' + myBudget[i].name + '</td><td class="column-center">$<input id="pos' + i + '-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
 		} else {
-			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td></td><td class="column-center">$<input id="of1-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center"></td><td class="column-center"></td></tr>');
+			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td></td><td class="column-center">$<input id="pos' + i + '-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center"></td><td class="column-center"></td></tr>');
 		}
 	}
 }
@@ -67,9 +67,9 @@ function addToBudget(data) {
 	$("#budget-rows").html("");
 	for (var i = 0; i < myBudget.length; i++) {
 		if (myBudget[i].name) {
-			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td>' + myBudget[i].name + '</td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
+			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td>' + myBudget[i].name + '</td><td class="column-center">$<input id="pos' + i + '-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
 		} else {
-			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td></td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center"></td><td class="column-center"></td></tr>');
+			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td></td><td class="column-center">$<input id="pos' + i + '-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center"></td><td class="column-center"></td></tr>');
 		}
 	}
 }
@@ -86,9 +86,9 @@ function removeFromBudget(data) {
 	$("#budget-rows").html("");
 	for (var i = 0; i < myBudget.length; i++) {
 		if (myBudget[i].name) {
-			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td>' + myBudget[i].name + '</td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
+			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td>' + myBudget[i].name + '</td><td class="column-center">$<input id="pos' + i + '-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center">$' + myBudget[i].price + '</td><td class="column-center">$' + myBudget[i].diff + '</td></tr>');
 		} else {
-			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td></td><td class="column-center">$' + myBudget[i].budget + '</td><td class="column-center"></td><td class="column-center"></td></tr>');
+			$("#budget-rows").append('<tr><th scope="row">' + myBudget[i].rosterspot + '</th><td></td><td class="column-center">$<input id="pos' + i + '-budget" type="number" name="budget" min="1" max="50" value="' + myBudget[i].budget + '"></td><td class="column-center"></td><td class="column-center"></td></tr>');
 		}
 	}
 }
