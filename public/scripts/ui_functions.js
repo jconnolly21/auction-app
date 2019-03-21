@@ -75,7 +75,7 @@ function addToBudget(data) {
 
 // data here is a single player
 function removeFromBudget(data) {
-	for (var j = 0; i < myBudget.length; j++) {
+	for (var j = 0; j < myBudget.length; j++) {
 		if (data.name == myBudget[j].name) {
 			myBudget[j].name = null;
 			myBudget[j].price = null;

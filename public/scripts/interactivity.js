@@ -356,7 +356,9 @@ $(document).ready(function() {
 				totalValue += allPlayers[i].value;
 				totalBudget += allPlayers[i].price;
 
+				console.log(allPlayers[i]);
 				if (allPlayers[i].ownerid == 1) {
+					console.log('made it here');
 					removeFromBudget(allPlayers[i]);
 				}
 
