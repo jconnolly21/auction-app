@@ -87,13 +87,29 @@ $(document).ready(function() {
 			myBudget[i].budget = budgetRows[i].budget;
 		}
 
+		var contenders;
+
 		for (var i = 0; i < rosters[0].length; i++) {
+			contenders = [];
 			for (var j = 0; j < myBudget.length; j++) {
 				if (rosters[0][i].rosterspot == myBudget[j].rosterspot) {
-					myBudget[j].rosterspot += '*';
-					myBudget[j].name = rosters[0][i].name;
-					myBudget[j].price = rosters[0][i].price;
-					myBudget[j].diff = myBudget[j].budget - myBudget[j].price;
+					var obj = {};
+					obj.name = rosters[0][i].name;
+					obj.rosterspot = rosters[0][i].rosterspot;
+					obj.price = rosters[0][i].price;
+					obj.diff = myBudget[j].budget - myBudget[j].price;
+					obj.budget = myBudget[j].budget;
+					contenders.push(obj);
+				}
+			}
+			contenders.sort(function (a,b) {
+				return Math.abs(a.diff) - Math.abs(b.diff);
+			});
+			for (var j = 0; j < myBudget.length; j++) {
+				if (myBudget[j].rosterspot == contengers[0].rosterspot && myBudget[j].budget == contenders[0].budget) {
+					myBudget[j].name = contenders[0].name;
+					myBudget[j].price = contenders[0].price;
+					myBudget[j].diff = contenders[0].diff;
 				}
 			}
 		}
