@@ -1,8 +1,8 @@
 
 function updateMyBudget(data) {
-	for (var i = 0; i < budgetRows.length; i++) {
-		myBudget[i].rosterspot = budgetRows[i].rosterspot;
-		myBudget[i].budget = budgetRows[i].budget;
+	for (var i = 0; i < data.length; i++) {
+		myBudget[i].rosterspot = data[i].rosterspot;
+		myBudget[i].budget = data[i].budget;
 	}
 	var contenders;	
 	for (var i = 0; i < rosters[0].length; i++) {
