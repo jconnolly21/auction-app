@@ -43,7 +43,7 @@ function initializeMyBudget(data) {
 function addToBudget(data) {
 	var contenders = [];	
 	for (var j = 0; j < myBudget.length; j++) {
-		if (rosters[0][i].rosterspot == myBudget[j].rosterspot && !myBudget[j].name) {
+		if (data.rosterspot == myBudget[j].rosterspot && !myBudget[j].name) {
 			var obj = {};
 			obj.name = data.name;
 			obj.rosterspot = data.rosterspot;
