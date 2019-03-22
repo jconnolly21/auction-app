@@ -81,6 +81,7 @@ $(document).ready(function() {
 		$.getJSON('https://frozen-shore-95322.herokuapp.com/mybudget', function(result) {
 			var budgetRows = result.budget;
 			initializeMyBudget(budgetRows);
+			updateBudgetTotal();
 		});
 	});
 
@@ -95,6 +96,7 @@ $(document).ready(function() {
 			myBudget[budgetIndex].diff = myBudget[budgetIndex].budget - myBudget[budgetIndex].price;
 		}
 		$(e.target).parent().parent().children('td').last().html('$' + myBudget[budgetIndex].diff);
+		updateBudgetTotal();
 	});
 
 	$("#nominate-list").change(function() {
@@ -128,6 +130,7 @@ $(document).ready(function() {
 
 				if (purchasedPlayer.ownerid == 1) {
 					addToBudget(purchasedPlayer);
+					updateBudgetTotal();
 				}
 
 				updatePlayersInTables(purchasedPlayer);
@@ -373,6 +376,7 @@ $(document).ready(function() {
 				if (allPlayers[i].ownerid == 1) {
 					console.log('made it here');
 					removeFromBudget(allPlayers[i]);
+					updateBudgetTotal();
 				}
 
 				// Set ownership props to null

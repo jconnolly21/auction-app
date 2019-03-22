@@ -39,6 +39,14 @@ function initializeMyBudget(data) {
 	}
 }
 
+function updateBudgetTotal() {
+	var total = 0;
+	for (var i = 0; i < myBudget.length; i++) {
+		total += myBudget[i].budget;
+	}
+	$('#budget-total').html('$' + total);
+}
+
 // data here is a single player
 function addToBudget(data) {
 	var contenders = [];	
