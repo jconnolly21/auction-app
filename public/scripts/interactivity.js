@@ -86,12 +86,13 @@ $(document).ready(function() {
 
 	$("body").on("change", ".budget-amount", function(e) {
 		console.log(e);
-		console.log(e.target.attributes.id.value.substr(0, e.target.attributes.id.value.indexOf('-')).substr(-(e.target.attributes.id.value.length-10)));
-		console.log(e.target.valueAsNumber);
-		// Get the value in budgets to change
-		// Get the new value for budget
-		// Change budget value in myBudget array
-		// Redraw diff and total
+		var budgetIndex = parseInt(e.target.attributes.id.value.substr(0, e.target.attributes.id.value.indexOf('-')).substr(-(e.target.attributes.id.value.length-10)));
+		var newBudget = e.target.valueAsNumber;
+		myBudget[budgetIndex].budget = newBudget;
+		if (myBudget[budgetIndex].name) {
+			myBudget[budgetIndex].diff = myBudget[budgetIndex].budget - myBudget[budgetIndex].price;
+		}
+		$(e.target).parent().parent().children('td').last().html('$' + newBudget);
 	});
 
 	$("#nominate-list").change(function() {
