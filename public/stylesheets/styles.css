@@ -91,9 +91,10 @@ ul li {
 }
 
 .budgetTableHeight {
-  height: 350px;
+  height: 345px;
   width:100%;
   overflow-y: scroll;
+  border: solid 1px #aaaaaa;
 }
 
 .keeper-big {
