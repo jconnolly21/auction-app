@@ -94,8 +94,8 @@ $(document).ready(function() {
 			console.log(myBudget[budgetIndex].price);
 			console.log(myBudget[budgetIndex].budget - myBudget[budgetIndex].price);
 			myBudget[budgetIndex].diff = myBudget[budgetIndex].budget - myBudget[budgetIndex].price;
+			$(e.target).parent().parent().children('td').last().html('$' + myBudget[budgetIndex].diff);
 		}
-		$(e.target).parent().parent().children('td').last().html('$' + myBudget[budgetIndex].diff);
 		updateBudgetTotal();
 	});
 
