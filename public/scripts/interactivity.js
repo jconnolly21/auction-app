@@ -125,8 +125,8 @@ $(document).ready(function() {
 				purchasedPlayer.price = bidAmount;
 				purchasedPlayer.draftnumber = draftNumber;
 
-				totalValue -= purchasedPlayer.value;
-				totalBudget -= purchasedPlayer.price;
+				totalValue -= parseInt(purchasedPlayer.value);
+				totalBudget -= parseInt(purchasedPlayer.price);
 
 				if (purchasedPlayer.ownerid == 1) {
 					addToBudget(purchasedPlayer);
@@ -296,8 +296,8 @@ $(document).ready(function() {
 						}
 					}
 
-					totalValue += allPlayers[i].value;
-					totalBudget += allPlayers[i].price;
+					totalValue += parseInt(allPlayers[i].value);
+					totalBudget += parseInt(allPlayers[i].price);
 
 					// Set ownership props to null
 					allPlayers[i].ownerid = null;
@@ -369,8 +369,8 @@ $(document).ready(function() {
 				// Find draft number
 				whenDrafted = allPlayers[i].draftnumber;
 
-				totalValue += allPlayers[i].value;
-				totalBudget += allPlayers[i].price;
+				totalValue += parseInt(allPlayers[i].value);
+				totalBudget += parseInt(allPlayers[i].price);
 
 				console.log(allPlayers[i]);
 				if (allPlayers[i].ownerid == 1) {
