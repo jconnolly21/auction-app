@@ -92,7 +92,7 @@ $(document).ready(function() {
 		if (myBudget[budgetIndex].name) {
 			myBudget[budgetIndex].diff = myBudget[budgetIndex].budget - myBudget[budgetIndex].price;
 		}
-		$(e.target).parent().parent().children('td').last().html('$' + newBudget);
+		$(e.target).parent().parent().children('td').last().html('$' + myBudget[budgetIndex].diff);
 	});
 
 	$("#nominate-list").change(function() {
