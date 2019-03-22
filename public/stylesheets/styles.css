@@ -92,7 +92,7 @@ ul li {
 
 .budgetTableHeight {
   height: 345px;
-  width:100%;
+  width:65%;
   overflow-y: scroll;
   border: solid 1px #aaaaaa;
 }
